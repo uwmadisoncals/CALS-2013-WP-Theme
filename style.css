@@ -3571,8 +3571,8 @@ body {
 }
 
 body {
-	background:url("images/CALS_bg.jpg"), url("images/digitalbg.jpg");
-	background-repeat: repeat-x, repeat;
+	background:#e8e6d9;
+	
 	font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
@@ -3838,9 +3838,9 @@ color: #B70101;
 
 
 .collegeFeature {
-	width: 938px;
+	width: 100%;
 	margin: 0 auto;
-	height: 245px;
+	height: 400px;
 	position: relative;
 	z-index:2;
 	overflow: hidden;
@@ -3978,6 +3978,15 @@ color: #B70101;
 	z-index:1;
 }*/
 
+.headerPhotoBg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 400px;
+	z-index:1;
+}
+
 .collegeFeature ul, .collegeFeature li {
 	list-style: none;
 	padding: 0px;
@@ -3998,8 +4007,12 @@ color: #B70101;
 	position: relative;
 	overflow: hidden;
 	float: left;
-	width: 938px;
+	width: auto;
 	
+}
+
+.collegeFeature li img {
+	width: 100%;
 }
 
 .collegeFeature .timer {

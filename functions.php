@@ -94,12 +94,12 @@ function twentyeleven_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'utility', __( 'Utility Links', 'twentyeleven' ) );
 	register_nav_menu( 'primary', __( 'Primary Menu', 'twentyeleven' ) );
-	register_nav_menu( 'footer1', __( 'Footer Menu 1', 'twentyeleven' ) );
-	register_nav_menu( 'footer2', __( 'Footer Menu 2', 'twentyeleven' ) );
-	register_nav_menu( 'footer3', __( 'Footer Menu 3', 'twentyeleven' ) );
-	register_nav_menu( 'footer4', __( 'Footer Menu 4', 'twentyeleven' ) );
-
+	register_nav_menu( 'footer1', __( 'Footer Menu Column 1', 'twentyeleven' ) );
+	register_nav_menu( 'footer2', __( 'Footer Menu Column 2', 'twentyeleven' ) );
+	
+	
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
@@ -370,7 +370,7 @@ function twentyeleven_widgets_init() {
 		'after_title' => '</h3></div>',
 	) );
 
-	register_sidebar( array(
+	/*register_sidebar( array(
 		'name' => __( 'Footer Area One', 'twentyeleven' ),
 		'id' => 'sidebar-3',
 		'description' => __( 'An optional widget area for your site footer', 'twentyeleven' ),
@@ -408,7 +408,7 @@ function twentyeleven_widgets_init() {
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );
+	) );*/
 }
 add_action( 'widgets_init', 'twentyeleven_widgets_init' );
 

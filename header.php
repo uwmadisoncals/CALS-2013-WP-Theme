@@ -203,8 +203,8 @@ endwhile;
 // Reset Query
 wp_reset_query();
 
-cals_search_feed('http://news.cals.wisc.edu/?feed=rss2&cat=-20,-21,-66,-67,0', 40, 1, -1); 
-cals_search_feed('http://ecals.cals.wisc.edu/feed/', 40, 1, -1); 
+//cals_search_feed('http://news.cals.wisc.edu/?feed=rss2&cat=-20,-21,-66,-67,0', 40, 1, -1); 
+//cals_search_feed('http://ecals.cals.wisc.edu/feed/', 40, 1, -1); 
 ?>
 
 						<!-- Hard code any additional search terms here -->
@@ -262,5 +262,102 @@ cals_search_feed('http://ecals.cals.wisc.edu/feed/', 40, 1, -1);
 <div id="mobile-filter">
 	<div id="mobile-filter-inner">
 	</div>
+</div>
+
+<div class="headerPhotoBg">
+<div class="collegeFeature">
+<ul class="slides">
+  <?php while ( have_posts() ) : the_post(); ?>
+
+					<?php //get_template_part( 'content', 'page' ); ?>
+
+					<?php //comments_template( '', true ); ?>
+					
+					<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 5 );
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					
+						
+    			
+    				<li class="flipin">
+    					<div class="slideImage">
+				    				<?php 
+				    					
+					    				if ( has_post_thumbnail() ) {
+						    				
+						    				//the_post_thumbnail();
+						    				echo get_the_post_thumbnail($page->ID, 'large');
+				 
+						    				} else {
+				 
+											 //echo '<img src="';
+											 echo catch_that_image();
+											// echo '" alt="" />';
+				
+										}
+					    				
+				    				?>
+    					</div>
+				    			
+				    		
+    			<h3><?php the_title(); ?></h3>
+    			
+  	
+  		
+  			<div class="featureCaption">
+  				<h2><?php the_title(); ?></h2>
+  				
+  				<a href="students/admissions" >Apply to CALS</a> | <a href="students/undergraduate-programs/areas-of-study/">Explore our majors</a>
+  			</div>
+  			
+  		</li>
+  		
+  	
+					<?php endwhile; ?>
+
+				<?php endwhile; // end of the loop. ?>
+				
+				</ul>
+  	
+  	<a href="#" class="next">Next</a>
+  	<a href="#" class="previous">Previous</a>
+  	
+  	<div class="timer">
+  		<a href="#">Pause Slide Rotation</a>
+	  	<div class="timerLeft">
+	  	<div class="timer1"></div>
+	  	</div>
+	  	<div class="timerRight">
+	  	<div class="timer2"></div>
+	  	</div>
+	  	
+  	</div>
+  </div>
+  <div class='fluidHeight' style="display: none;">
+			
+			<div class = 'sliderContainer'>
+			
+				<div class = 'iosSlider'>
+				
+					<div class = 'slider'>
+					
+						
+						
+						
+					
+					</div>
+				
+				</div>
+				
+				
+				
+				<div class = 'scrollbarContainer'></div>
+				
+			</div>
+		
+		</div>
+		
+		<!-- end of feature slider -->
+		
 </div>
 	
