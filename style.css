@@ -608,11 +608,16 @@ a.button:active {
 ----------------------------------------------- */
 
 #branding {
-	width: 940px;
+	width: 100%;
 	margin: 0 auto;
 	padding-bottom: 10px;
-	position: relative;
+	position: absolute;
 	z-index: 9999;
+}
+
+#branding .headerCentered {
+	width: 940px;
+	margin: 0 auto;
 }
 
 #uwred #branding {
@@ -936,7 +941,10 @@ a.button:active {
 
 #main {
 	clear: both;
-	padding: 1em 0 0;
+	padding: 0 0 0;
+	margin-top: -150px;
+	z-index:3;
+	position: relative;
 }
 .page-title {
 	color: #666;
@@ -3835,19 +3843,30 @@ color: #B70101;
 	padding-right: 10px;
 }
 
-
+.headertransition {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 180px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(232,230,217,0.4) 1%, rgba(232,230,217,0.8) 50%, rgba(232,230,217,1) 99%, rgba(232,230,217,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(1%,rgba(232,230,217,0.4)), color-stop(50%,rgba(232,230,217,0.8)), color-stop(99%,rgba(232,230,217,1)), color-stop(100%,rgba(232,230,217,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(232,230,217,0.4) 1%,rgba(232,230,217,0.8) 50%,rgba(232,230,217,1) 99%,rgba(232,230,217,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(232,230,217,0.4) 1%,rgba(232,230,217,0.8) 50%,rgba(232,230,217,1) 99%,rgba(232,230,217,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(232,230,217,0.4) 1%,rgba(232,230,217,0.8) 50%,rgba(232,230,217,1) 99%,rgba(232,230,217,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(232,230,217,0.4) 1%,rgba(232,230,217,0.8) 50%,rgba(232,230,217,1) 99%,rgba(232,230,217,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#e8e6d9',GradientType=0 ); /* IE6-9 */
+	z-index:3;
+}
 
 .collegeFeature {
 	width: 100%;
 	margin: 0 auto;
-	height: 400px;
+	height: 500px;
 	position: relative;
 	z-index:2;
 	overflow: hidden;
-	 -moz-box-shadow: 0px 1px 5px #585858;
-  -webkit-box-shadow: 0px 1px 5px #585858;
-	box-shadow: 0px 1px 5px #585858;
-}
+	}
 
 .collegeFeature em, .iosSlider em {
 	letter-spacing: 1px;
@@ -3979,12 +3998,10 @@ color: #B70101;
 }*/
 
 .headerPhotoBg {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	height: 400px;
-	z-index:1;
+	
+	height: 500px;
+	position: relative;
+	
 }
 
 .collegeFeature ul, .collegeFeature li {
@@ -4077,7 +4094,7 @@ color: #B70101;
 
 .collegeFeature .next:link, .collegeFeature .next:visited {
 	position: absolute;
-	top: 90px;
+	top: 190px;
 	right: 0px;
 	width: 40px;
 	height: 40px;
@@ -4121,7 +4138,7 @@ color: #B70101;
 
 .collegeFeature .previous:link, .collegeFeature .previous:visited {
 	position: absolute;
-	top: 90px;
+	top: 190px;
 	left: 0px;
 	width: 40px;
 	height: 40px;
@@ -4198,12 +4215,17 @@ color: #B70101;
 
 .collegeFeature li .featureCaption, .iosSlider .featureCaption {
 	position: absolute;
-	bottom: 0px;
+	top: 240px;
 	left: 0px;
-	padding: 40px;
-	padding-left: 60px;
+	right: 0px;
+	
 	z-index:5;
 	color: #fff;
+}
+
+.collegeFeature li .featureCaption .centered, .iosSlider .featureCaption .centered {
+	width: 940px;
+	margin: 0 auto;
 }
 
 .collegeFeature li .featureCaption h2, .iosSlider h2 {

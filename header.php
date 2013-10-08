@@ -133,6 +133,7 @@ $current_colorscheme = $options['link_color'];
 
 <div id="page" class="hfeed">
 	<header id="branding" role="banner">
+		<div class="headerCentered">
 			<hgroup class="heading">
 				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
 				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -250,6 +251,7 @@ wp_reset_query();
 			
 			
 <div class="headingbg clearfix"></div>
+		</div>
 	</header><!-- #branding -->
 
 <div id="mobile-menu">
@@ -265,6 +267,7 @@ wp_reset_query();
 </div>
 
 <div class="headerPhotoBg">
+<div class="headertransition"></div>
 <div class="collegeFeature">
 <ul class="slides">
   <?php while ( have_posts() ) : the_post(); ?>
@@ -305,9 +308,11 @@ wp_reset_query();
   	
   		
   			<div class="featureCaption">
+  				<div class="centered">
   				<h2><?php the_title(); ?></h2>
   				
   				<a href="students/admissions" >Apply to CALS</a> | <a href="students/undergraduate-programs/areas-of-study/">Explore our majors</a>
+  				</div>
   			</div>
   			
   		</li>

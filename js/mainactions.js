@@ -29,7 +29,16 @@ var countFeatures = 0;
 			  
 			  
 		});
-		   
+		 
+		 var bodyWidth = $(window).width() +"px";
+				//console.log(bodyWidth);
+				$(".collegeFeature ul li").css("width",bodyWidth);
+		 
+		$( window ).resize(function() {
+				var bodyWidth = $(window).width() +"px";
+				//console.log(bodyWidth);
+				$(".collegeFeature ul li").css("width",bodyWidth);
+  		});
 		
 		   $('.iosSlider .slider').html(mobileFeatures); 
 		 
