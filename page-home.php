@@ -88,25 +88,7 @@ get_header(); ?>
 		<div id="primary">
 			<div id="content" class="fullWidth" role="main">
 				
-				<div class="searchContainer">
-					<form method="get" id="librarysearchform" action="http://search.library.wisc.edu/catalog">
-						<label for="ls" class="assistive-text">Search</label>
-						<input type="text" class="field" name="ls" id="ls" placeholder="Search the Catalog" x-webkit-speech="">
-						<input type="submit" class="submit" name="submit" id="librarysearchsubmit" value="Search">
-						<a href="#">More Search Options</a>
-					</form>
-					<div class="searchOptions">
-						<a href="#" class="redButton searchToggle"><div class="searchImg"></div><div class="searchType">Books</div><div class="arrowDown"></div></a>
-						<div class="results" style="display:none;">
-							<ul>
-								<li><a href="#">Articles</a></li>
-								<li><a href="#">Books</a></li>
-								<li><a href="#">Journals</a></li>
-								<li><a href="#">Databases</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				
 
 				<?php while ( have_posts() ) : the_post(); ?>
 

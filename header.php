@@ -96,13 +96,17 @@
 
 
  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.7.1.min.js"></script>
+
+ <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.js"></script>
  <!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery_easing.js"></script>-->
  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.iosslider.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.isotope.min.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-css-transform.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-rotate.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/browserdetect.js"></script>
-   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mainactions.js"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/blur.min.js"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mainactions.js"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/blurobjs.js"></script>
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -224,6 +228,7 @@ wp_reset_query();
 			</hgroup>
 			
 			<nav id="access" role="navigation">
+				<div class="headeroverlay">
 				<a href="#" class="mobileNavTrigger">Navigation</a>
 				<a href="#" class="mobileSettingsTrigger">Navigation</a>
 				<div class="mobileScrollTop"></div>
@@ -246,7 +251,7 @@ wp_reset_query();
 			  		<li><a href="#">Outreach</a></li>
   				</ul>-->
 				</div>
-				
+				</div>
 			</nav><!-- #access -->
 			
 			
@@ -278,29 +283,38 @@ wp_reset_query();
 					
 					<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 5 );
 					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					$loopcount = 0;
+					while ( $loop->have_posts() ) : $loop->the_post(); 
+					$loopcount = $loopcount + 1;
+					$slideclass = "slideImage".$loopcount;
+					$slideblurclass = "slideBlur".$loopcount;
+					?>
 					
-						
+					
     			
     				<li class="flipin">
-    					<div class="slideImage">
-				    				<?php 
+    					<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php 
 				    					
 					    				if ( has_post_thumbnail() ) {
 						    				
 						    				//the_post_thumbnail();
-						    				echo get_the_post_thumbnail($page->ID, 'large');
+						    				//echo get_the_post_thumbnail($page->ID, 'large');
+						    				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'large' );
+$url = $thumb['0']; echo $url;
 				 
 						    				} else {
 				 
 											 //echo '<img src="';
-											 echo catch_that_image();
+											 //echo catch_that_image();
 											// echo '" alt="" />';
 				
 										}
 					    				
-				    				?>
+				    				?>') no-repeat; background-size: 100% auto;">
+				    				<div class="slideBlur <?php echo $slideblurclass ?>"></div>
     					</div>
+    					
+    					
 				    			
 				    		
     			<h3><?php the_title(); ?></h3>

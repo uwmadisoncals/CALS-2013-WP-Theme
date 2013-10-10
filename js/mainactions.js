@@ -1,11 +1,17 @@
 $(function(){
 
+  
+
 var countFeatures = 0;
+	   
+	   
+	   
 	   
 	   //Check to see if the homepage feature exists
 	   var checkcol = $('.collegeFeature').html();
 	   if(checkcol) {
 	   
+	 
 	   
 	   
 	   var mobileFeatures ="";
