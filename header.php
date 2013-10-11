@@ -104,7 +104,7 @@
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-css-transform.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-rotate.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/browserdetect.js"></script>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/blur.min.js"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/blurjs2.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mainactions.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/blurobjs.js"></script>
 
@@ -251,6 +251,8 @@ wp_reset_query();
 			  		<li><a href="#">Outreach</a></li>
   				</ul>-->
 				</div>
+				
+				
 				</div>
 			</nav><!-- #access -->
 			
@@ -311,6 +313,9 @@ $url = $thumb['0']; echo $url;
 										}
 					    				
 				    				?>') no-repeat; background-size: 100% auto;">
+				    				
+				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>
+				    				<div class="slideBlurImage"></div>
 				    				<div class="slideBlur <?php echo $slideblurclass ?>"></div>
     					</div>
     					

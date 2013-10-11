@@ -15,11 +15,14 @@ var countFeatures = 0;
 	   
 	   
 	   var mobileFeatures ="";
+	   var navFeatures ="";
 	   //Feature setup
 	  $('.collegeFeature li').each(function(index) {
 			   countFeatures = countFeatures + 1;
 			   
 			   mobileFeatures = mobileFeatures + ("<div class='item item"+countFeatures+"'><div class='inner'>"+ $(this).html() + "</div></div>");
+			   
+			   //navFeatures = navFeatures + ("<div class='navitem navitem"+countFeatures+"'><div class='inner'>"+ $(this).html() + "</div></div>");
 			   
 			   $(this).attr("data-count",countFeatures);
 			   $(this).css("z-index",countFeatures);
@@ -35,15 +38,21 @@ var countFeatures = 0;
 			  
 			  
 		});
+		
+		//$(".headeroverlay").append(navFeatures);
 		 
 		 var bodyWidth = $(window).width() +"px";
 				//console.log(bodyWidth);
 				$(".collegeFeature ul li").css("width",bodyWidth);
+				var headerbackground = bodyWidth + " auto";
+				$(".headerbgBlurImage").css("background-size",headerbackground);
 		 
 		$( window ).resize(function() {
 				var bodyWidth = $(window).width() +"px";
 				//console.log(bodyWidth);
+				var headerbackground = bodyWidth + " auto";
 				$(".collegeFeature ul li").css("width",bodyWidth);
+				$(".headerbgBlurImage").css("background-size",headerbackground);
   		});
 		
 		   $('.iosSlider .slider').html(mobileFeatures); 

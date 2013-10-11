@@ -1,34 +1,47 @@
 $(document).ready(function(){
 		var count = 1;
 	
-		/*$( ".slideImage" ).each(function( index ) {
+		$( ".slideImage" ).each(function( index ) {
 				
-				var source = ".slideImage" + count;
-				var obj = ".slideBlur" + count;
-				console.log($(this).html());
-				$(obj).blurjs({
+				var orightml = $(this).css("background-image");
+				$(this).find(".slideBlurImage").css("background-image",orightml);
+				$(this).find(".headerbgBlurImage").css("background-image",orightml);
+				
+				
+				
+								/*$(obj).blurjs({
 					source: source, 
 					radius:30
-				});
-				count = count + 1;
-  		});*/
+				});*/
+				
+  		});
+	
+	
+	var p1 = $( ".slideBlur" );
+	var offset1 = p1.offset();
+	var offsetPosition1 = "0px -" + offset1.top + "px";
+	
+	var p2 = $( ".headerbgBlur" );
+	var offset2 = p2.offset();
+	
+	
+	var p3 = $( ".headeroverlay" );
+	var offset3 = p3.offset();
+	
+	
+	var offsetPosition2 = "-"+offset3.left+"px -" + offset2.top + "px";
+	
+
+	$(".slideBlurImage").css("background-position",offsetPosition1);
+	$(".headerbgBlurImage").css("background-position",offsetPosition2);
+	//$(".headerbgBlurImage").css("background-position",offsetPosition2);
+	
+	/*$('.slideBlur').blurjs({
+		 
+		radius:30
+	});*/
 	
 	
 	
-	
-	$('.slideBlur2,#access').blurjs({
-		source: '.slideImage2', 
-		radius:30,
-		cache: true,
-		cacheKeyPrefix: 'blurjs-1'
-	});
-	
-	
-	$('.slideBlur1,#access').blurjs({
-		source: '.slideImage1', 
-		radius:30,
-		cache: false,
-		cacheKeyPrefix: 'blurjs-2'
-	});
 	
 });

@@ -3891,7 +3891,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 	
 .collegeFeature .slideImage {
 	height: 500px;
-	position: relative;
+	
+}
+
+.collegeFeature .headerBgContainer {
+	
+	width: 940px;
+	position:relative;
+	margin: 0 auto;	
+	
+}
+
+.collegeFeature .headerbgBlur {
+	position: absolute;
+	top: 126px;
+	left: 0px;
+	right: 0px;
+	
+	height: 40px;
+	-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+	z-index:1;
+	background: #ccc;
+overflow: hidden;
+}
+
+.collegeFeature .headerbgBlurImage {
+height: 40px;
+position:relative;
+z-index:2;
+background-size: 100% auto;
+-ms-filter: blur(1px);
+	-webkit-filter: blur(8px);
+	-moz-filter: blur(8px);
+	-o-filter: blur(8px);
+	filter: url("#blur8px");
+	filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=8);
 }
 
 .collegeFeature .slideBlur {
@@ -3901,7 +3937,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 	left: 0px;
 	right: 0px;
 	z-index:1;
+	background: #a5a5a5;
 	background-size: 100% auto;
+	overflow: hidden;
+}
+
+.collegeFeature .slideBlurImage {
+	position: absolute;
+	height: 215px;
+	bottom: 0px; 
+	left: 0px;
+	right: 0px;
+	z-index:2;
+	background-position: 0px -320px;
+	background-size: 100% auto;
+	-ms-filter: blur(8px);
+	-webkit-filter: blur(8px);
+	-moz-filter: blur(8px);
+	-o-filter: blur(8px);
+	filter: url("#blur8px");
+	filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=8);
 }
 
 .collegeFeature em, .iosSlider em {
