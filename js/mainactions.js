@@ -11,13 +11,26 @@ var countFeatures = 0;
 	   var checkcol = $('.collegeFeature').html();
 	   if(checkcol) {
 	   
-	 
+	   var blurbarheight = $('.headertransition').height();
+	   blurbarheightmod = blurbarheight + 10;
+	   blurbarheight = blurbarheight + "px";
+	   blurbarheightmod = blurbarheightmod + "px";
+	   
+	   $(".slideBlurImage").css("height",blurbarheightmod);
+	   $(".slideBlur").css("height",blurbarheight);
+	   
+	   
+	 var transitiontype = "crossdissolve"; //This can be set to 'slide' or to 'crossdissolve'
+    	$(".collegeFeature").addClass(transitiontype);
 	   
 	   
 	   var mobileFeatures ="";
 	   var navFeatures ="";
 	   //Feature setup
-	  $('.collegeFeature li').each(function(index) {
+	   
+	   if(transitiontype == "slide") {	  
+	   
+	   $('.collegeFeature li').each(function(index) {
 			   countFeatures = countFeatures + 1;
 			   
 			   mobileFeatures = mobileFeatures + ("<div class='item item"+countFeatures+"'><div class='inner'>"+ $(this).html() + "</div></div>");
@@ -31,13 +44,29 @@ var countFeatures = 0;
 				   //$(this).css("display","none");
 				   $(this).removeClass('active');
 			   }
+  
+			  
+		 });
+		
+		} else {
+				
+			 $('.collegeFeature li').each(function(index) {
+			   countFeatures = countFeatures + 1;
 			   
-			  
-			   	
-			 
-			  
-			  
-		});
+			   mobileFeatures = mobileFeatures + ("<div class='item item"+countFeatures+"'><div class='inner'>"+ $(this).html() + "</div></div>");
+			   
+			   //navFeatures = navFeatures + ("<div class='navitem navitem"+countFeatures+"'><div class='inner'>"+ $(this).html() + "</div></div>");
+			   var zIndexCount = 10-countFeatures;
+			   $(this).attr("data-count",countFeatures);
+			   $(this).css("z-index",countFeatures);
+			   $(this).addClass('active');
+			   if($(this).attr("data-count") != 1) {
+				   //$(this).css("display","none");
+				   $(this).removeClass('active');
+				   $(this).css("opacity","0");
+			   }
+			   });
+		}
 		
 		//$(".headeroverlay").append(navFeatures);
 		 
@@ -62,23 +91,31 @@ var countFeatures = 0;
 		var time1,time2;
     	time1 = setInterval(function() {nextSlide();},duration);
     	
+    	
+    	
+    	
     	//Feature slide rotation functionality
     	function nextSlide(elem) {
     	
     	rotateTimer();
     	
     	 var widthvar = $(".collegeFeature ul li").width();
-    	
-    	if($('.collegeFeature li:last-child').hasClass('active')) {
-		   $(".collegeFeature ul").animate({ 
-		        left: "0px"
-		      }, 500 );
-		      
-		   } else {
+    	 
+    	if(transitiontype == "slide") {
+	    	if($('.collegeFeature li:last-child').hasClass('active')) {
 			   $(".collegeFeature ul").animate({ 
-		        left: "-="+widthvar+"px"
-		      }, 500 );
-		   }
+			        left: "0px"
+			      }, 500 );
+			      
+			      
+			      
+			   } else {
+				   $(".collegeFeature ul").animate({ 
+			        left: "-="+widthvar+"px"
+			      }, 500 );
+			   }
+		   
+		  }
 
 	    	
 	    	$('.collegeFeature li').each(function(e) {
@@ -88,11 +125,26 @@ var countFeatures = 0;
 				  $(t).next().addClass('active');
 				  $(t).removeClass('active');
 				  
+				  if(transitiontype == "crossdissolve") {
+					  $(t).next().animate({
+					   	  opacity: 1
+				   	  }, 1000, function() {
+					   	  $(t).css("opacity","0");
+				   	  });
+			   	  }
+				  
 				   return false;
 			   } 
 			   if($(this).hasClass('active') && ($(this).attr("data-count") == countFeatures)) {
 				  var t = $(this);
 				  $(t).removeClass('active');
+				   
+				   if(transitiontype == "crossdissolve") {
+					   $('.collegeFeature li:first-child').css("opacity","1");
+					   $(t).animate({
+					   	  opacity: 0
+				   	  }, 1000 );
+			   	  }
 				   
 				    $('.collegeFeature li:first-child').addClass('active');
 				   return false; 
@@ -133,13 +185,16 @@ var countFeatures = 0;
 
 	     $('.collegeFeature .next').click(function() {
 	     
+	     	//console.log(transitiontype);
 	     	     
 	     if(!sliderpaused) {
 	     	clearTimeout(time1);
 	     	time1 = setInterval(function() {nextSlide($(this));},duration);
 	     	rotateTimer();
 	     }
-		    var widthvar = $(".collegeFeature ul li").width();
+	     
+	     if(transitiontype == "slide") {
+		     var widthvar = $(".collegeFeature ul li").width();
 	     	
 	    	
 	    	$('.collegeFeature li').each(function(index) {
@@ -173,6 +228,52 @@ var countFeatures = 0;
 			   
 			   
 		   });
+	     } else {
+		     $('.collegeFeature li').each(function(index) {
+			   
+			   if($(this).hasClass('active') && ($(this).attr("data-count") < countFeatures)) {
+			   	  var t = $(this);
+			   	  $(t).next().animate({
+				   	  opacity: 1
+			   	  }, 1000, function() {
+				   	  $(t).css("opacity","0");
+			   	  });
+			   	  
+			   	 
+				  $(t).next().addClass('active');
+				  $(t).removeClass('active');
+				  
+				 /* $(".collegeFeature ul").animate({ 
+					  left: "-="+widthvar+"px"
+		        	}, 500 );*/
+				   
+				  return false;
+			   } 
+			   if($(this).hasClass('active') && ($(this).attr("data-count") == countFeatures)) {
+				  var t = $(this);
+				  $(t).removeClass('active');
+				  
+				  
+				  $('.collegeFeature li:first-child').css("opacity","1");
+				   $(t).animate({
+				   	  opacity: 0
+			   	  }, 1000 );
+				  
+				   $('.collegeFeature li:first-child').addClass('active');
+				   
+				/*   $(".collegeFeature ul").animate({ 
+					   left: "0px"
+		        	}, 500 );*/
+				   
+				   return false; 
+			   }
+			   
+			    
+			   
+			   
+		   });
+	     }
+		    
 		   
 		   		   
 		   return false;
@@ -188,6 +289,8 @@ var countFeatures = 0;
 	     	}
 	     	
 		     var widthvar = $(".collegeFeature ul li").width();
+	    	
+	    	if(transitiontype == "slide") {
 	    	
 	    	$('.collegeFeature li').each(function(index) {
 			   
@@ -215,7 +318,46 @@ var countFeatures = 0;
 
 				   return false; 
 			   }
+		   }); 
+		   
+		   } else {
+		   $('.collegeFeature li').each(function(index) {
+			   
+			   if($(this).hasClass('active') && ($(this).attr("data-count") != 1)) {
+			   	 var t = $(this);
+				  $(t).prev().addClass('active');
+				  $(t).removeClass('active');
+				  
+				  $(t).prev().css("opacity","1");
+				  $(t).animate({
+				   	  opacity: 0
+			   	  }, 1000);
+
+				   
+				   return false;
+			   } 
+			   if($(this).hasClass('active') && ($(this).attr("data-count") == 1)) {
+				  var t = $(this);
+				  $(t).removeClass('active');
+				   
+				   
+				    $('.collegeFeature li:last-child').addClass('active');
+				    $('.collegeFeature li:last-child').animate({
+				   	  opacity: 1
+			   	  }, 1000, function() {
+				   	  $(t).css("opacity","0");
+			   	  });
+				    
+				    
+				     /*$(".collegeFeature ul").animate({ 
+					     left: "-2814px"
+					     }, 500 );*/
+
+				   return false; 
+			   }
 		   });
+		   
+		   }
 		   
 		   
 

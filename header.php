@@ -180,7 +180,37 @@ $current_colorscheme = $options['link_color'];
 			</a>
 			<?php endif; // end check for removed header image ?>
 
-			<?php
+			
+
+			
+			</hgroup>
+			
+			<nav id="access" role="navigation">
+				<div class="headeroverlay">
+				<a href="#" class="mobileNavTrigger">Navigation</a>
+				<a href="#" class="mobileSettingsTrigger">Navigation</a>
+				<div class="mobileScrollTop"></div>
+				<div class="centerfix relative">
+				<a href="#" class="totop" title="Go to the top of the page">Go to the top of the page</a>
+				<h3 class="assistive-text"><?php _e( 'Main menu', 'twentyeleven' ); ?></h3>
+				<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
+				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to primary content', 'twentyeleven' ); ?></a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to secondary content', 'twentyeleven' ); ?></a></div>
+				<?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				
+				<!-- The markup of the navigation if it is hard coded -->
+				<!--<ul class="clearfix">
+			  		<li><a href="#">Students</a></li>
+			  		<li><a href="#">Alumni</a></li>
+			  		<li><a href="#">Faculty &amp; Staff</a></li>
+			  		<li><a href="#">Industry &amp; Community</a></li>
+			  		<li><a href="#">Research</a></li>
+			  		<li><a href="#">Outreach</a></li>
+  				</ul>-->
+  				
+  				
+  						<?php
 				// Has the text been hidden?
 				if ( 'blank' == get_header_textcolor() ) :
 			?>
@@ -223,33 +253,6 @@ wp_reset_query();
 			?>
 				<?php get_search_form(); ?>
 			<?php endif; ?>
-
-			
-			</hgroup>
-			
-			<nav id="access" role="navigation">
-				<div class="headeroverlay">
-				<a href="#" class="mobileNavTrigger">Navigation</a>
-				<a href="#" class="mobileSettingsTrigger">Navigation</a>
-				<div class="mobileScrollTop"></div>
-				<div class="centerfix">
-				<a href="#" class="totop" title="Go to the top of the page">Go to the top of the page</a>
-				<h3 class="assistive-text"><?php _e( 'Main menu', 'twentyeleven' ); ?></h3>
-				<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to primary content', 'twentyeleven' ); ?></a></div>
-				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to secondary content', 'twentyeleven' ); ?></a></div>
-				<?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				
-				<!-- The markup of the navigation if it is hard coded -->
-				<!--<ul class="clearfix">
-			  		<li><a href="#">Students</a></li>
-			  		<li><a href="#">Alumni</a></li>
-			  		<li><a href="#">Faculty &amp; Staff</a></li>
-			  		<li><a href="#">Industry &amp; Community</a></li>
-			  		<li><a href="#">Research</a></li>
-			  		<li><a href="#">Outreach</a></li>
-  				</ul>-->
 				</div>
 				
 				
@@ -275,6 +278,8 @@ wp_reset_query();
 
 <div class="headerPhotoBg">
 <div class="headertransition"></div>
+<div class="contrastmask1"></div>
+
 <div class="collegeFeature">
 <ul class="slides">
   <?php while ( have_posts() ) : the_post(); ?>
@@ -314,9 +319,12 @@ $url = $thumb['0']; echo $url;
 					    				
 				    				?>') no-repeat; background-size: 100% auto;">
 				    				
-				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>
+				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>					
 				    				<div class="slideBlurImage"></div>
+				    				
+				    				
 				    				<div class="slideBlur <?php echo $slideblurclass ?>"></div>
+				    				<div class="contrastmask2"></div>
     					</div>
     					
     					

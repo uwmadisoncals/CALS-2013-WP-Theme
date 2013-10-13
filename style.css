@@ -91,6 +91,10 @@ body {
 #access div {
 	
 }
+
+#access .menu-main-navigation-bar-container {
+	padding-right: 180px;
+}
 #primary {
 	width: 940px;
 	margin: 0 auto;
@@ -492,10 +496,11 @@ input[type=text],
 input[type=password],
 textarea {
 	background: #fafafa;
-	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	/*-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-	border: 1px solid #ddd;
+	border: 1px solid #ddd;*/
+	border: none;
 	color: #888;
 }
 input[type=text]:focus,
@@ -510,9 +515,9 @@ input[type=text] {
 	padding: 3px;
 }
 input#s {
-	background: url("images/search.png") no-repeat 5px 6px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+	background: url("images/search.png") no-repeat 5px 10px;
+	/*-moz-border-radius: 2px;
+	border-radius: 2px;*/
 	font-size: 14px;
 	height: 22px;
 	line-height: 1.2em;
@@ -869,7 +874,7 @@ a.button:active {
 /* Search Form */
 #branding #searchform {
 	position: absolute;
-	top: 3.8em;
+	top: 0px;
 	right: 7.6%;
 	text-align: right;
 }
@@ -884,18 +889,28 @@ a.button:active {
 }
 #branding #s {
 	float: right;
+	color: rgba(0,0,0,0.3);
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 24px;
+	font-family: "Open Sans";
+	letter-spacing: 1px;
 	-webkit-transition-duration: 400ms;
-	-webkit-transition-property: width, background;
+	-webkit-transition-property: width, color;
 	-webkit-transition-timing-function: ease;
 	-moz-transition-duration: 400ms;
-	-moz-transition-property: width, background;
+	-moz-transition-property: width, color;
 	-moz-transition-timing-function: ease;
 	-o-transition-duration: 400ms;
-	-o-transition-property: width, background;
+	-o-transition-property: width, color;
 	-o-transition-timing-function: ease;
-	width: 72px;
-	background-color: rgba(255,255,255,.1);
-	border: 1px solid rgba(255,255,255,.2);
+	width: 146px;
+	padding-top: 8px;
+	padding-bottom: 12px;
+	border-left: 1px solid rgba(0,0,0,0.2);
+	/*background-color: rgba(255,255,255,.1);
+	border: 1px solid rgba(255,255,255,.2);*/
 }
 
 #uwred #branding #s {
@@ -903,9 +918,11 @@ a.button:active {
 }
 
 #branding #s:focus, #branding #s.notEmpty {
-	background-color: #f9f9f9;
-	width: 196px;
-	border: 1px solid rgba(255,255,255,1);
+	/*background-color: #f9f9f9;*/
+	color: rgba(0,0,0,0.8);
+	width: 146px;
+	
+	/*border: 1px solid rgba(255,255,255,1);*/
 }
 #branding #searchsubmit {
 	display: none;
@@ -3864,6 +3881,37 @@ color: #B70101;
 	padding-right: 10px;
 }
 
+.contrastmask1 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 160px;
+	z-index:3;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.6)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+.contrastmask2 {
+	position: absolute;
+	bottom: 180px;
+	left: 0px;
+	right: 0px;
+	height: 100px;
+	z-index:3;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */}
+
 .headertransition {
 	position: absolute;
 	bottom: 0px;
@@ -3957,6 +4005,7 @@ background-size: 100% auto;
 	-o-filter: blur(8px);
 	filter: url("#blur8px");
 	filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=8);
+	margin: -8px -10px -10px -8px;
 }
 
 .collegeFeature em, .iosSlider em {
@@ -4101,6 +4150,19 @@ background-size: 100% auto;
 	margin: 0px;
 }
 
+
+
+.collegeFeature.crossdissolve ul {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index:3;
+	width: auto;
+	bottom: 0px;
+	
+}
+
 .collegeFeature ul {
 	position: absolute;
 	top: 0px;
@@ -4110,13 +4172,34 @@ background-size: 100% auto;
 }
 
 
+.collegeFeature.crossdissolve li {
+	float: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index:2; 
+}
+
 
 .collegeFeature li {
 	position: relative;
 	overflow: hidden;
 	float: left;
 	width: auto;
+	height: 500px;
 	
+}
+
+.slideBlurImageContainer {
+	overflow: hidden;
+	position: absolute;
+	bottom: 0px;
+	height: 180px;
+	left: 0px;
+	right: 0px;
+	z-index:1;
 }
 
 .collegeFeature li img {
@@ -4125,7 +4208,7 @@ background-size: 100% auto;
 
 .collegeFeature .timer {
 	position: absolute;
-	bottom: 10px;
+	bottom: 190px;
 	right: 10px;
 	z-index:5;
 	height: 30px;
@@ -6114,7 +6197,7 @@ position: relative;
 
 .filtered {
 	position: absolute;
-	top: 88px;
+	top: 38px;
 	right: -5px;
 	z-index:4;
 	background: #fff;
@@ -6133,6 +6216,11 @@ border-radius: 3px;
  -moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 	box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	
+}
+
+.filtered li {
+	float: none;
 	
 }
 
@@ -6233,6 +6321,10 @@ border-radius: 3px;
 	max-height: 590px;
 }
 
+#access .filtered li {
+	float: none;
+}
+
 .filtered ul li a:link, .filtered ul li a:visited, #uwred #page .filtered ul li a {
 	outline: none;
 	display: block;
@@ -6242,6 +6334,7 @@ border-radius: 3px;
 	color: #535353;
 	border-bottom: none;
 	border-top: 1px solid #e8e8e8;
+	width: 100%;
 }
 
 .filtered ul li a:hover, .filtered ul li a:focus {
@@ -6266,7 +6359,7 @@ border-radius: 3px;
 #searchform .searchClear:link, #searchform .searchClear:visited {
 	display: block;
 	position: absolute;
-	top: 7px;
+	top: 10px;
 	right: 7px;
 	width: 19px;
 	height: 19px;
@@ -6277,6 +6370,7 @@ border-radius: 3px;
 	border-bottom: none;
 	outline: none;	
 	display: none;
+	padding: 0px;
 }
 
 .Chrome #searchform .searchClear:link, .Chrome #searchform .searchClear:visited {
