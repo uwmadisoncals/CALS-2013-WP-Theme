@@ -180,10 +180,14 @@ $current_colorscheme = $options['link_color'];
 			</a>
 			<?php endif; // end check for removed header image ?>
 
-			
+			<div class="utilityMenu">
+				<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
+			</div>
 
 			
 			</hgroup>
+			
+			
 			
 			<nav id="access" role="navigation">
 				<div class="headeroverlay">
@@ -330,7 +334,7 @@ $url = $thumb['0']; echo $url;
     					
 				    			
 				    		
-    			<h3><?php the_title(); ?></h3>
+    			
     			
   	
   		
@@ -338,7 +342,9 @@ $url = $thumb['0']; echo $url;
   				<div class="centered">
   				<h2><?php the_title(); ?></h2>
   				
-  				<a href="students/admissions" >Apply to CALS</a> | <a href="students/undergraduate-programs/areas-of-study/">Explore our majors</a>
+	  				<div class="featuresubtitle">
+	  				<?php the_content_rss(); ?>
+	  				</div>
   				</div>
   			</div>
   			

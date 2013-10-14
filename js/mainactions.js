@@ -48,6 +48,7 @@ var countFeatures = 0;
 			  
 		 });
 		
+		
 		} else {
 				
 			 $('.collegeFeature li').each(function(index) {
@@ -67,6 +68,10 @@ var countFeatures = 0;
 			   }
 			   });
 		}
+		
+		 //console.log(countFeatures);
+		 
+		
 		
 		//$(".headeroverlay").append(navFeatures);
 		 
@@ -91,7 +96,11 @@ var countFeatures = 0;
 		var time1,time2;
     	time1 = setInterval(function() {nextSlide();},duration);
     	
-    	
+    	 //If only one feature is available, hide auto rotation.
+		 if(countFeatures == 1) {
+			 $(".timer, .collegeFeature .next, .collegeFeature .previous").hide();
+			 clearInterval(time1);
+		 }
     	
     	
     	//Feature slide rotation functionality
