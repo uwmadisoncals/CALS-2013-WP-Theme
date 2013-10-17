@@ -959,10 +959,21 @@ a.button:active {
 #main {
 	clear: both;
 	padding: 0 0 0;
-	margin-top: -150px;
+	margin-top: -320px;
+	padding-bottom: 320px;
 	z-index:3;
 	position: relative;
 }
+
+.home #main {
+	clear: both;
+	padding: 0 0 0;
+	margin-top: -150px;
+	padding-bottom: 150px;
+	z-index:3;
+	position: relative;
+}
+
 .page-title {
 	color: #666;
 	font-size: 10px;
@@ -1450,11 +1461,13 @@ article.format-status .entry-content {
 	padding: 0px 0 0;
 }
 .singular .entry-title {
-	color: #000;
+	color: #b22632;
 	font-size: 36px;
-	font-weight: bold;
+	
 	line-height: 48px;
-	font-weight: 500;
+	font-weight: 300;
+	font-family: "Open Sans";
+	-webkit-font-smoothing: antialiased;
 }
 .singular .entry-title,
 .singular .entry-header .entry-meta {
@@ -1510,7 +1523,7 @@ blockquote.pull.alignright {
 	position: absolute;
 	right: auto;
 	top: -31px;
-	background: #d68a28 url("images/editpencil.png") no-repeat;
+	background: #b22632 url("images/editpencil.png") no-repeat;
 	background-position: 8px 5px;
 	letter-spacing: 1px;
 	color: #fff;
@@ -1530,7 +1543,7 @@ border-radius: 0px;
 }
 
 .singular .entry-meta .edit-link a.post-edit-link:hover {
-	background: #a66b1f url("images/editpencil.png") no-repeat;
+	background: #8c141e url("images/editpencil.png") no-repeat;
 	background-position: 8px 5px;
 }
 
@@ -3738,6 +3751,10 @@ h1.logo {
   width: 700px;
   margin-right: -20px;
   margin-bottom: 40px;
+  -webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+min-height: 220px;
 }
 
 @-moz-document url-prefix() {
@@ -3942,13 +3959,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 	right: 0px;
 	height: 100px;
 	z-index:3;
-	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */}
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.6))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#99000000',GradientType=0 ); /* IE6-9 */}
 
 .headertransition {
 	position: absolute;
@@ -3977,7 +3994,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 	
 .collegeFeature .slideImage {
 	height: 500px;
+	-ms-filter: blur(8px);
+	-webkit-filter: blur(8px);
+	-moz-filter: blur(8px);
+	-o-filter: blur(8px);
+	filter: url("#blur8px");
+	filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=8);
 	
+}
+
+.home .collegeFeature .slideImage {
+	-ms-filter: none;
+	-webkit-filter: none;
+	-moz-filter: none;
+	-o-filter: none;
+	filter: none;
+	filter: none;
 }
 
 .collegeFeature .headerBgContainer {
@@ -4426,6 +4458,18 @@ background-size: 100% auto;
 
 
 .collegeFeature li .featureCaption, .iosSlider .featureCaption {
+	display:none;
+	position: absolute;
+	top: 240px;
+	left: 0px;
+	right: 0px;
+	
+	z-index:5;
+	color: #fff;
+}
+
+.home .collegeFeature li .featureCaption, .home .iosSlider .featureCaption {
+	display:block;
 	position: absolute;
 	top: 240px;
 	left: 0px;
@@ -5522,7 +5566,9 @@ footer .inner .copyright {
 	z-index:2;
 	width: 230px;
   background: #fff;
-
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
   color: #343434;
   border: 1px solid #b7b7b7;
   box-sizing: border-box;
