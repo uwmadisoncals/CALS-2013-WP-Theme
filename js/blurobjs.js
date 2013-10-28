@@ -5,14 +5,7 @@ $(document).ready(function(){
 				
 				var orightml = $(this).css("background-image");
 				$(this).find(".slideBlurImage").css("background-image",orightml);
-				$(this).find(".headerbgBlurImage").css("background-image",orightml);
-				
-				
-				
-								/*$(obj).blurjs({
-					source: source, 
-					radius:30
-				});*/
+				$(this).find(".headerbgBlurImage").css("background-image",orightml);	
 				
   		});
 	

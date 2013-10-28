@@ -1,6 +1,5 @@
 $(function(){
 
-  
 
 var countFeatures = 0;
 	   

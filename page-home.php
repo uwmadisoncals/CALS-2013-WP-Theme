@@ -21,82 +21,50 @@ get_header(); ?>
 <div class="mobileScroll">
 <a href="#" class="mobileNavTriggerLarge" style="display: none;"></a>
 
-<!--<div class="collegeFeature">
-  	<ul class="slides">
-  		<li class="flipin">
-  			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/homefeature/featurebar_img1.jpg" alt="College Feature">
-  			<div class="featureCaption">
-  				<h2>What do <span class="tan">you</span> think?</h2>
-  				<a href="https://uwmadison.qualtrics.com/SE/?SID=SV_3sLTqafFeK3rTQ9">Take the library survey and let us know how we are doing.</a>
-  			</div>
-  			
-  		</li>
-  		<li class="flipin">
-  			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/homefeature/featurebar_img2.jpg" alt="College Feature">
-  			<div class="featureCaption">
-  				<h2>Learning and growing <span class="yellow">together</span></h2>
-  				
-  				<a href="#">Find materials pertaining to your field of study. Ask a Librarian how.</a>
-  			</div>
-  			
-  		</li>
-  		
-  	</ul>
-  	
-  	<a href="#" class="next">Next</a>
-  	<a href="#" class="previous">Previous</a>
-  	
-  	<div class="timer">
-  		<a href="#">Pause Slide Rotation</a>
-	  	<div class="timerLeft">
-	  	<div class="timer1"></div>
-	  	</div>
-	  	<div class="timerRight">
-	  	<div class="timer2"></div>
-	  	</div>
-	  	
-  	</div>
-  </div>
-  <div class='fluidHeight' style="display: none;">
-			
-			<div class = 'sliderContainer'>
-			
-				<div class = 'iosSlider'>
-				
-					<div class = 'slider'>
-					
-						
-						
-						
-					
-					</div>
-				
-				</div>
-				
-				
-				
-				<div class = 'scrollbarContainer'></div>
-				
-			</div>
-		
-		</div>
-<!--		<div style="width:940px; margin: 0 auto;">
-	<?php if (function_exists('muneeb_ssp_slider')) {muneeb_ssp_slider(159);} ?>	
-		</div>-->
+
 	<div id="main">
 
 		<div id="primary">
 			<div id="content" class="fullWidth" role="main">
 				
 				
-
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part( 'content', 'page-home' ); ?>
-
-					<?php comments_template( '', true ); ?>
-
-				<?php endwhile; // end of the loop. ?>
+				<!-- CALS News Content Box -->
+				<div class="row clearfix">
+				
+					<div class="span-50 box">
+							
+							<h2>News</h2>
+							
+							<div class="boxContent">
+							<h3>A new program enriches global 
+opportunities for CALS undergrads</h3>
+							<p class="homeNewsDate">Tuesday, September 3rd 2013</p>
+							</div>
+							<div class="topShade"></div>
+							<div class="bottomShade"></div>
+					</div>
+					
+					<div class="span-50 box">
+							
+					</div>
+					
+				</div>
+				
+				<div class="row clearfix">
+				
+					<div class="span-33 box">
+							
+					</div>
+					
+					<div class="span-33 box">
+							
+					</div>
+					
+					<div class="span-33 box">
+							
+					</div>
+					
+				</div>
 				
 			</div><!-- #content -->
 			
