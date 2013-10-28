@@ -45,6 +45,42 @@ opportunities for CALS undergrads</h3>
 					</div>
 					
 					<div class="span-50 box">
+							 <?php 
+								//hold original loop
+								$tmp_post = $post;
+								
+								//get spotlight posts
+								$posts = get_posts('category_name=spotlight&numberposts=1');
+								foreach($posts as $post){
+									setup_postdata($post);?>
+									
+								<?php	if ( has_post_thumbnail() ) {
+		    				
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'large');
+ 
+		    				} else {
+ 
+							 //echo '<img src="';
+							 echo catch_that_image();
+							// echo '" alt="" />';
+
+						} ?>
+                                               
+                                                <h2>Spotlight</h2>
+                                             <div class="boxContent">
+											<h3 class="spotlight_title"><a href="<?php the_permalink();?>"><?php  the_title();?></a></h3>
+											<p><?php echo $post->post_excerpt;?></p>
+                                             </div>
+                                             <div class="topShade"></div>
+							<div class="bottomShade"></div>
+								<!-- .spotlight_slide -->  
+                        <?php	 
+							
+								} 
+								//restore original loop
+								$post = $tmp_post;
+							?>
 							
 					</div>
 					
@@ -53,7 +89,46 @@ opportunities for CALS undergrads</h3>
 				<div class="row clearfix">
 				
 					<div class="span-33 box">
+							<h2>Announcements</h2>
+							<?php switch_to_blog(19); 
+//hold original loop
+								$tmp_post = $post;
+								
+								//get spotlight posts
+								$posts = get_posts('category_name=spotlight&numberposts=1');
+								foreach($posts as $post){
+									setup_postdata($post);?>
+									
+								<?php	if ( has_post_thumbnail() ) {
+		    				
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'large');
+ 
+		    				} else {
+ 
+							 //echo '<img src="';
+							 echo catch_that_image();
+							// echo '" alt="" />';
+
+						} ?>
+                                               
+                                                <h2>Announcements</h2>
+                                             <div class="boxContent">
+											<h3 class="spotlight_title"><a href="<?php the_permalink();?>"><?php  the_title();?></a></h3>
+											<p><?php echo $post->post_excerpt;?></p>
+                                             </div>
+                                             <div class="topShade"></div>
+							<div class="bottomShade"></div>
+								<!-- .spotlight_slide -->  
+                        <?php	 
 							
+								} 
+								//restore original loop
+								$post = $tmp_post;
+ restore_current_blog(); ?>
+							
+							
+						
 					</div>
 					
 					<div class="span-33 box">
