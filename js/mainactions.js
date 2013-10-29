@@ -1013,10 +1013,10 @@ var countFeatures = 0;
 				    
 				    if(scrolltop >= offset) {
 					    $('#access').addClass("fixedNav"); 
-					    $('.collegeFeature').css("margin-top","50px");
+					    $('#branding').css("margin-bottom","50px");
 				    } else {
 					    $('#access').removeClass("fixedNav");
-					    $('.collegeFeature').css("margin-top","0px");
+					    $('#branding').css("margin-bottom","0px");
 				    }
 			  	});
 			  	
@@ -1213,7 +1213,7 @@ var countFeatures = 0;
     if(BrowserDetect.browser == "Explorer") {
 	    offset = offset;
     } else {
-	    offset = offset + 80;
+	    offset = offset;
     }
     
     

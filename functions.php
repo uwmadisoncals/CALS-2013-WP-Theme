@@ -72,7 +72,34 @@ if ( ! function_exists( 'twentyeleven_setup' ) ):
  *
  * @since Twenty Eleven 1.0
  */
+ 
+ add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type( 'headerslides',
+		array(
+			'labels' => array(
+				'name' => __( 'Header Slides' ),
+				'singular_name' => __( 'Header Slide' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'supports' => array(
+	  'title',
+	  'editor',
+	  'excerpt',
+	  'trackbacks',
+	  'revisions',
+	  'thumbnail',
+	  'author',
+	  'page-attributes',
+	  )
+		)
+	);
+}
+ 
 function twentyeleven_setup() {
+
+
 
 	/* Make Twenty Eleven available for translation.
 	 * Translations can be added to the /languages/ directory.

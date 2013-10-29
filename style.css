@@ -797,6 +797,7 @@ a.button:active {
 	outline: none;
 	background: url("images/small_logo.png") no-repeat;
 	background-position: 0px 0px;
+	
 	opacity: 0;
 }
 
@@ -823,7 +824,17 @@ a.button:active {
 	left: 0px;
 	z-index:5;
 	width: 100%;
-	
+	margin-top: 0px;
+	-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+}
+
+#access.fixedNav .headeroverlay {
+	background: #fff;
+	-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
 }
 
 #access.fixedNav .centerfix {
@@ -5623,13 +5634,128 @@ footer .inner #pre-footer .quick_links_list ul li.quick_links_list_title {
 	text-transform: uppercase;
 }
 
-footer .inner .copyright {
-	width: 320px;
-	margin: 0 auto;
+footer .inner #pre-footer .linksContainer {
+	width: 50%;
+	box-sizing: border-box;
+	float: left;
+}
+
+footer .inner #pre-footer .linksContainer #supplementary {
+	border-top: none;
+	padding: 0px;
+}
+
+footer .inner #pre-footer h3 {
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fff;
+}
+
+footer .inner #pre-footer .button {
+	width: 100%;
 	text-align: center;
+	margin-bottom: 40px;
+	box-sizing: border-box;
+}
+
+footer .inner #pre-footer .linksContainer.right {
+	width: 32%;
+	box-sizing: border-box;
+	float: right;
+}
+
+footer .inner #pre-footer p {
+	font-size: 13px;
+}
+
+footer .inner #pre-footer p.address {
+	font-size: 10px;
+	color: #898076;
+}
+
+footer .inner .copyright {
+	position: relative;
+	width: 50%;
+	
+	
 	color: #4e4e4e;
 	margin-top: 60px;
 }
+
+footer .inner .copyright {
+
+	width: 50%;
+	margin: 0 auto;
+	text-align: left;
+	color: rgba(255,255,255,0.5);
+	margin-top: 40px;
+	line-height: 18px;
+	float: left;
+	
+}
+
+footer .socialRef {
+	float: right;
+	width: 50%;
+	margin-top: 40px;
+}
+
+footer .socialRef .twitter {
+	display: block;
+	float: right;
+	width: 30px;
+	height: 30px;
+	text-indent: -10000px;
+	background: url("images/twitterlogo.png") no-repeat;
+	border: none;
+	margin-left: 7px;
+}
+
+footer .socialRef .youtube {
+	display: block;
+	float: right;
+	width: 30px;
+	height: 30px;
+	text-indent: -10000px;
+	background: url("images/youtubelogo.png") no-repeat;
+	border: none;
+	margin-left: 2px;
+}
+
+footer .socialRef .facebook {
+	display: block;
+	float: right;
+	width: 30px;
+	height: 30px;
+	text-indent: -10000px;
+	background: url("images/facebooklogo.png") no-repeat;
+	border: none;
+	margin-left: 7px;
+}
+
+
+footer .inner .copyright img {
+	width: 30px;
+	position: absolute;
+	top: -6px;
+	left: 0px;
+	z-index:1;
+}
+
+footer .inner .copyright a {
+	display: block;
+}
+
+footer .inner .copyright div:first-child {
+	padding-left: 40px;
+	font-size: 11px;
+	line-height: 18px;
+	color: #898076;
+}
+
 
 .loadBarContainer {
 	position: absolute;
