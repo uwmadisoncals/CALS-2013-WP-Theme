@@ -35,13 +35,40 @@ get_header(); ?>
 							
 							<h2>News</h2>
 							
-							<div class="boxContent">
-							<h3>A new program enriches global 
-opportunities for CALS undergrads</h3>
-							<p class="homeNewsDate">Tuesday, September 3rd 2013</p>
-							</div>
-							<div class="topShade"></div>
-							<div class="bottomShade"></div>
+							<?php switch_to_blog(22); ?>
+<?php query_posts("posts_per_page=1"); ?>
+<?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post();  ?>
+
+  <?php	if ( has_post_thumbnail() ) {
+		    				
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'large');
+ 
+		    				} else {
+							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+							 //echo '<img src="';
+							 echo catch_that_news_image();
+							// echo '" alt="" />';
+
+						} ?>
+			<div class="boxContent">
+											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
+											<p><?php the_time('l, F jS, Y') ?></p>
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>			
+    
+    
+
+    
+ 
+
+  <?php endwhile; ?>
+<?php endif; ?>
+<?php restore_current_blog(); ?>							
+							
+						
 					</div>
 					
 					<div class="span-50 box">
@@ -90,16 +117,13 @@ opportunities for CALS undergrads</h3>
 				
 					<div class="span-33 box">
 							<h2>Announcements</h2>
-							<?php switch_to_blog(19); 
-//hold original loop
-								$tmp_post = $post;
-								
-								//get spotlight posts
-								$posts = get_posts('category_name=spotlight&numberposts=1');
-								foreach($posts as $post){
-									setup_postdata($post);?>
-									
-								<?php	if ( has_post_thumbnail() ) {
+							
+							<?php switch_to_blog(21); ?>
+<?php query_posts("category_id=8&posts_per_page=1"); ?>
+<?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post();  ?>
+
+  <?php	if ( has_post_thumbnail() ) {
 		    				
 		    				//the_post_thumbnail();
 		    				echo get_the_post_thumbnail($page->ID, 'large');
@@ -111,32 +135,97 @@ opportunities for CALS undergrads</h3>
 							// echo '" alt="" />';
 
 						} ?>
-                                               
-                                                <h2>Announcements</h2>
-                                             <div class="boxContent">
-											<h3 class="spotlight_title"><a href="<?php the_permalink();?>"><?php  the_title();?></a></h3>
-											<p><?php echo $post->post_excerpt;?></p>
+			<div class="boxContent">
+											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
+											<p><?php the_time('l, F jS, Y') ?></p>
                                              </div>
-                                             <div class="topShade"></div>
-							<div class="bottomShade"></div>
-								<!-- .spotlight_slide -->  
-                        <?php	 
-							
-								} 
-								//restore original loop
-								$post = $tmp_post;
- restore_current_blog(); ?>
-							
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>			
+    
+    
+
+    
+ 
+
+  <?php endwhile; ?>
+<?php endif; ?>
+<?php restore_current_blog(); ?>							
 							
 						
 					</div>
 					
 					<div class="span-33 box">
+							<h2>Events</h2>
 							
+							<?php switch_to_blog(22); ?>
+<?php query_posts("posts_per_page=1"); ?>
+<?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post();  ?>
+
+  <?php	if ( has_post_thumbnail() ) {
+		    				
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'large');
+ 
+		    				} else {
+							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+							 //echo '<img src="';
+							 echo catch_that_news_image();
+							// echo '" alt="" />';
+
+						} ?>
+			<div class="boxContent">
+											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
+											<p><?php the_time('l, F jS, Y') ?></p>
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>			
+    
+    
+
+    
+ 
+
+  <?php endwhile; ?>
+<?php endif; ?>
+<?php restore_current_blog(); ?>
 					</div>
 					
 					<div class="span-33 box">
+							<h2>Faces</h2>
 							
+							<?php switch_to_blog(22); ?>
+<?php query_posts("posts_per_page=1"); ?>
+<?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post();  ?>
+
+  <?php	if ( has_post_thumbnail() ) {
+		    				
+		    				//the_post_thumbnail();
+		    				echo get_the_post_thumbnail($page->ID, 'large');
+ 
+		    				} else {
+							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+							 //echo '<img src="';
+							 echo catch_that_news_image();
+							// echo '" alt="" />';
+
+						} ?>
+			<div class="boxContent">
+											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
+											<p><?php the_time('l, F jS, Y') ?></p>
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>			
+    
+    
+
+    
+ 
+
+  <?php endwhile; ?>
+<?php endif; ?>
+<?php restore_current_blog(); ?>
 					</div>
 					
 				</div>

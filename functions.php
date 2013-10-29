@@ -606,6 +606,29 @@ function catch_that_image() {
   return $first_img;
 }
 
+
+function catch_that_news_image() {
+  global $post, $posts;
+  $first_img = '';
+  
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches[1][0];
+  
+  /*if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->post_content, $vidmatch)) {
+  	$video = "yes";
+    $first_img = $vidmatch[1][0];
+}*/
+
+  if(empty($first_img)) {
+    $first_img = "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+  }  else {
+	$first_img = "<img src='".$first_img."' alt=' '>";
+  }
+  return $first_img;
+}
+
 function custom_text_length($charlength, $more_link, $c_type, $post=NULL){
     $text = '';
     if($c_type == 'content'){
