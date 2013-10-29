@@ -35,7 +35,7 @@ get_header(); ?>
 							
 							<h2>News</h2>
 							
-							<?php switch_to_blog(22); ?>
+							<?php switch_to_blog(20); ?>
 <?php query_posts("posts_per_page=1"); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
@@ -118,7 +118,7 @@ get_header(); ?>
 					<div class="span-33 box">
 							<h2>Announcements</h2>
 							
-							<?php switch_to_blog(21); ?>
+							<?php switch_to_blog(19); ?>
 <?php query_posts("category_id=8&posts_per_page=1"); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
