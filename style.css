@@ -4143,7 +4143,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 	-o-filter: blur(8px);
 	filter: url("#blur8px");
 	filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=8);
-	
+	margin: -8px -10px -10px -8px;
+}
+
+.home .collegeFeature .slideImage {
+	margin: 0px;
 }
 
 .home .collegeFeature .slideImage {
