@@ -5591,6 +5591,47 @@ footer#colophon {
 
 }
 
+.entry-content img {
+	-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+
+#nav_explore h6 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #bb2726;
+}
+
+#nav_explore li {
+	margin-bottom: 1rem;
+	padding-left: 0px;
+	margin-left: 0px;
+	
+}
+
+#nav_explore li a {
+	display: block;
+	color: #353535;
+	padding: 8px;
+	margin-left: -8px;
+	margin-right: -8px;
+	-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+
+#nav_explore li a:hover {
+	text-decoration: none;
+	background: #f5e6da;
+}
+
+
+ul#nav_explore {
+	list-style: none;
+	margin-left: 0px;
+}
+
 #uwred footer#colophon {
 	background: #302e28;
 	border-top: 2px solid #b70101;
