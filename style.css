@@ -4160,6 +4160,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 	overflow: hidden;
 }
 
+@-moz-document url-prefix() {
+	.collegeFeature .slideImage {
+		filter: url(resources.svg#svgBlur);
+	}
+}
+
 .home .collegeFeature .slideImage {
 	margin: 0px;
 }
@@ -4208,6 +4214,12 @@ background-size: 100% auto;
 	filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=8);
 }
 
+@-moz-document url-prefix() {
+	.collegeFeature .headerbgBlurImage {
+		filter: url(resources.svg#svgBlur);
+	}
+}
+
 .collegeFeature .slideBlur {
 	height: 215px;
 	position: absolute;
@@ -4237,6 +4249,13 @@ background-size: 100% auto;
 	filter: url("#blur8px");
 	filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=8);
 	margin: -8px -10px -10px -8px;
+}
+
+@-moz-document url-prefix() {
+	.collegeFeature .slideBlurImage {
+		filter: url(resources.svg#svgBlur);
+		
+	}
 }
 
 .collegeFeature em, .iosSlider em {
