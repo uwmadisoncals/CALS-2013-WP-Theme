@@ -3633,8 +3633,15 @@ body#uwred {
 	background: #fff url("images/window-bg.jpg") repeat-x;
 }
 
-h3 {
-	font-family: 'Merriweather', Georgia, serif;
+.exploreMenu h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-size:20px;
+	font-weight: bold;
+	color:#404040;
+}
+
+.exploreMenu {
+	margin-top: 60px;
 }
 
 .heading {
@@ -3814,6 +3821,12 @@ min-height: 220px;
 	overflow: hidden;
 }
 
+.eventsBox h3.spotlight_title {
+	font-size: 16px;
+	line-height: 20px;
+	margin-top: 12px;
+}
+
 .home .row .box {
 	height: 200px;
 }
@@ -3954,7 +3967,7 @@ nav {
 
 .utilityMenu {
 	position: absolute;
-	top: 4px;
+	top: 14px;
 	right: 0px;
 	z-index:2;	
 }

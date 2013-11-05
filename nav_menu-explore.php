@@ -7,6 +7,7 @@
 	$child_pages = get_pages('child_of='.$post->ID.'&parent='.$post->ID.'&hierarchical=0&post_type=page&sort_column=menu_order&sort_order=ASC');
 
 	if(!empty($child_pages)){?>
+		<div class="exploreMenu">
 		<h3>Explore</h3>
         <ul id="nav_explore">
 			
@@ -24,7 +25,8 @@
 						</a>
                      </li>
             <?php } ?>
-            </ul><!-- #nav_explore -->    
+            </ul><!-- #nav_explore --> 
+		</div>   
 	<?php 
 	}
 

@@ -119,7 +119,7 @@ get_header(); ?>
 							<h2>Announcements</h2>
 							
 							<?php switch_to_blog(19); ?>
-<?php query_posts("category_id=8&posts_per_page=1"); ?>
+<?php query_posts("cat=10&posts_per_page=1"); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
@@ -129,7 +129,7 @@ get_header(); ?>
 		    				echo get_the_post_thumbnail($page->ID, 'large');
  
 		    				} else {
- 
+							
 							 //echo '<img src="';
 							 echo catch_that_image();
 							// echo '" alt="" />';
@@ -154,48 +154,53 @@ get_header(); ?>
 						
 					</div>
 					
-					<div class="span-33 box">
+					<div class="span-33 box eventsBox">
 							<h2>Events</h2>
-							
-							<?php switch_to_blog(20); ?>
-<?php query_posts("posts_per_page=1"); ?>
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post();  ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/images/aghall1.jpg" alt=" ">
+							<div class="boxContent">
+										<?php // Get RSS Feed(s)
+  include_once(ABSPATH . WPINC . '/rss.php');
+  $rss = fetch_rss('http://www.today.wisc.edu/events/feed/30.rss2');
+  $maxitems = 2;
+  $items = array_slice($rss->items, 0, $maxitems);
+?>
 
-  <?php	if ( has_post_thumbnail() ) {
-		    				
-		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'large');
- 
-		    				} else {
-							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
-							 //echo '<img src="';
-							 echo catch_that_news_image();
-							// echo '" alt="" />';
 
-						} ?>
-			<div class="boxContent">
-											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_time('l, F jS, Y') ?></p>
+  <?php if (empty($items)): ?>
+   <h3 class="spotlight_title">No Upcoming Events</h3>
+  <?php else:
+      foreach ( $items as $item ):
+        ?>
+        <h3 class="spotlight_title">
+          <a href='<?php echo $item['link']; ?>' title='<?php echo $item['title']; ?>'>
+            
+            <?php $tempTitle = $item['title']; $newTitle = substr($tempTitle, 20, 60); ?>
+            <?php echo $newTitle."..."; ?>
+          </a>
+        </h3>
+        <p><?php $tempDate = $item['title']; $newDate = substr($tempTitle, 0, 18); ?>
+            <?php echo $newDate; ?></p>
+        <?php
+      endforeach;
+    endif;
+  ?>
+
+				
+			
+								
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>			
     
     
 
-    
- 
-
-  <?php endwhile; ?>
-<?php endif; ?>
-<?php restore_current_blog(); ?>
 					</div>
 					
 					<div class="span-33 box">
 							<h2>Faces</h2>
 							
 							<?php switch_to_blog(20); ?>
-<?php query_posts("posts_per_page=1&category_id=17"); ?>
+<?php query_posts("posts_per_page=1&cat=17"); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
