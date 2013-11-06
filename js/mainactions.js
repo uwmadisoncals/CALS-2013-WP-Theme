@@ -3,7 +3,21 @@ $(function(){
 
 var countFeatures = 0;
 	   
+	  /* $("a.moreButton").mouseover(function() {
+		  $(this).parent().find("img").addClass("blurAnim");
+		  
+	   });
 	   
+	   $("a.moreButton").mouseout(function() {
+		  $(this).parent().find("img").removeClass("blurAnim");
+		  
+	   });*/
+	   
+	   $(".box a").click(function() {
+		  $(this).closest(".box").find("img").addClass("blurAnim");
+		  $(this).closest(".box").find(".windows8").show();
+		  $(this).closest(".box").find(".shade").fadeIn(400);
+	   });
 	   
 	   
 	   //Check to see if the homepage feature exists

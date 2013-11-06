@@ -69,6 +69,32 @@ get_header(); ?>
 <?php restore_current_blog(); ?>							
 							<a href="http://news.dev.cals.wisc.edu" class="moreButton">More News</a>
 						
+						
+						<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>
+						
 					</div>
 					
 					<div class="span-50 box">
@@ -108,7 +134,30 @@ get_header(); ?>
 								//restore original loop
 								$post = $tmp_post;
 							?>
-							
+						<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>	
 					</div>
 					
 				</div>
@@ -151,7 +200,30 @@ get_header(); ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>							
 							<a href="http://ecals.dev.cals.wisc.edu" class="moreButton">More Announcements</a>
-						
+						<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>
 					</div>
 					
 					<div class="span-33 box eventsBox">
@@ -193,6 +265,31 @@ get_header(); ?>
 							<div class="bottomShade"></div>			
     
 								<a href="http://www.today.wisc.edu/events/feed/30" class="moreButton">More Events</a>
+								
+								<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>
 
 					</div>
 					
@@ -231,6 +328,31 @@ get_header(); ?>
   <?php endwhile; ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>
+<a href="http://news.dev.cals.wisc.edu/category/departments/cals-faces/" class="moreButton">More Faces</a>
+<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>
 					</div>
 					
 				</div>
