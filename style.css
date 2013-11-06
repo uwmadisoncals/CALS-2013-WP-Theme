@@ -3821,6 +3821,42 @@ min-height: 220px;
 	overflow: hidden;
 }
 
+
+
+.moreButton:link, .moreButton:visited {
+	
+	position: absolute;
+	top: 13px;
+	left: -90px;
+	display: inline-block;
+	padding: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	background: rgba(255,255,255,1);
+	color: rgba(0,0,0,0.6);
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 11px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	opacity: 0.2;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	transition: 0.4s;
+	transition-delay: 1.6s;
+	-webkit-transition-delay: 1.6s; /* Safari */
+	-moz-transition-delay: 1.6s; /* Safari */
+	z-index:6;
+}
+
+.box:hover .moreButton {
+	opacity: 1;
+	left: 13px;
+	text-decoration: none;
+}
+
+
 .eventsBox h3.spotlight_title {
 	font-size: 16px;
 	line-height: 20px;

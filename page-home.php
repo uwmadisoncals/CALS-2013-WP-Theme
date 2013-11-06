@@ -67,7 +67,7 @@ get_header(); ?>
   <?php endwhile; ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>							
-							
+							<a href="http://news.dev.cals.wisc.edu" class="moreButton">More News</a>
 						
 					</div>
 					
@@ -150,7 +150,7 @@ get_header(); ?>
   <?php endwhile; ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>							
-							
+							<a href="http://ecals.dev.cals.wisc.edu" class="moreButton">More Announcements</a>
 						
 					</div>
 					
@@ -192,7 +192,7 @@ get_header(); ?>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>			
     
-    
+								<a href="http://www.today.wisc.edu/events/feed/30" class="moreButton">More Events</a>
 
 					</div>
 					
