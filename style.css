@@ -3827,7 +3827,7 @@ min-height: 220px;
 	
 	position: absolute;
 	top: 13px;
-	left: -90px;
+	left: -160px;
 	display: inline-block;
 	padding: 4px;
 	padding-left: 8px;
@@ -3840,20 +3840,26 @@ min-height: 220px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	opacity: 0.2;
-	-webkit-transition: 0.4s;
-	-moz-transition: 0.4s;
-	transition: 0.4s;
-	transition-delay: 1.6s;
-	-webkit-transition-delay: 1.6s; /* Safari */
-	-moz-transition-delay: 1.6s; /* Safari */
+	
+	-webkit-transition: left 0.4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+	-moz-transition: left 0.4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+	transition: left 0.4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+	transition-delay: 1s;
+	-webkit-transition-delay: 1s; /* Safari */
+	-moz-transition-delay: 1s; /* Safari */
+	
+	
 	z-index:6;
 }
 
 .box:hover .moreButton {
-	opacity: 1;
+	
 	left: 13px;
 	text-decoration: none;
+}
+
+.moreButton:hover {
+	background: rgba(255,255,255,0.6);
 }
 
 
