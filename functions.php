@@ -653,23 +653,39 @@ function catch_that_image() {
 function catch_that_news_image() {
   global $post, $posts;
   $first_img = '';
+  $first_vid = '';
   
   ob_start();
   ob_end_clean();
-  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-  $first_img = $matches[1][0];
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $imgmatches);
+  $output = preg_match('/<iframe.*src=\"(.*)\".*><\/iframe>/isU', $post->post_content, $vidmatches);
+  $first_img = $imgmatches[1][0];
+  $first_vid = $vidmatches[0];
   
   /*if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->post_content, $vidmatch)) {
   	$video = "yes";
     $first_img = $vidmatch[1][0];
 }*/
 
-  if(empty($first_img)) {
-    $first_img = "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
+  if(empty($first_img) && empty($first_vid)) {
+    //placeholder
+    //$first_img = "<div class='noImageSpacer2'></div>";
+    return "<img src='http://localhost/wp-content/themes/calsmain2013/images/newsplaceholder1.jpg' alt=' '>";
   }  else {
-	$first_img = "<img src='".$first_img."' alt=' '>";
+	//$first_vid = "<img src='".$first_vid;
+	//return $first_vid;
+	
+	// placeholder image
+	if(empty($first_vid)) {
+		$first_img = "<img src='".$first_img."' alt=' '>";
+		return $first_img;
+	} else {
+		return $first_vid;
+	}
+	
+	
   }
-  return $first_img;
+  
 }
 
 function custom_text_length($charlength, $more_link, $c_type, $post=NULL){
