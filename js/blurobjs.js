@@ -8,6 +8,14 @@ $(document).ready(function(){
 				$(this).find(".headerbgBlurImage").css("background-image",orightml);	
 				
   		});
+  		
+  		 //setTimeout(function() {
+	   $(".headershade").addClass("fadeOut");
+	   //},1500);
+	   
+	   setTimeout(function() {
+	   $(".headershade").hide();
+	   },3000);
 	
 	
 	var p1 = $( ".slideBlur" );

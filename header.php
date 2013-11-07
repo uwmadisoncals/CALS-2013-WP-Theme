@@ -392,9 +392,10 @@ $url = $thumb['0']; echo $url;
 				<div class = 'scrollbarContainer'></div>
 				
 			</div>
+			
 		
 		</div>
-		
+		<div class="headershade"></div>
 		<!-- end of feature slider -->
 		
 </div>

@@ -180,7 +180,7 @@ get_header(); ?>
 		    				} else {
 							
 							 //echo '<img src="';
-							 echo catch_that_image();
+							 echo catch_that_announcements_image();
 							// echo '" alt="" />';
 
 						} ?>

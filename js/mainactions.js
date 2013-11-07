@@ -13,6 +13,8 @@ var countFeatures = 0;
 		  
 	   });*/
 	   
+	  
+	   
 	   $(".box a").click(function() {
 		  $(this).closest(".box").find("img").addClass("blurAnim");
 		  $(this).closest(".box").find(".windows8").show();

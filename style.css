@@ -787,15 +787,16 @@ a.button:active {
 
 #access .totop {
 	position: absolute;
-	top: -80px;
-	left: 0px;
-	width: 57px;
-	height: 31px;
+	top: 10px;
+	left: -30px;
+	width: 18px;
+	height: 18px;
 	z-index:4;
 	overflow: hidden;
 	text-indent: -100000px;
 	outline: none;
-	background: url("images/small_logo.png") no-repeat;
+	background: url("images/totopImg.png") no-repeat;
+	background-size: 18px 18px;
 	background-position: 0px 0px;
 	
 	opacity: 0;
@@ -813,8 +814,9 @@ a.button:active {
 
 
 #uwred #access .totop:hover, #uwred #access .totop:active {
-	background-size: 39px 42px;
-	background-position: 0px -21px;
+	/*background-size: 39px 42px;
+	background-position: 0px -21px;*/
+	top: 8px;
 	
 }
 
@@ -846,37 +848,37 @@ border-radius: 0px;
 #access.fixedNav .totop {
 	position: absolute;
 	opacity: 1;
-	top: 4px;
-	left: -70px;
+	top: 10px;
+	left: -30px;
 	z-index:4;
 	border-bottom: none;
 	background-position: 0px 0px;
 	-webkit-transition-duration: 400ms;
-	-webkit-transition-property: opacity;
+	-webkit-transition-property: top;
 	
 	-moz-transition-duration: 400ms;
-	-moz-transition-property: opacity;
+	-moz-transition-property: top;
 	
 	-o-transition-duration: 400ms;
-	-o-transition-property: opacity;
+	-o-transition-property: top;
 	
 	transition-duration: 400ms;
-	transition-property: opacity;
+	transition-property: top;
 }
 
 #access.fixedNav .totop:hover {
 	position: absolute;
-	top: 4px;
-	left: -70px;
+	top: 6px;
+	left: -30px;
 	z-index:4;
 	border-bottom: none;
-	background-position: 0px -31px;
+	
 }
 
 #access.fixedNav .totop:active {
 	position: absolute;
-	top: 4px;
-	left: -70px;
+	top: 6px;
+	left: -30px;
 	z-index:4;
 	border-bottom: none;
 	background-position: 0px 0px;
@@ -3887,6 +3889,40 @@ min-height: 220px;
 .moreButton:hover {
 	background: rgba(255,255,255,0.9);
 	color: #000;
+}
+
+@keyframes headershadefadeout
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+@-webkit-keyframes headershadefadeout /* Safari and Chrome */
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+.headershade {
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: #4b4b4b;
+	z-index:2;
+	
+	
+}
+
+.headershade.fadeOut {
+
+	
+	animation: headershadefadeout 2s;
+-webkit-animation: headershadefadeout 2s; /* Safari and Chrome */
+-webkit-animation-fill-mode: forwards;
+opacity: 0;
 }
 
 .shade {
