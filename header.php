@@ -223,7 +223,31 @@ $current_colorscheme = $options['link_color'];
 				<div class="filtered" style="display: none;">
 					<ul>
 					<li class="subheading" style="display: block;">Results <span id="filter-count"></span></li>
-					
+					<?php query_posts();
+
+// The Loop
+while ( have_posts() ) : the_post();
+	echo '<li>';
+	echo '<a href="';
+	the_permalink();
+	echo '">';
+	the_title();
+	echo '</a>';
+	echo '</li>';
+endwhile;
+
+// Reset Query
+wp_reset_query(); 
+
+$pages = get_pages(); 
+  foreach ( $pages as $page ) {
+  	echo '<li>';
+  	echo '<a href="' . get_page_link( $page->ID ) . '">';
+	echo $page->post_title;
+	echo '</a>';
+	echo '</li>';
+	
+  } ?>
 
 						<!-- Hard code any additional search terms here -->
 						<!--<li><a href="#">Search Item 1</a></li>-->
