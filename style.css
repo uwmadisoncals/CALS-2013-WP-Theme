@@ -4937,6 +4937,11 @@ background-size: 100% auto;
 }
 
 .collegeFeature .timer {
+	display: none;
+}
+
+.home .collegeFeature .timer {
+	display: block;
 	position: absolute;
 	bottom: 190px;
 	right: 10px;
@@ -4996,7 +5001,12 @@ background-size: 100% auto;
 	
 }
 
-.collegeFeature .next:link, .collegeFeature .next:visited {
+.collegeFeature .next, .collegeFeature .previous {
+	display: none;
+}
+
+.home .collegeFeature .next:link, .home .collegeFeature .next:visited {
+	display: block;
 	position: absolute;
 	top: 190px;
 	right: 0px;
@@ -5013,14 +5023,14 @@ background-size: 100% auto;
 	border-bottom: none;
 }
 
-.collegeFeature .next:hover {
+.home .collegeFeature .next:hover {
 	
 	background: url("images/arrowRight.png") no-repeat rgba(0,0,0,.9);
 	background-position: 18px center;
 	
 }
 
-.collegeFeature .next.down {
+.home .collegeFeature .next.down {
 	-webkit-animation-name: nextdown;
  	-webkit-animation-duration: 0.2s;
  	-webkit-animation-iteration-count: 1;
@@ -5030,7 +5040,7 @@ background-size: 100% auto;
 	-webkit-animation-fill-mode: forwards; 
 }
 
-.collegeFeature .next.up {
+.home .collegeFeature .next.up {
 	-webkit-animation-name: nextup;
  	-webkit-animation-duration: 0.6s;
  	-webkit-animation-iteration-count: 1;
@@ -5040,7 +5050,8 @@ background-size: 100% auto;
 	-webkit-animation-fill-mode: forwards; 
 }
 
-.collegeFeature .previous:link, .collegeFeature .previous:visited {
+.home .collegeFeature .previous:link, .home .collegeFeature .previous:visited {
+display: block;
 	position: absolute;
 	top: 190px;
 	left: 0px;
@@ -5057,7 +5068,7 @@ background-size: 100% auto;
 	border-bottom: none;
 }
 
-.collegeFeature .previous:hover {
+.home .collegeFeature .previous:hover {
 	
 	background: url("images/arrowLeft.png") no-repeat rgba(0,0,0,.9);
 	background-position: 8px center;
