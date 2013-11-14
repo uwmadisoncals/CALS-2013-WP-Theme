@@ -223,7 +223,7 @@ $current_colorscheme = $options['link_color'];
 				<div class="filtered" style="display: none;">
 					<ul>
 					<li class="subheading" style="display: block;">Results <span id="filter-count"></span></li>
-					<?php query_posts();
+					<?php query_posts('posts_per_page=50');
 
 // The Loop
 while ( have_posts() ) : the_post();
