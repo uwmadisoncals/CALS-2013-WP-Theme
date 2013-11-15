@@ -3763,7 +3763,7 @@ h1.logo {
   background: #fff;
   padding: 30px;
   color: #343434;
-  overflow: hidden;
+  /*overflow: hidden;*/
   box-sizing: border-box;
   -moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
