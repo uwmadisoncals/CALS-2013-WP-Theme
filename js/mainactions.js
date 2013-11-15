@@ -743,7 +743,7 @@ var countFeatures = 0;
 		  	//Setup sidebar navigation event listeners
 		  	$("#nav_sidebar .children").hide();
 		  	
-		  	$("#nav_sidebar .children").parent().find("a").css("font-weight","bold");
+		  	$("#nav_sidebar li ul.children").prev().addClass("hasChildren");
 		  	
 		  	$("#nav_sidebar .children").delay(300).slideDown(700, function() {
 			  		// Animation complete.
@@ -1904,7 +1904,7 @@ var countFeatures = 0;
     	});
     	
     	//Check for search complete to be ignored and hide
-    	setInterval(function() {
+    	//setInterval(function() {
     		
 			var v = $("#s").val();
 			if(v != "") {
@@ -1961,7 +1961,7 @@ var countFeatures = 0;
 			        $(".searchClear").hide();
 		        }
 			}
-		},1000);
+		//},1000);
     	
     	//take action upon user leaving the search input field
     	$("#s").blur(function () {
