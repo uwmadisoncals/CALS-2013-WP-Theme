@@ -612,6 +612,9 @@ function twentyeleven_body_classes( $classes ) {
 add_filter( 'body_class', 'twentyeleven_body_classes' );
 
 
+
+
+
 function catch_that_image() {
   global $post, $posts;
   $first_img = '';
@@ -706,7 +709,7 @@ function catch_that_announcements_image() {
   	$video = "yes";
     $first_img = $vidmatch[1][0];
 }*/
-
+//var_dump($post->post_content);
   if(empty($first_img) && empty($first_vid)) {
     //placeholder
     //$first_img = "<div class='noImageSpacer2'></div>";
