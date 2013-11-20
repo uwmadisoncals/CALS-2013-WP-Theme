@@ -1,6 +1,7 @@
 $(function(){
 
 
+
 var countFeatures = 0;
 	   
 	  /* $("a.moreButton").mouseover(function() {
@@ -1851,6 +1852,99 @@ var countFeatures = 0;
 		//Regular Expression Search Filter Auto Complete
 		$("#s").keyup(function () {
 			var filter = $(this).val(), count = 0;
+			$("#cals_uwds-q").attr("value",filter);
+			
+			
+			$.ajax({
+                  
+                    url: 'http://www.wisc.edu/directories/json/?jsonp=?',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {name: $(this).val(), division: 'COLLEGE OF AGRICULTURAL & LIFE SCIENCES'},
+                    success:  function(data, textStatus, XMLHttpRequest) {
+                                var output ='';
+                                if (data !== null){
+                                    if(data["count"]==0){
+                                        if(data["errors"][0]){
+                                            if(data["errors"][0]['code']==4){
+                                                //"Results >
+                                                output = '<div class="error">Too many results. Please narrow your search.</div>';									
+                                            }
+                                        } else {
+                                            output = '<div class="error">No matches found.</div>';
+                                        }
+                                    } else {
+                                        output = '<div class = "num_matches">' + data["count"] + ' match';
+                                        if (data['count']>1){ output+='es'};
+                                        output+= '</div>';
+                                        output+='<ul>';
+                                        $.each(data["records"], function(index, record){
+                                                                    for(j=0;j<record['titles'].length;j++){
+                                                                        if(record["titles"][j]["division"]=="COLLEGE OF AGRICULTURAL & LIFE SCIENCES"){
+                                                                        
+                                                                        
+                                                                        output+=
+                                                                                '<li class="person">' +
+                                                                                    '<div class="person_name"><strong>'
+                                                                                        + record['fullName'] + 
+                                                                                    '</strong></div>';
+                                                                                    
+                                                                        if (record['emails'][0]!=""){
+                                                                            output+='<div class="person_email"><strong>Email: </strong>' +
+                                                                                        '<a href="mailto:' + record['emails'][0] + '"> ' + record['emails'][0] + ' </a>' +
+                                                                                    '</div>';
+                                                                        }
+                                                                        
+                                                                        if(record['phones'][0]!=""){
+                                                                            output+='<div class="person_phone"><strong>Phone: </strong>' 
+                                                                                        + record['phones'][0] +
+                                                                                    '</div>';
+                                                                        }
+    
+                                                                        if(record["titles"][j]["title"]){
+                                                                            output+='<div class="person_title"><strong>Title: </strong>'
+                                                                                        + record["titles"][j]["title"] +
+                                                                                    '</div>';
+                                                                        }
+                                                                        
+                                                                        if(record["titles"][j]["department"]){
+                                                                            output+='<div class="person_department"><strong>Dept: </strong>'
+                                                                                        + record["titles"][j]["department"] +
+                                                                                    '</div>';
+                                                                        }
+                                                                        
+                                                                        
+                                                                            output+='<div class="person_more">' +
+                                                                                        '<a href="http://www.wisc.edu/directories/person.php?name=' + record['fullName'] + '" target="_blank">More &raquo;</a>' +
+                                                                                    '</div>' +
+                                                                                '</li>';
+                                                                        }
+                                                                    }
+                                                                        
+                                                                });
+                                        
+                                        output+="</ul>";
+                                            
+                                }
+                                
+    
+                                }
+                                
+                                $("#cals_uwds_search_results").html(output);
+                                $(".filtered .directory").html(output)
+                                //console.log(XMLHttpRequest);	
+                              
+                              },
+                    error: function(){ 
+                            $("#cals_uwds_search_results").html('Data could not be retrieved.');
+                            
+                            }
+                });
+			
+			
+			
+			
+			
 			var resultscounted = 0;
 			if(filter == "boredom") {
 			       eegg();

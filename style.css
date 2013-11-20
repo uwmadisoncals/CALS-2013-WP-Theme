@@ -69,6 +69,10 @@ footer, header, hgroup, menu, nav, section {
 	width: 940px; margin: 0 auto; overflow: hidden;
 }
 
+#cals_uwds {
+	display: none;
+}
+
 /* =Structure
 ----------------------------------------------- */
 

@@ -220,6 +220,7 @@ $current_colorscheme = $options['link_color'];
 			?>
 				<div class="globalSearch">
 				<?php get_search_form(); ?>
+				<?php cals_uw_directory_search($small=true, $add_class = 'search_results'); ?>
 				<div class="filtered" style="display: none;">
 					<ul>
 					<li class="subheading" style="display: block;">Results <span id="filter-count"></span></li>
@@ -244,12 +245,19 @@ $pages = get_pages();
 	echo '</a>';
 	echo '</li>';
 	
-  } ?>
+  } 
+  
+  
+  //cals_uw_directory_search($small=true, $add_class = 'search_results');
+  
+  ?>
 
 						<!-- Hard code any additional search terms here -->
 						<!--<li><a href="#">Search Item 1</a></li>-->
 						
 					</ul>
+					
+					<div class="directory"></div>
 				</div>
 				</div>
 			<?php
