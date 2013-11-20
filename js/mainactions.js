@@ -2001,6 +2001,15 @@ var countFeatures = 0;
 	
 		    });*/
 		    
+		    var seen = {};
+			$('.filtered li.visible').each(function() {
+			    var txt = $(this).text();
+			    if (seen[txt])
+			        $(this).remove();
+			    else
+			        seen[txt] = true;
+			});
+		    
 		    $("#filter-count").text(count+peoplecount);
 		    if((count + peoplecount) > 0) {
 			            $(".filtered").show();
