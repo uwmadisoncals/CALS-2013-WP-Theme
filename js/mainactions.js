@@ -1876,7 +1876,7 @@ var countFeatures = 0;
                                     } else {
                                     	peoplecount = data['count'];
                                         
-                                        output+='';
+                                        output+='<ul>';
                                         $.each(data["records"], function(index, record){
                                                                     for(j=0;j<record['titles'].length;j++){
                                                                         if(record["titles"][j]["division"]=="COLLEGE OF AGRICULTURAL & LIFE SCIENCES"){
@@ -1920,7 +1920,7 @@ var countFeatures = 0;
                                                                         
                                                                 });
                                         
-                                        output+="";
+                                        output+="</ul>";
                                             
                                 }
                                 
@@ -1928,7 +1928,7 @@ var countFeatures = 0;
                                 }
                                 
                                 $("#cals_uwds_search_results").html(output);
-                                $(".filtered ul").append(output);
+                                $(".filtered .directory").html(output);
                                 //console.log(XMLHttpRequest);	
                               
                               },
@@ -2001,14 +2001,7 @@ var countFeatures = 0;
 	
 		    });*/
 		    
-		    var seen = {};
-			$('.filtered li.visible').each(function() {
-			    var txt = $(this).text();
-			    if (seen[txt])
-			        $(this).remove();
-			    else
-			        seen[txt] = true;
-			});
+		   
 		    
 		    $("#filter-count").text(count+peoplecount);
 		    if((count + peoplecount) > 0) {
@@ -2027,6 +2020,15 @@ var countFeatures = 0;
 		        }
 		            
     	});
+    	
+    	 var seen = {};
+			$('.filtered li').each(function() {
+			    var txt = $(this).text();
+			    if (seen[txt])
+			        $(this).remove();
+			    else
+			        seen[txt] = true;
+			});
     	
     	
     	//Check for search complete to be ignored and hide
