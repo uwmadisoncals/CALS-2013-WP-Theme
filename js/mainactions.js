@@ -1847,7 +1847,7 @@ var countFeatures = 0;
 			});
 		}
 		
-				
+		var peoplecount = 0;		
 		
 		//Regular Expression Search Filter Auto Complete
 		$("#s").keyup(function () {
@@ -1867,41 +1867,40 @@ var countFeatures = 0;
                                     if(data["count"]==0){
                                         if(data["errors"][0]){
                                             if(data["errors"][0]['code']==4){
-                                                //"Results >
-                                                output = '<div class="error">Too many results. Please narrow your search.</div>';									
+                                                //Too many results
+                                                output = '';									
                                             }
                                         } else {
-                                            output = '<div class="error">No matches found.</div>';
+                                            output = '';
                                         }
                                     } else {
-                                        output = '<div class = "num_matches">' + data["count"] + ' match';
-                                        if (data['count']>1){ output+='es'};
-                                        output+= '</div>';
-                                        output+='<ul>';
+                                    	peoplecount = data['count'];
+                                        
+                                        output+='';
                                         $.each(data["records"], function(index, record){
                                                                     for(j=0;j<record['titles'].length;j++){
                                                                         if(record["titles"][j]["division"]=="COLLEGE OF AGRICULTURAL & LIFE SCIENCES"){
                                                                         
                                                                         
                                                                         output+=
-                                                                                '<li class="person">' +
+                                                                                '<li class=""><a href="http://www.wisc.edu/directories/person.php?name=' + record['fullName'] + '" target="_blank">' +
                                                                                     '<div class="person_name"><strong>'
                                                                                         + record['fullName'] + 
                                                                                     '</strong></div>';
                                                                                     
                                                                         if (record['emails'][0]!=""){
-                                                                            output+='<div class="person_email"><strong>Email: </strong>' +
-                                                                                        '<a href="mailto:' + record['emails'][0] + '"> ' + record['emails'][0] + ' </a>' +
+                                                                            output+='<div class="person_email">' +
+                                                                                        '' + record['emails'][0] + '' +
                                                                                     '</div>';
                                                                         }
                                                                         
                                                                         if(record['phones'][0]!=""){
-                                                                            output+='<div class="person_phone"><strong>Phone: </strong>' 
+                                                                            output+='<div class="person_phone">' 
                                                                                         + record['phones'][0] +
                                                                                     '</div>';
                                                                         }
     
-                                                                        if(record["titles"][j]["title"]){
+                                                                       /* if(record["titles"][j]["title"]){
                                                                             output+='<div class="person_title"><strong>Title: </strong>'
                                                                                         + record["titles"][j]["title"] +
                                                                                     '</div>';
@@ -1911,19 +1910,17 @@ var countFeatures = 0;
                                                                             output+='<div class="person_department"><strong>Dept: </strong>'
                                                                                         + record["titles"][j]["department"] +
                                                                                     '</div>';
-                                                                        }
+                                                                        }*/
                                                                         
                                                                         
-                                                                            output+='<div class="person_more">' +
-                                                                                        '<a href="http://www.wisc.edu/directories/person.php?name=' + record['fullName'] + '" target="_blank">More &raquo;</a>' +
-                                                                                    '</div>' +
+                                                                            output+='</a>' +
                                                                                 '</li>';
                                                                         }
                                                                     }
                                                                         
                                                                 });
                                         
-                                        output+="</ul>";
+                                        output+="";
                                             
                                 }
                                 
@@ -1931,7 +1928,7 @@ var countFeatures = 0;
                                 }
                                 
                                 $("#cals_uwds_search_results").html(output);
-                                $(".filtered .directory").html(output)
+                                $(".filtered ul").append(output);
                                 //console.log(XMLHttpRequest);	
                               
                               },
@@ -1951,7 +1948,11 @@ var countFeatures = 0;
 		    }
 		            
 			$(".filtered:first li").each(function () {
-		        if ($(this).text().search(new RegExp(filter, "i")) < 0) {$(this).addClass("hidden"); $(this).removeClass("visible"); 
+				
+			
+		        if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+		        	$(this).addClass("hidden"); 
+		        	$(this).removeClass("visible"); 
 			       
 			        
 		        } else {
@@ -1979,8 +1980,29 @@ var countFeatures = 0;
 		            
 		        }
 		    });
-		    $("#filter-count").text(count);
-		    if(count > 0) {
+		    
+		    
+		  /* $(".filtered li.visible").each(function () {
+		    	//console.log('ran');
+		    		$(this).addClass("checking");
+		    		var currentobj = $(this);
+		    		var currenttextobj = $(this).text();
+		    		
+		    		//var nexttextobj = $(this).next("li.visible").text();
+		    		$(".filtered li.visible").not($(".checking")).each(function () {
+			    		var nexttextobj = $(this).text();
+			    		if(currenttextobj == nexttextobj) {
+				    		//console.log(currenttextobj +" "+ nexttextobj);
+				    		$(this).addClass("duplicate");
+				    		currentobj.removeClass("checking");
+			    		}
+		    		});
+		    		
+	
+		    });*/
+		    
+		    $("#filter-count").text(count+peoplecount);
+		    if((count + peoplecount) > 0) {
 			            $(".filtered").show();
 			            $("#s").addClass("notEmpty");
 			            //$(".searchClear").show();
@@ -1996,6 +2018,7 @@ var countFeatures = 0;
 		        }
 		            
     	});
+    	
     	
     	//Check for search complete to be ignored and hide
     	//setInterval(function() {
@@ -2022,6 +2045,8 @@ var countFeatures = 0;
 		        		// Animation complete
 					
 		     		 });*/
+		     		 
+		     		 
 				
 		            $(this).removeClass("hidden");
 		            $(this).addClass("visible");
@@ -2055,6 +2080,10 @@ var countFeatures = 0;
 			        $(".searchClear").hide();
 		        }
 			}
+			
+			
+			 
+    	
 		//},1000);
     	
     	//take action upon user leaving the search input field
@@ -2092,6 +2121,9 @@ var countFeatures = 0;
 			void(0);
 			}
 		}
+		
+		
+		
 		
 		//Mobile Helper Functions
 		(function(document){
