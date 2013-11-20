@@ -674,7 +674,7 @@ function catch_that_news_image() {
   if(empty($first_img) && empty($first_vid)) {
     //placeholder
     //$first_img = "<div class='noImageSpacer2'></div>";
-    return "<img src='http://localhost/wp-content/themes/calsmain2013/images/newsplaceholder1.jpg' alt=' '>";
+    return "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpg' alt=' '>";
   }  else {
 	//$first_vid = "<img src='".$first_vid;
 	//return $first_vid;
@@ -713,7 +713,8 @@ function catch_that_announcements_image() {
   if(empty($first_img) && empty($first_vid)) {
     //placeholder
     //$first_img = "<div class='noImageSpacer2'></div>";
-    return "<img src='http://localhost/wp-content/themes/calsmain2013/images/announcementsplaceholder1.jpg' alt=' '>";
+    
+    return "<img src='".get_template_directory_uri()."/images/announcementsplaceholder1.jpg' alt=' '>";
   }  else {
 	//$first_vid = "<img src='".$first_vid;
 	//return $first_vid;
