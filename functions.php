@@ -73,8 +73,8 @@ if ( ! function_exists( 'twentyeleven_setup' ) ):
  *
  * @since Twenty Eleven 1.0
  */
- 
- add_action( 'init', 'create_post_type' );
+
+add_action( 'init', 'create_post_type' );
 function create_post_type() {
 	register_post_type( 'headerslides',
 		array(
@@ -88,7 +88,6 @@ function create_post_type() {
 	  'title',
 	  'editor',
 	  'excerpt',
-	  'trackbacks',
 	  'revisions',
 	  'thumbnail',
 	  'author',

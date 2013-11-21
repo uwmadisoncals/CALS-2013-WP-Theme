@@ -1583,9 +1583,9 @@ a.post-edit-link {
 	height: 18px;
 	line-height: 18px;
 	z-index: 1;
-	-moz-box-shadow:    0px 1px 3px 0px #bebebe;
-	-webkit-box-shadow: 0px 1px 3px 0px #bebebe;
-	box-shadow:         0px 1px 3px 0px #bebebe;
+	-moz-box-shadow:    0px 1px 2px 0px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+	box-shadow:         0px 1px 2px 0px rgba(0,0,0,0.3);
 	-webkit-border-bottom-right-radius: 2px;
 -webkit-border-bottom-left-radius: 2px;
 -moz-border-radius-bottomright: 2px;
@@ -6578,6 +6578,12 @@ position: relative;
 
 	background: #f2e7df url("images/subnav_indent.png") no-repeat;
 	background-position: 55px center;
+}
+
+#page #nav_sidebar .children li .children li .children li a.current_link {
+
+	background: #f2e7df url("images/subnav_indent.png") no-repeat;
+	background-position: 70px center;
 }
 
  
