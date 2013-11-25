@@ -9,6 +9,9 @@
 $options = twentyeleven_get_theme_options();
 $current_layout = $options['theme_layout'];
 
+
+
+
 if ( 'content' != $current_layout ) :
 ?>
 		<div id="secondary" class="widget-area" role="complementary">
@@ -41,7 +44,13 @@ if ( 'content' != $current_layout ) :
     // This is not the homepage
  ?>
 	
-	<?php get_template_part('nav_menu', 'sidebar');  ?>
+	<?php if(is_search()) {
+		//Show staff results here
+		cals_uw_directory_search($small=true, $add_class = 'search_results_side'); 
+		
+	 } else { 
+			
+	 get_template_part('nav_menu', 'sidebar'); } ?>
 	
 	
 	

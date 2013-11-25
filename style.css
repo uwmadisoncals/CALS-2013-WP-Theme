@@ -73,6 +73,33 @@ footer, header, hgroup, menu, nav, section {
 	display: none;
 }
 
+.search #cals_uwds {
+	display: block;
+	float: right;
+	top: 0px;
+	right: 0px;
+	z-index: 2;
+	width: 230px;
+	background: #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #343434;
+	box-sizing: border-box;
+	-moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	overflow: hidden;
+}
+
+.search #cals_uwds small {
+	display: none;
+}
+
+.search #cals_uwds #cals_uwds-q {
+	width: auto;
+}
+
 /* =Structure
 ----------------------------------------------- */
 
@@ -7269,6 +7296,12 @@ border-radius: 3px;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#ffffff,EndColorStr=#f1f1f1);
   -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#ffffff,EndColorStr=#f1f1f1);
 }
+
+
+body.search .filtered {
+	display: none !important;
+}
+
 .filtered:after, .filtered-top:after, .filtered-right:after, .filtered-bottom:after, .filtered-left:after {
   content:"\25B8";
   display:block;

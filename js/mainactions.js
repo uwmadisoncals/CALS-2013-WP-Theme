@@ -1852,7 +1852,7 @@ var countFeatures = 0;
 		//Regular Expression Search Filter Auto Complete
 		$("#s").keyup(function () {
 			var filter = $(this).val(), count = 0;
-			$("#cals_uwds-q").attr("value",filter);
+			//$("#cals_uwds-q").attr("value",filter);
 			
 			
 			$.ajax({
@@ -1927,13 +1927,13 @@ var countFeatures = 0;
     
                                 }
                                 
-                                $("#cals_uwds_search_results").html(output);
+                                //$("#cals_uwds_search_results").html(output);
                                 $(".filtered .directory").html(output);
                                 //console.log(XMLHttpRequest);	
                               
                               },
                     error: function(){ 
-                            $("#cals_uwds_search_results").html('Data could not be retrieved.');
+                            //$("#cals_uwds_search_results").html('Data could not be retrieved.');
                             
                             }
                 });

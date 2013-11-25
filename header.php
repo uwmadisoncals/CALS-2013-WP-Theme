@@ -220,7 +220,7 @@ $current_colorscheme = $options['link_color'];
 			?>
 				<div class="globalSearch">
 				<?php get_search_form(); ?>
-				<?php cals_uw_directory_search($small=true, $add_class = 'search_results'); ?>
+				<?php //cals_uw_directory_search($small=true, $add_class = 'search_results'); ?>
 				<div class="filtered" style="display: none;">
 					<ul>
 					<li class="subheading" style="display: block;">Results <span id="filter-count"></span></li>
