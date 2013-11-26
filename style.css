@@ -73,12 +73,17 @@ footer, header, hgroup, menu, nav, section {
 	display: none;
 }
 
+.page-template-page-cals_directory_search-php #cals_uwds {
+	display:block;
+}
+
 .search #cals_uwds {
 	display: block;
 	float: right;
 	top: 0px;
 	right: 0px;
 	z-index: 2;
+	padding: 20px;
 	width: 230px;
 	background: #fff;
 	-webkit-border-radius: 4px;
@@ -90,6 +95,39 @@ footer, header, hgroup, menu, nav, section {
 	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 	box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 	overflow: hidden;
+}
+
+.search #cals_uwds_search_results {
+	border-top: none;
+}
+
+.search #cals_uwds .dept_title {
+	font-family: "Open Sans";
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.search #cals_uwds #cals_uwds-f {
+	background: none;
+	padding: 0px;
+}
+
+.search #primary #cals_uwds-q {
+	margin-right: 0px;
+	margin-left: 0px;
+	background: #e3e3e3;
+	width: 100%;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+
+}
+
+.search #primary #cals_uwds_search_results {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .search #cals_uwds small {
@@ -553,6 +591,15 @@ input#s {
 	height: 22px;
 	line-height: 1.2em;
 	padding: 4px 10px 4px 28px;
+}
+
+.search-no-results input#s {
+	background-color: rgba(0,0,0,0.05);
+	padding: 8px;
+	padding-left: 25px;
+}
+.search-no-results .searchClear {
+	opacity: 0;
 }
 input#searchsubmit {
 	display: none;
@@ -1033,6 +1080,11 @@ border-radius: 0px;
 	letter-spacing: 0;
 	text-transform: none;
 }
+
+.page-title span {
+	font-weight: bold;
+}
+
 .hentry,
 .no-results {
 	border-bottom: 1px solid #ddd;
@@ -1056,13 +1108,17 @@ border-radius: 0px;
 }
 .entry-title {
 	clear: both;
-	color: #222;
+	color: #b22632;
 	font-size: 26px;
-	font-weight: bold;
+	font-weight: 300;
 	line-height: 1.5em;
 	/*padding-bottom: 0.3em;*/
 	padding-top: 15px;
 	margin-bottom: 0px;
+}
+
+.entry-title a {
+	color: #1982d1;
 }
 
 .whiteContainer .entry-title {
@@ -1081,7 +1137,7 @@ border-radius: 0px;
 
 .entry-title,
 .entry-title a {
-	color: #222;
+	color: #b22632;
 	text-decoration: none;
 }
 .entry-title a:hover,
@@ -1103,7 +1159,11 @@ border-radius: 0px;
 }
 .entry-content,
 .entry-summary {
-	padding: 1.625em 0 0;
+	padding: 1em 0 0;
+}
+
+.search .entry-summary {
+	padding-top: 0px;
 }
 .entry-content h1,
 .entry-content h2,
@@ -3585,7 +3645,8 @@ h1, h2, h3, p, ul, ol, pre, dl {
 h1, h2, #super-list, .element, .tagline, #index-list, 
 .super-list .link {
   /*font-family: 'Helvetica Neue', Arial, sans-serif;*/
-  font-family: 'Merriweather', Georgia, serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 	font-size: 36px;
 	font-weight: normal;
 }
@@ -3598,7 +3659,7 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.1em;
 }
 
@@ -3823,7 +3884,7 @@ h1.logo {
 	/*padding-right: 240px;*/
 }
 
-.single #content, .page #content, .search-results #content, .archive #content, .error404 #content {
+.single #content, .page #content, .search-results #content, .archive #content, .error404 #content, .search-no-results #content {
 	position: relative;
   background: #fff;
   padding: 30px;

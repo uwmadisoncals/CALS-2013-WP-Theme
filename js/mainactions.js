@@ -1855,6 +1855,9 @@ var countFeatures = 0;
 			//$("#cals_uwds-q").attr("value",filter);
 			
 			
+
+			
+			
 			$.ajax({
                   
                     url: 'http://www.wisc.edu/directories/json/?jsonp=?',
@@ -1904,13 +1907,13 @@ var countFeatures = 0;
                                                                             output+='<div class="person_title"><strong>Title: </strong>'
                                                                                         + record["titles"][j]["title"] +
                                                                                     '</div>';
-                                                                        }
+                                                                        }*/
                                                                         
                                                                         if(record["titles"][j]["department"]){
                                                                             output+='<div class="person_department"><strong>Dept: </strong>'
                                                                                         + record["titles"][j]["department"] +
                                                                                     '</div>';
-                                                                        }*/
+                                                                        }
                                                                         
                                                                         
                                                                             output+='</a>' +
@@ -2020,6 +2023,9 @@ var countFeatures = 0;
 		        }
 		            
     	});
+    	
+    				
+
     	
     	 var seen = {};
 			$('.filtered li').each(function() {

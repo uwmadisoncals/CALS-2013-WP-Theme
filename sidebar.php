@@ -46,9 +46,10 @@ if ( 'content' != $current_layout ) :
 	
 	<?php if(is_search()) {
 		//Show staff results here
-		cals_uw_directory_search($small=true, $add_class = 'search_results_side'); 
+		cals_uw_directory_search($small=true, $add_class = 'search_results_side'); ?>
 		
-	 } else { 
+		
+	 <?php } else { 
 			
 	 get_template_part('nav_menu', 'sidebar'); } ?>
 	

@@ -294,7 +294,7 @@ $pages = get_pages();
 
 <div class="collegeFeature">
 <ul class="slides">
-  <?php while ( have_posts() ) : the_post(); ?>
+
 
 					<?php //get_template_part( 'content', 'page' ); ?>
 
@@ -357,11 +357,13 @@ $url = $thumb['0']; echo $url;
   			</div>
   			
   		</li>
-  		
+  					
   	
 					<?php endwhile; ?>
+				
+					
 
-				<?php endwhile; // end of the loop. ?>
+				
 				
 				</ul>
   	
