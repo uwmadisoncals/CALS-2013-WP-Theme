@@ -43,14 +43,16 @@ if ( 'content' != $current_layout ) :
 <?php if ( 'content' == $current_layout ) : if ( !is_home() ) {
     // This is not the homepage
  ?>
-	
+	<div class="searchSidebar">
 	<?php if(is_search()) {
 		//Show staff results here
+		
 		cals_uw_directory_search($small=true, $add_class = 'search_results_side'); ?>
 		
 		
 		<!-- SEARCH FORM -->
 <div class="googleSearch">
+<h4>Google Found</h4>
 <form action="http://www.google.com/search" method="get">
 <!-- HTML5 SEARCH BOX!  -->
 <input type="search" id="search-box" name="q" results="5" autocomplete="on" />
@@ -64,6 +66,8 @@ if ( 'content' != $current_layout ) :
 </div>
  
 </form>
+</div>
+
 </div>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
@@ -107,12 +111,12 @@ function googlesearch() {
         
         var searchBox2 = $("#s");
 			//var control = new google.search.SearchControl();
-			var value = searchBox2.val();
+			var value2 = searchBox2.val();
 			
-            if(value) {
-            	searchBox.val(value);
-            	console.log("searching");
-                control.execute(value);
+            if(value2) {
+            	searchBox.val(value2);
+            	//console.log("searching");
+                control.execute(value2);
             }	
             
             
