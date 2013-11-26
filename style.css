@@ -97,6 +97,27 @@ footer, header, hgroup, menu, nav, section {
 	overflow: hidden;
 }
 
+.search div.googleSearch {
+	display: block;
+	float: right;
+	top: 0px;
+	right: 0px;
+	z-index: 2;
+	margin-top: 10px;
+	padding: 20px;
+	width: 230px;
+	background: #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #343434;
+	box-sizing: border-box;
+	-moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	overflow: hidden;
+}
+
 .search #cals_uwds_search_results {
 	border-top: none;
 }

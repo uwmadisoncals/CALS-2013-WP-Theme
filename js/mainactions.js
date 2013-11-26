@@ -1847,7 +1847,10 @@ var countFeatures = 0;
 			});
 		}
 		
-		var peoplecount = 0;		
+		var peoplecount = 0;	
+		
+		
+		
 		
 		//Regular Expression Search Filter Auto Complete
 		$("#s").keyup(function () {

@@ -49,6 +49,78 @@ if ( 'content' != $current_layout ) :
 		cals_uw_directory_search($small=true, $add_class = 'search_results_side'); ?>
 		
 		
+		<!-- SEARCH FORM -->
+<div class="googleSearch">
+<form action="http://www.google.com/search" method="get">
+<!-- HTML5 SEARCH BOX!  -->
+<input type="search" id="search-box" name="q" results="5" autocomplete="on" />
+<!-- SEARCH BUTTON -->
+<input id="search-submit" type="submit" value="Search" />
+<div id="search-area" style="position:relative;">
+<div id="search-results">
+<div id="search-results-pointer"></div>
+<div id="search-results-content"></div>
+</div>
+</div>
+ 
+</form>
+</div>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("search","1");
+//google.load("jquery", 1.4.2);
+ 
+function googlesearch() {
+//console.log("hi");
+    if(typeof(searchLoaded) == "undefined") {
+        var searchLoaded = true; // set searchLoaded to "true"; no more loading!
+ 
+        var searchBox = $("input#search-box");
+ 
+        // google interaction
+        var search = new google.search.WebSearch(),
+        control = new google.search.SearchControl(),
+        options = new google.search.DrawOptions();
+ 
+        // set google options
+        options.setDrawMode(google.search.SearchControl.DRAW_MODE_TABBED);
+        options.setInput(searchBox);
+        search.setSiteRestriction("http://www.cals.wisc.edu");
+		//options.as_sitesearch("http://www.cals.wisc.edu");
+        // set search options
+        search.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+ 
+        // set search controls
+        control.addSearcher(search);
+        control.draw(document.getElementById("search-results-content"),options);
+        control.setNoResultsString("No results were found.");
+ 
+        // add listeners to search box
+        searchBox.bind("keydown", function() {
+        	//console.log("hi");
+            var value = searchBox.val();
+            if(value) {
+                control.execute(value);
+            }
+        });
+        
+        
+        var searchBox2 = $("#s");
+			//var control = new google.search.SearchControl();
+			var value = searchBox2.val();
+			
+            if(value) {
+            	searchBox.val(value);
+            	console.log("searching");
+                control.execute(value);
+            }	
+            
+            
+    }
+}
+google.setOnLoadCallback(googlesearch);
+</script>
+		
 	 <?php } else { 
 			
 	 get_template_part('nav_menu', 'sidebar'); } ?>
