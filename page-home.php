@@ -31,7 +31,7 @@ get_header(); ?>
 				<!-- CALS News Content Box -->
 				<div class="row clearfix">
 				
-					<div class="span-50 box">
+					<div class="span-50 box dropin">
 							
 							<h2>News</h2>
 							
@@ -97,7 +97,7 @@ get_header(); ?>
 						
 					</div>
 					
-					<div class="span-50 box">
+					<div class="span-50 box dropin2">
 							 <?php 
 								//hold original loop
 								$tmp_post = $post;
@@ -164,7 +164,7 @@ get_header(); ?>
 				
 				<div class="row clearfix">
 				
-					<div class="span-33 box">
+					<div class="span-33 box dropin3">
 							<h2>Announcements</h2>
 							
 							<?php switch_to_blog(19); ?>
@@ -226,7 +226,7 @@ get_header(); ?>
 						<div class="shade"></div>
 					</div>
 					
-					<div class="span-33 box eventsBox">
+					<div class="span-33 box eventsBox dropin4">
 							<h2>Events</h2>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/aghall1.jpg" alt=" ">
 							<div class="boxContent">
@@ -293,7 +293,7 @@ get_header(); ?>
 
 					</div>
 					
-					<div class="span-33 box">
+					<div class="span-33 box dropin5">
 							<h2>Faces</h2>
 							
 							<?php switch_to_blog(20); ?>

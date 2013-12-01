@@ -3326,6 +3326,37 @@ p.comment-form-comment {
  }
 }
 
+@-webkit-keyframes dropin {
+ from {
+  opacity: 0;
+  -webkit-transform: scale(3,3);
+  -webkit-animation-timing-function: cubic-bezier(0.000, 0.325, 0.000, 1.000);
+  
+  
+ }
+ to {
+	-webkit-transform: scale(1,1);
+	-webkit-animation-timing-function: cubic-bezier(0.000, 0.325, 0.000, 1.000);
+	opacity: 1;
+	
+ }
+}
+
+@-moz-keyframes dropin {
+ from {
+  opacity: 0;
+  -moz-transform: scale(3,3);
+   -moz-animation-timing-function: cubic-bezier(0.000, 0.325, 0.000, 1.000);
+  
+ }
+ to {
+	-moz-transform: scale(1,1);
+	opacity: 1;
+	-moz-animation-timing-function: cubic-bezier(0.000, 0.325, 0.000, 1.000);
+	
+ }
+}
+
 @-webkit-keyframes rotate {
  from {
   -webkit-transform: rotate(0deg);
@@ -4985,6 +5016,133 @@ background-size: 100% auto;
 .aboutCALSMission .column {
 	width: 500px;
 }
+
+.dropin {
+	opacity: 0;
+	-webkit-animation-name: dropin;
+ 	-webkit-animation-duration: 0.3s;
+ 	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;	
+	-webkit-transform: rotateY(0deg);	
+	-webkit-box-sizing: border-box;
+	-webkit-animation-fill-mode: forwards; 
+	
+	
+	-moz-animation-name: dropin;
+ 	-moz-animation-duration: 0.3s;
+ 	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease-in-out;	
+	-moz-transform: rotateY(0deg);	
+	-moz-box-sizing: border-box;
+	-moz-animation-fill-mode: forwards; 
+	
+	animation-delay:0.1s;
+-webkit-animation-delay:0.1s; /* Safari and Chrome */
+-moz-animation-delay:0.1s;
+
+}
+
+.dropin2 {
+	opacity: 0;
+	-webkit-animation-name: dropin;
+ 	-webkit-animation-duration: 0.4s;
+ 	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;	
+	-webkit-transform: rotateY(0deg);	
+	-webkit-box-sizing: border-box;
+	-webkit-animation-fill-mode: forwards; 
+	
+	
+	-moz-animation-name: dropin;
+ 	-moz-animation-duration: 0.4s;
+ 	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease-in-out;	
+	-moz-transform: rotateY(0deg);	
+	-moz-box-sizing: border-box;
+	-moz-animation-fill-mode: forwards; 
+	
+	animation-delay:0.1s;
+-webkit-animation-delay:0.1s; /* Safari and Chrome */
+-moz-animation-delay:0.1s;
+
+}
+
+.dropin3 {
+	opacity: 0;
+	-webkit-animation-name: dropin;
+ 	-webkit-animation-duration: 0.6s;
+ 	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;	
+	-webkit-transform: rotateY(0deg);	
+	-webkit-box-sizing: border-box;
+	-webkit-animation-fill-mode: forwards; 
+	
+	
+	-moz-animation-name: dropin;
+ 	-moz-animation-duration: 0.6s;
+ 	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease-in-out;	
+	-moz-transform: rotateY(0deg);	
+	-moz-box-sizing: border-box;
+	-moz-animation-fill-mode: forwards; 
+	
+	animation-delay:0.2s;
+-webkit-animation-delay:0.2s; /* Safari and Chrome */
+-moz-animation-delay:0.2s;
+
+}
+
+
+.dropin4 {
+	opacity: 0;
+	-webkit-animation-name: dropin;
+ 	-webkit-animation-duration: 0.8s;
+ 	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;	
+	-webkit-transform: rotateY(0deg);	
+	-webkit-box-sizing: border-box;
+	-webkit-animation-fill-mode: forwards; 
+	
+	
+	-moz-animation-name: dropin;
+ 	-moz-animation-duration: 0.8s;
+ 	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease-in-out;	
+	-moz-transform: rotateY(0deg);	
+	-moz-box-sizing: border-box;
+	-moz-animation-fill-mode: forwards; 
+	
+	animation-delay:0.25s;
+-webkit-animation-delay:0.25s; /* Safari and Chrome */
+-moz-animation-delay:0.25s;
+
+}
+
+.dropin5 {
+	opacity: 0;
+	-webkit-animation-name: dropin;
+ 	-webkit-animation-duration: 1.2s;
+ 	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;	
+	-webkit-transform: rotateY(0deg);	
+	-webkit-box-sizing: border-box;
+	-webkit-animation-fill-mode: forwards; 
+	
+	
+	-moz-animation-name: dropin;
+ 	-moz-animation-duration: 1.2s;
+ 	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: ease-in-out;	
+	-moz-transform: rotateY(0deg);	
+	-moz-box-sizing: border-box;
+	-moz-animation-fill-mode: forwards; 
+	
+	animation-delay:0.3s;
+-webkit-animation-delay:0.3s; /* Safari and Chrome */
+-moz-animation-delay: 0.3s;
+
+}
+
 
 /*.collegeFeature.flipin, .collegeFeature .flipin {
 	position: absolute;
