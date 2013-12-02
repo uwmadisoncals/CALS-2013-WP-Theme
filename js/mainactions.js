@@ -14,7 +14,25 @@ var countFeatures = 0;
 		  
 	   });*/
 	   
+	  setInterval(function() {
+		  $("body").toggleClass("relative");
+	  },1000);
 	  
+	  
+	  $('.newsItem .additionalContent').each(function(index) {
+		//console.log($(this).next().html());
+		var i = $(this).children().hasClass("noImageSpacer2");
+		
+		if(i) {
+				//console.log("no image");
+			} else {
+				$(this).next().addClass("imagePresent");
+			}
+		
+		
+			
+			
+		});
 	   
 	   $(".box a").click(function() {
 		  $(this).closest(".box").find("img").addClass("blurAnim");
@@ -79,8 +97,10 @@ var countFeatures = 0;
 			   $(this).addClass('active');
 			   if($(this).attr("data-count") != 1) {
 				   //$(this).css("display","none");
+				   //$(this).hide();
 				   $(this).removeClass('active');
 				   $(this).css("opacity","0");
+				   $(this).css("left","100000px");
 			   }
 			   });
 		}
@@ -111,9 +131,10 @@ var countFeatures = 0;
 		var halfd = duration /2;
 		var time1,time2;
     	time1 = setInterval(function() {nextSlide();},duration);
+    	var homeCheck = $("body").hasClass("home");
     	
     	 //If only one feature is available, hide auto rotation.
-		 if(countFeatures == 1) {
+		 if(countFeatures == 1 || homeCheck == false) {
 			 $(".timer, .collegeFeature .next, .collegeFeature .previous").hide();
 			 clearInterval(time1);
 		 }
@@ -147,14 +168,17 @@ var countFeatures = 0;
 			  
 			   if($(this).hasClass('active') && ($(this).attr("data-count") < countFeatures)) {
 			   	 var t = $(this);
+			   	 
 				  $(t).next().addClass('active');
 				  $(t).removeClass('active');
 				  
 				  if(transitiontype == "crossdissolve") {
+				  	$(t).next().css("left","0px");
 					  $(t).next().animate({
 					   	  opacity: 1
 				   	  }, 1000, function() {
 					   	  $(t).css("opacity","0");
+					   	  $(t).css("left","100000px");
 				   	  });
 			   	  }
 				  
@@ -166,9 +190,12 @@ var countFeatures = 0;
 				   
 				   if(transitiontype == "crossdissolve") {
 					   $('.collegeFeature li:first-child').css("opacity","1");
+					   $('.collegeFeature li:first-child').css("left","0px");
 					   $(t).animate({
 					   	  opacity: 0
-				   	  }, 1000 );
+				   	  }, 1000, function() {
+					   	  $(t).css("left","10000000px");
+				   	  });
 			   	  }
 				   
 				    $('.collegeFeature li:first-child').addClass('active');
@@ -258,10 +285,12 @@ var countFeatures = 0;
 			   
 			   if($(this).hasClass('active') && ($(this).attr("data-count") < countFeatures)) {
 			   	  var t = $(this);
+			   	  $(t).next().css("left","0px");
 			   	  $(t).next().animate({
 				   	  opacity: 1
 			   	  }, 1000, function() {
 				   	  $(t).css("opacity","0");
+				   	  $(t).css("left","1000000px");
 			   	  });
 			   	  
 			   	 
@@ -280,9 +309,12 @@ var countFeatures = 0;
 				  
 				  
 				  $('.collegeFeature li:first-child').css("opacity","1");
+				  $('.collegeFeature li:first-child').css("left","0px");
 				   $(t).animate({
 				   	  opacity: 0
-			   	  }, 1000 );
+			   	  }, 1000, function() {
+				   	  $(t).css("left","100000px");
+			   	  });
 				  
 				   $('.collegeFeature li:first-child').addClass('active');
 				   
@@ -321,6 +353,7 @@ var countFeatures = 0;
 			   
 			   if($(this).hasClass('active') && ($(this).attr("data-count") != 1)) {
 			   	 var t = $(this);
+			   	 
 				  $(t).prev().addClass('active');
 				  $(t).removeClass('active');
 				  
@@ -351,12 +384,15 @@ var countFeatures = 0;
 			   if($(this).hasClass('active') && ($(this).attr("data-count") != 1)) {
 			   	 var t = $(this);
 				  $(t).prev().addClass('active');
+				   $(t).prev().css("left","0px");
 				  $(t).removeClass('active');
 				  
 				  $(t).prev().css("opacity","1");
 				  $(t).animate({
 				   	  opacity: 0
-			   	  }, 1000);
+			   	  }, 1000, function() {
+				   	  $(t).css("left","100000px");
+			   	  });
 
 				   
 				   return false;
@@ -366,11 +402,14 @@ var countFeatures = 0;
 				  $(t).removeClass('active');
 				   
 				   
+				   
 				    $('.collegeFeature li:last-child').addClass('active');
+				    $('.collegeFeature li:last-child').css("left","0px");
 				    $('.collegeFeature li:last-child').animate({
 				   	  opacity: 1
 			   	  }, 1000, function() {
 				   	  $(t).css("opacity","0");
+				   	  $(t).css("left","100000px");
 			   	  });
 				    
 				    
@@ -486,6 +525,9 @@ var countFeatures = 0;
  	//Redraw tiles UI
  	function reDraw(elem) {
 		
+		//$(".box").addClass("dropin");
+		
+		
 		setTimeout(function() {
 		
 		$("#container").animate({ 
@@ -560,21 +602,21 @@ var countFeatures = 0;
 		
 		
 		
-		var height1 = parseInt($(this).find('.additionalContent').height());
+		/*var height1 = parseInt($(this).find('.additionalContent').height());
 		var height2 = parseInt($(this).find('.text').height());
 		var height3 = parseInt($(this).find('.additionalContent img').attr('height'));
 		var width1 = parseInt($(this).find('.additionalContent img').attr('width'));
-		var width2 = parseInt($(this).find('.additionalContent').width());
+		var width2 = parseInt($(this).find('.additionalContent').width());*/
 		
 		
 		if(!isMobile) {
-		var updateheight = height1 + (height2*1.3);
+		//var updateheight = height1 + (height2*1.3);
 		} else {
-			var updateheight = height1 + (height2*1.1);
+			//var updateheight = height1 + (height2*1.1);
 		}
 			
 		
-		$(this).not('.customize, .noImage').find('.previousa').css("height",updateheight);
+		/*$(this).not('.customize, .noImage').find('.previousa').css("height",updateheight);*/
 		
 		if(BrowserDetect.browser != "Explorer") {
 		
@@ -586,7 +628,7 @@ var countFeatures = 0;
 		
 		//console.log(h);
 		
-		if(!isMobile) {
+		/*if(!isMobile) {
 		
 		$(this).find('.excerpt').css("height",h);
 		$(this).find('.excerpt').html("");
@@ -608,7 +650,7 @@ var countFeatures = 0;
 
 		//$(this).find('.excerpt').attr("data-height",h+'px');
 		
-		}
+		}*/
 		}
 		
 		
@@ -1260,6 +1302,7 @@ var countFeatures = 0;
 	    var w = $(this);
 
 		var tsrc = $(this).not('.customize').find('img').attr('src');
+		var tsrcObj = $(this).not('.customize').find('img').parent();
 		if(BrowserDetect.browser != "Explorer") {
 		//$(this).find('.excerpt').hide();
 		}
@@ -1288,6 +1331,21 @@ var countFeatures = 0;
 	            }
 	        }).error(function () {
 	            // notify the user that the image could not be loaded
+	            //tsrcObj.html("<div class='noImageSpacer2'></div>");
+	            
+	            //console.log(delaychange.attr("src"));
+	           
+				// console.log(tsrcObj.html());
+	            //tsrc = tsrc.replace(/^https:\/\//i, 'http://');
+	            tsrcObj.html("<div class='noImageSpacer2'></div>");
+	            tsrcObj.next().removeClass('imagePresent');
+	            // console.log(tsrcObj.html());
+	            //console.log(delaychange.attr("src"));
+				
+	           
+	            
+	            $('.loadBar').fadeOut(300);
+	            reDraw();
 	        }).attr('src', tsrc);
         
         
@@ -1847,18 +1905,12 @@ var countFeatures = 0;
 			});
 		}
 		
-		var peoplecount = 0;	
-		
-		
-		
+		var peoplecount = 0;		
 		
 		//Regular Expression Search Filter Auto Complete
 		$("#s").keyup(function () {
 			var filter = $(this).val(), count = 0;
-			//$("#cals_uwds-q").attr("value",filter);
-			
-			
-
+			$("#cals_uwds-q").attr("value",filter);
 			
 			
 			$.ajax({
@@ -1910,13 +1962,13 @@ var countFeatures = 0;
                                                                             output+='<div class="person_title"><strong>Title: </strong>'
                                                                                         + record["titles"][j]["title"] +
                                                                                     '</div>';
-                                                                        }*/
+                                                                        }
                                                                         
                                                                         if(record["titles"][j]["department"]){
                                                                             output+='<div class="person_department"><strong>Dept: </strong>'
                                                                                         + record["titles"][j]["department"] +
                                                                                     '</div>';
-                                                                        }
+                                                                        }*/
                                                                         
                                                                         
                                                                             output+='</a>' +
@@ -1933,13 +1985,13 @@ var countFeatures = 0;
     
                                 }
                                 
-                                //$("#cals_uwds_search_results").html(output);
+                                $("#cals_uwds_search_results").html(output);
                                 $(".filtered .directory").html(output);
                                 //console.log(XMLHttpRequest);	
                               
                               },
                     error: function(){ 
-                            //$("#cals_uwds_search_results").html('Data could not be retrieved.');
+                            $("#cals_uwds_search_results").html('Data could not be retrieved.');
                             
                             }
                 });
@@ -2026,9 +2078,6 @@ var countFeatures = 0;
 		        }
 		            
     	});
-    	
-    				
-
     	
     	 var seen = {};
 			$('.filtered li').each(function() {
