@@ -4560,7 +4560,7 @@ transform: rotate(900deg);
 
 .box.fullbleed, .box.fullbleed img {
 	margin-right: 0px;
-	max-width: 100%;
+	max-width: 200%;
 	
 	-webkit-border-radius: 0px;
 -moz-border-radius: 0px;
