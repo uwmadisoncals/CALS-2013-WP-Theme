@@ -27,25 +27,9 @@ get_header(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 				
-					<div class="row clearfix">
-						<div class="span-50">
-							<?php the_field('feature_container_1'); ?>
-						</div>
-						<div class="span-50">
-							<?php the_field('feature_container_2'); ?>
-						</div>
-					</div>
 					
-					<div class="row clearfix">
-						<div class="span-50">
-							<?php the_field('feature_container_3'); ?>
-						</div>
-						<div class="span-50">
-							<?php the_field('feature_container_4'); ?>
-						</div>
-					</div>
 					
-					<?php get_template_part( 'content', 'page' ); ?>
+					<?php get_template_part( 'content', 'page-alumni' ); ?>
 
 					<?php get_template_part('nav_menu', 'explore');?>
 

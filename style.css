@@ -4548,6 +4548,15 @@ transform: rotate(900deg);
 	height: 200px;
 }
 
+.page-template-page-alumni-php .row .box {
+	height: 300px;
+}
+
+.pagefeatureboxes {
+	margin-left: -30px;
+	margin-right: -30px;
+}
+
 .row .box img {
 	width: 100%;
 }
