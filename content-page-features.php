@@ -32,7 +32,32 @@
 											<?php the_field('feature_container_1'); ?>
                                              </div>
                             <div class="topShade"></div>
-							<div class="bottomShade"></div>		
+							<div class="bottomShade"></div>	
+							
+							<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>	
 							
 						</div>
 						<div class="span-50 box fullbleed">
@@ -43,6 +68,31 @@
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>	
+							
+							<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>
 						</div>
 					</div>
 					
@@ -55,6 +105,31 @@
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>	
+							
+							<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>
 						</div>
 						<div class="span-50 box fullbleed">
 							<h2><?php the_field('feature_container_4_title'); ?></h2>
@@ -64,6 +139,31 @@
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>	
+							
+							<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div> 
+
+						<div class="shade"></div>
 						</div>
 					</div>
 		</div>
