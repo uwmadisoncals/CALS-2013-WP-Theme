@@ -23,20 +23,47 @@
 		<?php the_content(); ?>
 		<div class="pagefeatureboxes">
 		<div class="row clearfix">
-						<div class="span-50 box">
-							<?php the_field('feature_container_1'); ?>
+						<div class="span-50 box fullbleed">
+						
+							<h2><?php the_field('feature_container_1_title'); ?></h2>
+							<img src="<?php the_field('feature_container_1_image'); ?>" alt="" />
+							
+							<div class="boxContent">
+											<?php the_field('feature_container_1'); ?>
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>		
+							
 						</div>
-						<div class="span-50 box">
-							<?php the_field('feature_container_2'); ?>
+						<div class="span-50 box fullbleed">
+							<h2><?php the_field('feature_container_2_title'); ?></h2>
+							<img src="<?php the_field('feature_container_2_image'); ?>" alt="" />
+							<div class="boxContent">
+											<?php the_field('feature_container_2'); ?>
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>	
 						</div>
 					</div>
 					
 					<div class="row clearfix">
-						<div class="span-50 box">
-							<?php the_field('feature_container_3'); ?>
+						<div class="span-50 box fullbleed">
+							<h2><?php the_field('feature_container_3_title'); ?></h2>
+							<img src="<?php the_field('feature_container_3_image'); ?>" alt="" />
+							<div class="boxContent">
+											<?php the_field('feature_container_3'); ?>
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>	
 						</div>
-						<div class="span-50 box">
-							<?php the_field('feature_container_4'); ?>
+						<div class="span-50 box fullbleed">
+							<h2><?php the_field('feature_container_4_title'); ?></h2>
+							<img src="<?php the_field('feature_container_4_image'); ?>" alt="" />
+							<div class="boxContent">
+											<?php the_field('feature_container_4'); ?>
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>	
 						</div>
 					</div>
 		</div>

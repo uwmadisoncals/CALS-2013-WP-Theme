@@ -4042,8 +4042,12 @@ min-height: 220px;
 	padding: 0px;
 }
 
-.row {
+.home .row {
 	margin-bottom: 1em;
+}
+
+.row {
+	margin-bottom: 0px;
 }
 
 .row .box {
@@ -4548,9 +4552,31 @@ transform: rotate(900deg);
 	height: 200px;
 }
 
-.page-template-page-alumni-php .row .box {
-	height: 300px;
+.row .box {
+	height: 200px;
 }
+
+
+
+.box.fullbleed, .box.fullbleed img {
+	margin-right: 0px;
+	max-width: 100%;
+	
+	-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+}
+
+.box.fullbleed img {
+	height: 100%;
+}
+
+.box.fullbleed.span-50 {
+	width: 50%;
+	margin-right: 0px;
+	
+}
+
 
 .pagefeatureboxes {
 	margin-left: -30px;
@@ -4561,7 +4587,7 @@ transform: rotate(900deg);
 	width: 100%;
 }
 
-.home .row .box h2 {
+.row .box h2 {
 	font-size: 13px;
 	position: absolute;
 	top: 20px;
