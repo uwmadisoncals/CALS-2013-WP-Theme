@@ -4019,6 +4019,7 @@ h1.logo {
 
 .single #primary, .page #primary {
 	width: 938px;
+	
 	/*padding-right: 240px;*/
 }
 
@@ -4067,6 +4068,7 @@ min-height: 220px;
 	box-shadow: none;
 	border: none;
 	padding: 0px;
+	overflow: visible;
 }
 
 .home .row {
