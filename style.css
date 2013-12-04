@@ -3788,6 +3788,13 @@ a code {
 	color:#fff;
 }
 
+.fixedBottom {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
 #uwred #page a, #uwred #page a code {
 	color: #ac0809;
 }
