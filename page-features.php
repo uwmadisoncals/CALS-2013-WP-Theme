@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Alumni Page
+ * Template Name: Feature Landing Page
  *
  * Description: Twenty Twelve loves the no-sidebar look as much as
  * you do. Use this page template to remove the sidebar from any page.
@@ -29,7 +29,7 @@ get_header(); ?>
 				
 					
 					
-					<?php get_template_part( 'content', 'page-alumni' ); ?>
+					<?php get_template_part( 'content', 'page-features' ); ?>
 
 					<?php get_template_part('nav_menu', 'explore');?>
 
