@@ -23,7 +23,7 @@
 		<?php the_content(); ?>
 		
 		<div class="pagefeatureboxes">
-		
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/twitterFetcher_v10_min.js"></script>
 		<div class="row clearfix">
 						<div class="span-50 box fullbleed">
 						
@@ -41,6 +41,7 @@
 							<h2><?php the_field('feature_container_2_title'); ?></h2>
 							<img src="<?php the_field('feature_container_2_image'); ?>" alt="" />
 							<div class="boxContent">
+											<div id="firstRecentTweet"></div>
 											<?php the_field('feature_container_2'); ?>
                                              </div>
                             <div class="topShade"></div>
