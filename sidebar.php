@@ -43,10 +43,11 @@ if ( 'content' != $current_layout ) :
 <?php if ( 'content' == $current_layout ) : if ( !is_home() ) {
     // This is not the homepage
  ?>
-	<div class="searchSidebar">
-	<?php if(is_search()) {
+	
+	<?php if(is_search()) { ?>
 		//Show staff results here
-		
+	<div class="searchSidebar">
+		<?php
 		cals_uw_directory_search($small=true, $add_class = 'search_results_side'); ?>
 		
 		

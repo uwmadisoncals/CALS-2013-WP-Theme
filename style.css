@@ -35,6 +35,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 :focus {/* remember to define focus styles! */
 	outline: 0;
 }
+
+.clear {
+	clear: both;
+}
 body {
 	background: #fff;
 	line-height: 1;
@@ -1131,7 +1135,7 @@ border-radius: 0px;
 	clear: both;
 	padding: 0 0 0;
 	margin-top: -320px;
-	padding-bottom: 320px;
+	
 	z-index:3;
 	position: relative;
 }
@@ -1140,7 +1144,6 @@ border-radius: 0px;
 	clear: both;
 	padding: 0 0 0;
 	margin-top: -150px;
-	padding-bottom: 150px;
 	z-index:3;
 	position: relative;
 }
