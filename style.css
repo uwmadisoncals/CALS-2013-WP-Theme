@@ -4723,6 +4723,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 #firstRecentTweet {
 	margin-bottom: 8px;
+	color: #fff;
 }
 
 .box .topShade {

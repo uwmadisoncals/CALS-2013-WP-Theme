@@ -11,7 +11,7 @@
 	
 	 <?php	if ( has_post_thumbnail() ) { ?>
 		 					<div class="featuredImage">
-		    					<?php echo get_the_post_thumbnail($page->ID, 'large'); ?>
+		    					<?php echo get_the_post_thumbnail($page->ID, 'full'); ?>
 		 					</div>
 						<?php } ?>
 	<header class="entry-header">
