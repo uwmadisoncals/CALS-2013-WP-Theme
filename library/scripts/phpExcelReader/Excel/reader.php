@@ -30,7 +30,7 @@
 //require_once 'PEAR.php';
 //require_once 'Spreadsheet/Excel/Reader/OLERead.php';
 
-require_once('/var/www/cals.main/wp-content/themes/cals_home/library/scripts/phpExcelReader/Excel/oleread.inc');
+require_once(get_stylesheet_directory().'/library/scripts/phpExcelReader/Excel/oleread.inc');
 //require_once 'OLE.php';
 
 define('SPREADSHEET_EXCEL_READER_BIFF8',             0x600);

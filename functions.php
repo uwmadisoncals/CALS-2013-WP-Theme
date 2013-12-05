@@ -343,7 +343,7 @@ function cals_get_current_committee_members($atts){
 	
 	// ExcelFile($filename, $encoding);
 	$data = new Spreadsheet_Excel_Reader();
-
+	
 	// Set output Encoding.
 	$data->setOutputEncoding('CP1251');	
 	
