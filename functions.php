@@ -335,6 +335,72 @@ function twentyeleven_continue_reading_link() {
 	//return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
 }
 
+function cals_get_current_committee_members($atts){
+	
+	$committee_name = $atts['committee_name'];
+	
+	include_once(get_stylesheet_directory().'/library/scripts/phpExcelReader/Excel/reader.php');
+	
+	// ExcelFile($filename, $encoding);
+	$data = new Spreadsheet_Excel_Reader();
+
+	// Set output Encoding.
+	$data->setOutputEncoding('CP1251');	
+	
+	//Add row offsset
+	$data->_rowoffset = 0;
+	
+	//Load file
+	$data->read($_SERVER['DOCUMENT_ROOT'].'/wp-content/uploads/cals_committees/cals_committee_member.xls');
+	
+	error_reporting(E_ALL ^ E_NOTICE);
+	
+
+	$now = time();
+	
+	for ($i = 1; $i <= $data->sheets[0]['numRows']; $i++) {
+		$start_date = strtotime($data->sheets[0]['cells'][$i][5]);
+		$end_date = strtotime($data->sheets[0]['cells'][$i][6]);
+		
+		//for ($j = 1; $j <= $data->sheets[0]['numCols']; $j++) {
+			if ($committee_name == $data->sheets[0]['cells'][$i][1] && $now >= $start_date && $now <=$end_date){
+				
+				$records[] = array('name' => $data->sheets[0]['cells'][$i][2], 
+								   'last_name' => $data->sheets[0]['cells'][$i][3] ,
+								   'start_date' => $start_date,
+								   'end_date' => $end_date,
+								   'classification' => $data->sheets[0]['cells'][$i][4] 
+								   );				
+			}
+		//}	
+	}
+	
+	//Sort records by last name
+		
+		//Obtain list of columns
+		foreach ($records as $key => $row){
+			$name[$key] = $row['name'];
+			$last_name[$key] = $row['last_name'];
+		}
+		
+		//Sort data by last_name, ascending
+		array_multisort($last_name, SORT_ASC, $records);
+		
+	//print records
+	foreach($records as $record){
+	
+		//$output.= '<li><strong>'.$record['name'].' '.$record['last_name'] .'</strong>, '.$record['classification'].' ('.date('Y', $record['start_date']). ' - '.date('Y', $record['end_date']).')</li>';
+
+		$output.= '<li><strong>'.$record['name'].' '.$record['last_name'] .'</strong>, '.$record['classification'].' ('.date('Y', $record['end_date']).')</li>';
+	
+	}
+	
+	return '<h4>Current members</h4><ul>'.$output.'</ul>';
+
+}
+
+add_shortcode('cals_committee_members', 'cals_get_current_committee_members');
+
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and twentyeleven_continue_reading_link().
  *
