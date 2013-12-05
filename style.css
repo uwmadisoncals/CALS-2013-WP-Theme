@@ -256,6 +256,10 @@ body {
 	
 	width: 760px;
 }
+
+.page #content.fullWidth {
+	width: 938px;
+}
 #secondary {
 	float: right;
 	
@@ -4583,6 +4587,10 @@ transform: rotate(900deg);
 
 .row .box {
 	height: 200px;
+}
+
+.fullWidth .row .box {
+	height: 260px;
 }
 
 

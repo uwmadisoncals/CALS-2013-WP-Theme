@@ -23,7 +23,7 @@ get_header(); ?>
 
 		<div id="primary">
 		
-			<div id="content" role="main">
+			<div id="content" class="fullWidth" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 				
@@ -31,14 +31,14 @@ get_header(); ?>
 					
 					<?php get_template_part( 'content', 'page-125th' ); ?>
 
-					<?php get_template_part('nav_menu', 'explore');?>
+					<?php //get_template_part('nav_menu', 'explore');?>
 
 					<?php //comments_template( '', true ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 				
 			</div><!-- #content -->
-			<?php get_sidebar(); ?>
+			<?php //get_sidebar(); ?>
 			<div class="clear"></div>
 		</div><!-- #primary -->
 
