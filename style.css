@@ -4581,7 +4581,7 @@ transform: rotate(900deg);
 	margin-top: 12px;
 }
 
-.home .row .box {
+.home.page .fullWidth .row .box {
 	height: 200px;
 }
 
@@ -4589,7 +4589,7 @@ transform: rotate(900deg);
 	height: 200px;
 }
 
-.fullWidth .row .box {
+.page .fullWidth .row .box {
 	height: 260px;
 }
 
