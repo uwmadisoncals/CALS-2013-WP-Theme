@@ -396,7 +396,7 @@ function cals_get_current_committee_members($atts){
 	}
 	
 	return '<h4>Current members</h4><ul>'.$output.'</ul>';
-
+	
 }
 
 add_shortcode('cals_committee_members', 'cals_get_current_committee_members');

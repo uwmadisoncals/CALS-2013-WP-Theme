@@ -31,6 +31,7 @@
 //require_once 'Spreadsheet/Excel/Reader/OLERead.php';
 
 require_once(get_stylesheet_directory().'/library/scripts/phpExcelReader/Excel/oleread.inc');
+
 //require_once 'OLE.php';
 
 define('SPREADSHEET_EXCEL_READER_BIFF8',             0x600);
@@ -1074,6 +1075,7 @@ class Spreadsheet_Excel_Reader
     }
 
 }
+
 
 /*
  * Local variables:
