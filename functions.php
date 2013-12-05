@@ -353,8 +353,8 @@ function cals_get_current_committee_members($atts){
 	//Load file
 	$data->read($_SERVER['DOCUMENT_ROOT'].'/wp-content/uploads/cals_committees/cals_committee_member.xls');
 	
-	error_reporting(E_ALL ^ E_NOTICE);
-	
+	//error_reporting(E_ALL ^ E_NOTICE);
+	error_reporting(0);
 
 	$now = time();
 	
