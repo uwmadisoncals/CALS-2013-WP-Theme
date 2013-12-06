@@ -10,19 +10,23 @@ var countFeatures = 0;
         if (agentStr.indexOf("Trident/5.0") > -1) {
             if (agentStr.indexOf("MSIE 7.0") > -1)
                 mode = "IE9 Compatibility View";
+                alert("You are viewing the site in compatibility mode.  This is not the browser default.");
+                //document.write("<script src='js/html5.js'></script>");
             else
                 mode = "IE9";
         }
         else if (agentStr.indexOf("Trident/4.0") > -1) {
             if (agentStr.indexOf("MSIE 7.0") > -1)
                 mode = "IE8 Compatibility View";
+                alert("You are viewing the site in compatibility mode.  This is not the browser default.");
+                 //document.write("<script src='js/html5.js'></script>");
             else
                 mode = "IE8";
         }
         else
             mode = "IE7";
 
-        document.title = "Browser Mode:\t" + mode;
+        //document.title = "Browser Mode:\t" + mode;
 
 	   
 	  setInterval(function() {
