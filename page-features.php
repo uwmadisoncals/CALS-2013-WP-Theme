@@ -31,7 +31,7 @@ get_header(); ?>
 					
 					<?php get_template_part( 'content', 'page-features' ); ?>
 
-					<?php get_template_part('nav_menu', 'explore');?>
+					<?php //get_template_part('nav_menu', 'explore');?>
 
 					<?php //comments_template( '', true ); ?>
 
