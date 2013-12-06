@@ -4,15 +4,26 @@ $(function(){
 
 var countFeatures = 0;
 	   
-	  /* $("a.moreButton").mouseover(function() {
-		  $(this).parent().find("img").addClass("blurAnim");
-		  
-	   });
 	   
-	   $("a.moreButton").mouseout(function() {
-		  $(this).parent().find("img").removeClass("blurAnim");
-		  
-	   });*/
+	   var agentStr = navigator.userAgent;
+        var mode;
+        if (agentStr.indexOf("Trident/5.0") > -1) {
+            if (agentStr.indexOf("MSIE 7.0") > -1)
+                mode = "IE9 Compatibility View";
+            else
+                mode = "IE9";
+        }
+        else if (agentStr.indexOf("Trident/4.0") > -1) {
+            if (agentStr.indexOf("MSIE 7.0") > -1)
+                mode = "IE8 Compatibility View";
+            else
+                mode = "IE8";
+        }
+        else
+            mode = "IE7";
+
+        document.title = "Browser Mode:\t" + mode;
+
 	   
 	  setInterval(function() {
 		  $("body").toggleClass("relative");
