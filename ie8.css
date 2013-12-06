@@ -21,6 +21,10 @@
 	width: 49%;
 }
 
+.box.span-33 {
+	width: 32%;
+}
+
 .collegeFeature .slideImage {
 	background-position: center top;
 }
