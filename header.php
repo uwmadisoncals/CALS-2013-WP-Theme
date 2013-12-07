@@ -82,6 +82,7 @@
 	
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/main.css" />
 <!--[if IE]>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/ie.css" />
 <![endif]-->
@@ -139,7 +140,10 @@ $current_colorscheme = $options['link_color'];
 ?>
 
 <body <?php body_class(); ?> id="<?php echo $current_colorscheme; ?>">
-
+<div class="ieWarning" style="display: none;">
+	<h1>It appears your Internet Explorer is set to force compatibility mode.  This means your browser acts like its from 2002.</h1>
+	<p>Please turn this off so your browser can behave normally and display this webpage.</p>
+</div>
 <div id="page" class="hfeed">
 	<header id="branding" role="banner">
 		<div class="headerCentered">

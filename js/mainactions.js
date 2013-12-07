@@ -3,7 +3,7 @@ $(function(){
 
 
 var countFeatures = 0;
-	   
+	   var ieWarning = localStorage.getItem("ieWarning");
 	   
 	   var agentStr = navigator.userAgent;
         var modeType;
@@ -29,9 +29,16 @@ var countFeatures = 0;
             modeType = "IE7";
 
 
-		if(modeType == "IE9 Compatibility View") {
-			console.log("hi");
+		if(modeType == "IE9 Compatibility View" || modeType == "IE8 Compatibility View") {
+			if(ieWarning != "dismiss") {
+				$(".ieWarning").slideDown();
+			}
 		}
+		
+		$(".ieWarningDismiss").click(function() {
+			$(".ieWarning").slideUp();
+			localStorage.setItem("ieWarning","dismiss");
+		});
         //document.title = "Browser Mode:\t" + mode;
 
 	   
