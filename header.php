@@ -144,7 +144,7 @@ $current_colorscheme = $options['link_color'];
 <div class="ieWarning" style="display: none;">
 	<h1>It appears your Internet Explorer is set to force compatibility mode.  This means your browser acts like its from 2002.</h1>
 	<p>To allow this site to behave normally, turn this off.</p>
-	<a href="#" class="button ieWarningDismissOnce">Dismiss and don't bother me again.</a> <a href="#" class="button ieWarningDismiss">Dismiss and don't bother me again.</a>
+	<a href="#" class="button ieWarningDismissOnce">Dismiss</a> <a href="#" class="button ieWarningDismiss">Dismiss and don't bother me again</a>
 </div>
 <div id="page" class="hfeed">
 	<header id="branding" role="banner">
