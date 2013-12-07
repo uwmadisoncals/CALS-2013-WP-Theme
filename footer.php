@@ -12,6 +12,7 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" role="contentinfo">
+		<div class="ieFooter">
 		<div class="inner">
 			<div id="pre-footer">
 			<div class="linksContainer">
@@ -62,7 +63,7 @@ University of Wisconsin Foundation.</p>
 					get_sidebar( 'footer' );
 			?>
 		</div>
-			
+	</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

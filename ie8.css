@@ -27,8 +27,9 @@
 
 .collegeFeature .slideImage {
 	background-position: center top;
+	background-repeat: repeat-x;
 }
 
-#colophon {
+.ieFooter {
 	background: #3c3b3b;
 }
