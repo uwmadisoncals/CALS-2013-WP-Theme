@@ -6,26 +6,32 @@ var countFeatures = 0;
 	   
 	   
 	   var agentStr = navigator.userAgent;
-        var mode;
+        var modeType;
         if (agentStr.indexOf("Trident/5.0") > -1) {
             if (agentStr.indexOf("MSIE 7.0") > -1)
-                mode = "IE9 Compatibility View";
-                alert("You are viewing the site in compatibility mode.  This is not the browser default.");
-                //document.write("<script src='js/html5.js'></script>");
+                modeType = "IE9 Compatibility View";
+                
+               
+                
             else
-                mode = "IE9";
+                modeType = "IE9";
         }
         else if (agentStr.indexOf("Trident/4.0") > -1) {
             if (agentStr.indexOf("MSIE 7.0") > -1)
-                mode = "IE8 Compatibility View";
-                alert("You are viewing the site in compatibility mode.  This is not the browser default.");
-                 //document.write("<script src='js/html5.js'></script>");
+                modeType = "IE8 Compatibility View";
+                
+             
+                
             else
-                mode = "IE8";
+                modeType = "IE8";
         }
         else
-            mode = "IE7";
+            modeType = "IE7";
 
+
+		if(modeType == "IE9 Compatibility View") {
+			console.log("hi");
+		}
         //document.title = "Browser Mode:\t" + mode;
 
 	   
