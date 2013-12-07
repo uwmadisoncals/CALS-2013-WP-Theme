@@ -35,7 +35,8 @@ var countFeatures = 0;
 			}
 		}
 		
-		$(".ieWarningDismiss").click(function() {
+		$(".ieWarningDismiss").click(function(e) {
+			e.preventDefault();
 			$(".ieWarning").slideUp();
 			localStorage.setItem("ieWarning","dismiss");
 		});
