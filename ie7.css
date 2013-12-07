@@ -33,3 +33,7 @@
 	position: relative;
 	z-index:5;
 }
+
+#colophon {
+	background: #3c3b3b;
+}
