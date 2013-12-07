@@ -40,6 +40,12 @@ var countFeatures = 0;
 			$(".ieWarning").slideUp();
 			localStorage.setItem("ieWarning","dismiss");
 		});
+		
+		$(".ieWarningDismissOnce").click(function(e) {
+			e.preventDefault();
+			$(".ieWarning").slideUp();
+			//localStorage.setItem("ieWarning","dismiss");
+		});
         //document.title = "Browser Mode:\t" + mode;
 
 	   

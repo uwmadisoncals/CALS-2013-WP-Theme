@@ -143,8 +143,8 @@ $current_colorscheme = $options['link_color'];
 <body <?php body_class(); ?> id="<?php echo $current_colorscheme; ?>">
 <div class="ieWarning" style="display: none;">
 	<h1>It appears your Internet Explorer is set to force compatibility mode.  This means your browser acts like its from 2002.</h1>
-	<p>Please turn this off so your browser can behave normally and display this webpage.</p>
-	<a href="#" class="ieWarningDismiss">Dismiss and don't bother me again.</a>
+	<p>To allow this site to behave normally, turn this off.</p>
+	<a href="#" class="button ieWarningDismissOnce">Dismiss and don't bother me again.</a> <a href="#" class="button ieWarningDismiss">Dismiss and don't bother me again.</a>
 </div>
 <div id="page" class="hfeed">
 	<header id="branding" role="banner">
