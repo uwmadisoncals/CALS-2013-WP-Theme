@@ -7064,14 +7064,20 @@ position: relative;
 position: relative;
 }
 
-#page #nav_sidebar .children li a.current_link.hasChildren, #nav_sidebar .children li .children li a.current_link.hasChildren {
+#page #nav_sidebar .children li a.current_link.hasChildren, #page #nav_sidebar .children li .children li a.current_link.hasChildren {
 	background: #f5e6da url("images/subnav_indent_last.png") no-repeat;
 	background-position: 35px center;
 }
 
+
 #page #nav_sidebar .children li .children li a.current_link {
 
 	background: #f2e7df url("images/subnav_indent.png") no-repeat;
+	background-position: 55px center;
+}
+
+#page #nav_sidebar .children li .children li:last-child a.current_link {
+	background: #f5e6da url("images/subnav_indent_last.png") no-repeat;
 	background-position: 55px center;
 }
 
