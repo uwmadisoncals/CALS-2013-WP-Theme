@@ -1,3 +1,5 @@
+@import "compass";
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -925,13 +927,27 @@ a.button:active {
 }
 #access li:hover > a,
 #access a:focus {
+	
 	background: #f9f9f9; /* Show a solid color for older browsers */
 	background: -moz-linear-gradient(#f9f9f9, #e5e5e5);
 	background: -o-linear-gradient(#f9f9f9, #e5e5e5);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#e5e5e5)); /* Older webkit syntax */
 	background: -webkit-linear-gradient(#f9f9f9, #e5e5e5);
 	color: #373737;
+	border-left: 1px solid #c0c0c0;
+	border-right: 1px solid #c0c0c0;
+	margin-left:-1px;
+	margin-right: -1px;
 }
+
+#access .sub-menu li:hover > a,
+#access .sub-menu a:focus {
+	border-left: none;
+	border-right: none;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 #access ul li:hover > ul {
 	display: block;
 }
@@ -1104,6 +1120,22 @@ border-radius: 0px;
 	border-left: 1px solid rgba(0,0,0,0.2);
 	/*background-color: rgba(255,255,255,.1);
 	border: 1px solid rgba(255,255,255,.2);*/
+}
+
+#branding #s::-webkit-input-placeholder {
+   color: rgba(0,0,0,0.3);
+}
+
+#branding #s:-moz-placeholder { /* Firefox 18- */
+   color: rgba(0,0,0,0.3);  
+}
+
+#branding #s::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(0,0,0,0.3);  
+}
+
+#branding #s:-ms-input-placeholder {  
+   color: rgba(0,0,0,0.3);  
 }
 
 #uwred #branding #s {
