@@ -79,7 +79,6 @@
         <!-- iPad (Retina, landscape) SPLASHSCREEN-->
         <link href="apple-touch-startup-image-1496x2048.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 
-	
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" /> 
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/main.css" />
@@ -142,9 +141,9 @@ $current_colorscheme = $options['link_color'];
 
 <body <?php body_class(); ?> id="<?php echo $current_colorscheme; ?>">
 <div class="ieWarning" style="display: none;">
-	<h1>It appears your Internet Explorer is set to force compatibility mode.  This means your browser acts like its from 2002.</h1>
-	<p>To allow this site to behave normally, turn this off.</p>
-	<a href="#" class="button ieWarningDismissOnce">Dismiss</a> <a href="#" class="button ieWarningDismiss">Dismiss and don't bother me again</a>
+	<h1>It appears you have adjusted your browser to force compatibility mode.  You will have a less than optimal experience when viewing this site as it was designed with modern web standards in mind.</h1>
+	<p>To allow this site to behave normally, turn this off by pressing <strong>alt</strong> then click <strong>Tools</strong> and then <strong>Compatibility View Settings</strong>.  If you uncheck <strong>Display all websites in compatibility view</strong>.</p>
+	<a href="#" class="button ieWarningDismissOnce">Dismiss</a> or <a href="#" class="button ieWarningDismiss">Dismiss and don't bother me again</a>
 </div>
 <div id="page" class="hfeed">
 	<header id="branding" role="banner">
