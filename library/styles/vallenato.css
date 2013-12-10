@@ -18,7 +18,7 @@
 	padding: 5px 10px;
 	border: 1px solid #cccccc;
 	cursor: pointer;
-	color: #666666;
+	color: #000000;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
@@ -28,19 +28,19 @@
 	-moz-border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	border-radius: 5px 5px 0 0;
-	background: url(http://www.cals.wisc.edu/wp-content/themes/cals_home/images/active-header.gif) #a89999;
+	background: url(http://www.cals.wisc.edu/wp-content/themes/cals_home/images/active-header.gif) #F5E6DA;
 	background-repeat: no-repeat;
 	background-position: right 50%;
 }
 
 .active-header:hover {
-	background: url(http://www.cals.wisc.edu/wp-content/themes/cals_home/images/active-header.gif) #a89999;
+	background: url(http://www.cals.wisc.edu/wp-content/themes/cals_home/images/active-header.gif) #F5E6DA;
 	background-repeat: no-repeat;
 	background-position: right 50%;
 }
 
 .inactive-header {
-	background: url(http://www.cals.wisc.edu/wp-content/themes/cals_home/images/inactive-header.gif) #ebebeb;
+	background: url(http://www.cals.wisc.edu/wp-content/themes/cals_home/images/inactive-header.gif) #EDEDED;
 	background-repeat: no-repeat;
 	background-position: right 50%;
 }
