@@ -18,8 +18,6 @@
 
 get_header(); wp_reset_query(); ?>
 
-<div class="mobileScroll">
-<a href="#" class="mobileNavTriggerLarge" style="display: none;"></a>
 
 
 	<div id="main">

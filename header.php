@@ -142,6 +142,22 @@ $current_colorscheme = $options['link_color'];
 ?>
 
 <body <?php body_class(); ?> id="<?php echo $current_colorscheme; ?>">
+
+<div id="mobile-menu">
+	<div id="mobile-menu-inner">
+	<div class="mobile-search"><input type="search" placeholder="Search" /></div>
+	<!--<a href="/" class="mobileHome">Home</a>-->
+	<div id="mobile-menu-container"></div>
+	</div>
+</div>
+<div id="mobile-filter">
+	<div id="mobile-filter-inner">
+	</div>
+</div>
+
+<div class="mobileScroll">
+<a href="#" class="mobileNavTriggerLarge" style="display: none;"></a>
+
 <div class="ieWarning" style="display: none;">
 	<h1>It appears you have adjusted your browser to force compatibility mode.  You will have a less than optimal experience when viewing this site as it was designed with modern web standards in mind.</h1>
 	<p>To allow this site to behave normally, turn this off by pressing <strong>alt</strong> then click <strong>Tools</strong> and then <strong>Compatibility View Settings</strong>.  If you uncheck <strong>Display all websites in compatibility view</strong> your browser will be restored to its default behavior for compatibility mode.</p>
@@ -290,17 +306,7 @@ $pages = get_pages();
 		</div>
 	</header><!-- #branding -->
 
-<div id="mobile-menu">
-	<div id="mobile-menu-inner">
-	<div class="mobile-search"><input type="search" placeholder="Search" /></div>
-	<!--<a href="/" class="mobileHome">Home</a>-->
-	<div id="mobile-menu-container"></div>
-	</div>
-</div>
-<div id="mobile-filter">
-	<div id="mobile-filter-inner">
-	</div>
-</div>
+
 
 <div class="headerPhotoBg">
 <div class="headertransition"></div>

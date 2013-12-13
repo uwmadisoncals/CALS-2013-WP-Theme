@@ -1,11 +1,7 @@
 $(function(){
 
 
-setInterval(function() { 
-	$(".headeroverlay, .headerbgBlur, .headerbgBlurImage").height($(".navWrapper").height());
-	$(".headerbgBlur, .headerbgBlurImage").width($(".navWrapper").width()); 
-	
-},1000);
+
 
 
 var countFeatures = 0;
@@ -57,7 +53,7 @@ var countFeatures = 0;
 	   
 	  setInterval(function() {
 		  $("body").toggleClass("relative");
-	  },1000);
+	  },1500);
 	  
 	  function anchoredFooter() {
 	  	  var footerElem = $("#colophon");
@@ -86,9 +82,14 @@ var countFeatures = 0;
 	  //run on page load
 	  anchoredFooter(); 
 	  
+	  $(".headeroverlay, .headerbgBlur, .headerbgBlurImage").height($(".navWrapper").height());
+	 $(".headerbgBlur, .headerbgBlurImage").width($(".navWrapper").width()); 
+	  
 	  //recheck when the window is resized
 	  $( window ).resize(function() {
 	 		anchoredFooter(); 
+	 		$(".headeroverlay, .headerbgBlur, .headerbgBlurImage").height($(".navWrapper").height());
+	 		$(".headerbgBlur, .headerbgBlurImage").width($(".navWrapper").width()); 
 	  });
 	  
 	  $('.newsItem .additionalContent').each(function(index) {
@@ -111,6 +112,8 @@ var countFeatures = 0;
 		  $(this).closest(".box").find(".windows8").show();
 		  $(this).closest(".box").find(".shade").fadeIn(400);
 	   });
+	   
+	   
 	   
 	   
 	   //Check to see if the homepage feature exists
@@ -941,7 +944,7 @@ var countFeatures = 0;
 			if($(".collegeFeature").hasClass("mobileShown")) {
 				
 			} else {
-			$(".collegeFeature").hide();
+			//$(".collegeFeature").hide();
 			}
 			$('.iosSlider').iosSlider({
 					desktopClickDrag: true,
