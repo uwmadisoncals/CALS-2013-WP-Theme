@@ -1,6 +1,12 @@
 $(function(){
 
 
+setInterval(function() { 
+	$(".headeroverlay, .headerbgBlur, .headerbgBlurImage").height($(".navWrapper").height());
+	$(".headerbgBlur, .headerbgBlurImage").width($(".navWrapper").width()); 
+	
+},1000);
+
 
 var countFeatures = 0;
 	   var ieWarning = localStorage.getItem("ieWarning");
