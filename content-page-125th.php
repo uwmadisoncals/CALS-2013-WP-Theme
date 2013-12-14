@@ -75,7 +75,7 @@
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>	
 							
-							<a href="https://twitter.com/search?q=%23UWCALS125&src=typd&f=realtime" class="moreButton">More Tweets</a>
+							<a href="https://twitter.com/search?q=%23UWCALS125&src=typd&f=realtime" class="moreButton">See More Shared CALS Memories</a>
 						
 						
 						<div class="windows8">

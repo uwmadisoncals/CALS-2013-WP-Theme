@@ -4176,7 +4176,7 @@ min-height: 220px;
 	
 	position: absolute;
 	top: 13px;
-	left: -180px;
+	left: -210px;
 	display: inline-block;
 	padding: 4px;
 	padding-left: 8px;
@@ -4765,6 +4765,10 @@ border-radius: 0px;
 	font-size: 11px;
 }
 
+.page .boxContent p {
+	font-size: 12px;
+}
+
 .box .bottomShade {
 	position: absolute;
 	bottom: 0px;
@@ -4801,6 +4805,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 #firstRecentTweet {
 	margin-bottom: 8px;
 	color: #fff;
+}
+
+#firstRecentTweet .tweet {
+	font-size: 18px;
+	margin-top: 10px;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+
+#firstRecentTweet .interact a {
+	margin-right: 8px;
+	font-weight: bold;
+}
+
+.uwmadison_events_container {
+	margin-top: 10px;
+}
+
+.uwmadison_events_container .uwmadison_event_date {
+	font-weight: bold;
+	margin-right: 8px;
+}
+
+.uwmadison_events_container li.uwmadison_event {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	font-size: 13px;
 }
 
 .box .topShade {
