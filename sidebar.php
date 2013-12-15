@@ -70,7 +70,7 @@ if ( 'content' != $current_layout ) :
 </div>
 
 </div>
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
 <script type="text/javascript">
 google.load("search","1");
 //google.load("jquery", 1.7.2);
