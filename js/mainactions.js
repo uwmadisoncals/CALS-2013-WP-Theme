@@ -51,9 +51,13 @@ var countFeatures = 0;
         //document.title = "Browser Mode:\t" + mode;
 
 	   
-	  setInterval(function() {
+	  setTimeout(function() {
 		  $("body").toggleClass("relative");
-	  },1500);
+	  },3000);
+	  
+	  setTimeout(function() {
+		  $("body").toggleClass("relative");
+	  },6000);
 	  
 	  function anchoredFooter() {
 	  	  var footerElem = $("#colophon");

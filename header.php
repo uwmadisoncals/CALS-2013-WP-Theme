@@ -112,6 +112,7 @@
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/mainactions.min.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/gsapi.min.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/blurobjs.js"></script>
+  
 
 
 <script src="<?php echo get_template_directory_uri(); ?>/library/scripts/vallenato.js" type="text/javascript"></script>
@@ -315,7 +316,7 @@ $pages = get_pages();
 
 <div class="collegeFeature">
 <ul class="slides">
-
+<canvas id="canvas"></canvas>
 
 					<?php //get_template_part( 'content', 'page' ); ?>
 
