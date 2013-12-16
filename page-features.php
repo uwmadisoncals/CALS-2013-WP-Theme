@@ -24,10 +24,13 @@ get_header(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 				
+					<?php if(is_page( 'faculty-staff' )) { ?>
+						<?php get_template_part( 'content', 'page-features-workplace' ); ?>
+					<?php } else { ?>
+						<?php get_template_part( 'content', 'page-features' ); ?>
+					<?php } ?>
 					
 					
-					<?php get_template_part( 'content', 'page-features' ); ?>
-
 					<?php //get_template_part('nav_menu', 'explore');?>
 
 					<?php //comments_template( '', true ); ?>
