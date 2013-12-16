@@ -30,11 +30,15 @@ body {
 	line-height: 1;
 }
 canvas {
-	display: block;
+	display: none;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	z-index:50;
+}
+
+.home canvas {
+	display: block;
 }
 ol, ul {
 	list-style: none;
