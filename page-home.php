@@ -14,7 +14,7 @@
  * @since Twenty Twelve 1.0
  */
  
-wp_enqueue_script( 'twentyeleven-showcase', get_template_directory_uri() . '/js/search.js', array( 'jquery' ), '2013-07-10' );
+//wp_enqueue_script( 'twentyeleven-showcase', get_template_directory_uri() . '/js/search.js', array( 'jquery' ), '2013-07-10' );
 
 get_header(); ?>
 
