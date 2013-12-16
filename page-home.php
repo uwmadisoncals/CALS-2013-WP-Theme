@@ -66,7 +66,7 @@ get_header(); ?>
   <?php endwhile; ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>							
-							<a href="http://news.dev.cals.wisc.edu" class="moreButton">More News</a>
+							<a href="http://news.cals.wisc.edu" class="moreButton">More News</a>
 						
 						
 						<div class="windows8">
@@ -198,7 +198,7 @@ get_header(); ?>
   <?php endwhile; ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>							
-							<a href="http://ecals.dev.cals.wisc.edu" class="moreButton">More Announcements</a>
+							<a href="http://ecals.cals.wisc.edu" class="moreButton">More Announcements</a>
 						<div class="windows8">
 							<div class="wBall" id="wBall_1">
 							<div class="wInnerBall">
@@ -327,7 +327,7 @@ get_header(); ?>
   <?php endwhile; ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>
-<a href="http://news.dev.cals.wisc.edu/category/departments/cals-faces/" class="moreButton">More Faces</a>
+<a href="http://news.cals.wisc.edu/category/departments/cals-faces/" class="moreButton">More Faces</a>
 <div class="windows8">
 							<div class="wBall" id="wBall_1">
 							<div class="wInnerBall">
