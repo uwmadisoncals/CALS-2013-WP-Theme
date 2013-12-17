@@ -2141,6 +2141,7 @@ var countFeatures = 0;
 		   
 		    
 		    $("#filter-count").text(count+peoplecount);
+		    
 		    if((count + peoplecount) > 0) {
 			            $(".filtered").show();
 			            $("#s").addClass("notEmpty");
