@@ -147,9 +147,11 @@ $current_colorscheme = $options['link_color'];
 
 <div id="mobile-menu">
 	<div id="mobile-menu-inner">
-	<div class="mobile-search"><input type="search" placeholder="Search" /></div>
+	<!--<div class="mobile-search"><input type="search" placeholder="Search" /></div>-->
 	<!--<a href="/" class="mobileHome">Home</a>-->
-	<div id="mobile-menu-container"></div>
+	<div id="mobile-menu-container" aria-hidden="true">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+	</div>
 	</div>
 </div>
 <div id="mobile-filter">
@@ -158,14 +160,16 @@ $current_colorscheme = $options['link_color'];
 </div>
 
 <div class="mobileScroll">
-<a href="#" class="mobileNavTriggerLarge" style="display: none;"></a>
 
+<a href="#" class="mobileNavTriggerLarge" style="display: none;"></a>
+<a href="#" class="mobileNavTrigger" aria-hidden="true">Navigation</a>
 <div class="ieWarning" style="display: none;">
 	<h1>It appears you have adjusted your browser to force compatibility mode.  You will have a less than optimal experience when viewing this site as it was designed with modern web standards in mind.</h1>
 	<p>To allow this site to behave normally, turn this off by pressing <strong>alt</strong> then click <strong>Tools</strong> and then <strong>Compatibility View Settings</strong>.  If you uncheck <strong>Display all websites in compatibility view</strong> your browser will be restored to its default behavior for compatibility mode.</p>
 	<a href="#" class="button ieWarningDismissOnce">Dismiss</a> or <a href="#" class="button ieWarningDismiss">Dismiss and don't bother me again</a>
 </div>
 <div id="page" class="hfeed">
+	
 	<header id="branding" role="banner">
 		<div class="headerCentered">
 			<hgroup class="heading">
@@ -221,8 +225,8 @@ $current_colorscheme = $options['link_color'];
 			
 			<nav id="access" role="navigation">
 				<div class="headeroverlay">
-				<a href="#" class="mobileNavTrigger">Navigation</a>
-				<a href="#" class="mobileSettingsTrigger">Navigation</a>
+				
+				
 				<div class="mobileScrollTop"></div>
 				<div class="centerfix relative">
 				<a href="#" class="totop" title="Go to the top of the page">Go to the top of the page</a>

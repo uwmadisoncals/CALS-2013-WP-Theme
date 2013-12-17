@@ -1,4 +1,4 @@
-@import "compass";
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -821,7 +821,7 @@ a.button:active {
 	margin: 0 auto;
 	padding-bottom: 10px;
 	position: absolute;
-	z-index: 9999;
+	z-index: 90;
 }
 
 #branding .headerCentered {
@@ -4897,7 +4897,7 @@ nav {
 	border-radius: 4px;
 }
 
-#menu-main-menu {
+.navWrapper .menu {
 		padding-right: 180px;
 	}
 	
@@ -8130,6 +8130,47 @@ body.search .filtered {
 }
 
 
+a.mobileNavTrigger {
+	display: none;
+	position: absolute;
+	top: 3.7em;
+	right: 1em;
+	z-index:92;
+}
+
+
+.mobile a.mobileNavTrigger {
+	display: block;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	z-index:92;
+}
+
+#mobile-menu {
+	position:fixed;
+	height: 100%;
+	z-index:-1;
+	opacity: 0;
+}
+
+#mobile-menu ul {
+	list-style: none;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+#mobile-menu ul li {
+	margin-bottom: 1em;
+}
+
+#mobile-menu ul li a {
+	display: block;
+	font-size: 1.4em;
+	font-weight: bold;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
 
 @media only screen and (min-width : 960px) {
 	
