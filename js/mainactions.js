@@ -104,8 +104,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	     $(".mobileScroll").css("-moz-transition", "0.3s");	
     	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
@@ -113,8 +113,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
-    	    $("#access").css("-moz-transition", "0.3s");
-    	    $("#access").css("-moz-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-moz-transition", "0.3s");
+    	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
 	  });
 	  
 	  $('.newsItem .additionalContent').each(function(index) {
@@ -1018,7 +1018,7 @@ var countFeatures = 0;
 			    var menushown = false;
 			    var filtershown = false;
 				
-				if(isMobile.any()) {
+				if(isMobile.iOS()) {
 					
 				$("body").addClass("mobile");
    
@@ -1040,8 +1040,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	    $(".mobileScroll").css("-moz-transition", "0.3s");	
     	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
@@ -1049,8 +1049,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
-    	    $("#access").css("-moz-transition", "0.3s");
-    	    $("#access").css("-moz-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-moz-transition", "0.3s");
+    	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
     	    
     	    $("#mobile-menu").css("z-index", "-1");
     	    $("#mobile-menu").css("opacity", "0");
@@ -1069,8 +1069,8 @@ var countFeatures = 0;
     	    $("#mobile-filter").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-filter-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	    
     	    setTimeout(function() { $("#mobile-menu").show(); },500);
@@ -1093,8 +1093,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	    
     	    $(".mobileScroll").css("-moz-transition", "0.3s");	
@@ -1103,8 +1103,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
-    	    $("#access").css("-moz-transition", "0.3s");
-    	    $("#access").css("-moz-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-moz-transition", "0.3s");
+    	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
     	    
     	    $("#mobile-menu").css("z-index", "-1");
     	    $("#mobile-menu").css("opacity", "0");
@@ -1120,16 +1120,16 @@ var countFeatures = 0;
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(240px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(240px,0,0)");
     	    
     	    $(".mobileScroll").css("-moz-transition", "0.3s");	
     	    $(".mobileScroll").css("-moz-transform", "translate3d(240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "translate3d(0px,0,0)");
     	    
-    	    $("#access").css("-moz-transition", "0.3s");
-    	    $("#access").css("-moz-transform", "translate3d(240px,0,0)");
+    	    //$("#access").css("-moz-transition", "0.3s");
+    	    //$("#access").css("-moz-transform", "translate3d(240px,0,0)");
     	    
     	    $("#mobile-menu").css("opacity", "1");
     	    setTimeout(function() { $("#mobile-menu").css("z-index", "1");  },500);
@@ -1171,8 +1171,8 @@ var countFeatures = 0;
     	    $("#mobile-filter").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-filter-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	    
     	    setTimeout(function() { $("#mobile-menu").show(); },500);
@@ -1187,8 +1187,8 @@ var countFeatures = 0;
     	    $("#mobile-filter").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-filter-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-webkit-transform", "translate3d(0px,0,0)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(-240px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(-240px,0,0)");
     	    
     	    
     	    $(".mobileScroll").css("-moz-transition", "0.3s");	
@@ -1197,8 +1197,8 @@ var countFeatures = 0;
     	    $("#mobile-filter").css("-moz-transform", "translate3d(0px,0,0)");
     	    $("#mobile-filter-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-moz-transform", "translate3d(0px,0,0)");
-    	    $("#access").css("-moz-transition", "0.3s");
-    	    $("#access").css("-moz-transform", "translate3d(-240px,0,0)");
+    	    //$("#access").css("-moz-transition", "0.3s");
+    	    //$("#access").css("-moz-transform", "translate3d(-240px,0,0)");
     	    
     	    filtershown = true;
     	    
@@ -1244,8 +1244,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	     $(".mobileScroll").css("-moz-transition", "0.3s");	
     	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
@@ -1253,8 +1253,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
-    	    $("#access").css("-moz-transition", "0.3s");
-    	    $("#access").css("-moz-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-moz-transition", "0.3s");
+    	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
     	    
     	    setTimeout(function() { $("#mobile-filter").show(); },500);
     	    
@@ -1270,8 +1270,8 @@ var countFeatures = 0;
     	    $("#mobile-filter").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-filter-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	    
     	    setTimeout(function() { $("#mobile-menu").show(); },500);
@@ -1294,8 +1294,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	     $(".mobileScroll").css("-moz-transition", "0.3s");	
     	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
@@ -1303,8 +1303,8 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(0px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
-    	    $("#access").css("-moz-transition", "0.3s");
-    	    $("#access").css("-moz-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-moz-transition", "0.3s");
+    	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
     	    
     	    setTimeout(function() { $("#mobile-filter").show(); },500);
     	    
@@ -1320,8 +1320,8 @@ var countFeatures = 0;
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(240px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(240px,0,0)");
     	    
     	    
     	     $(".mobileScroll").css("-moz-transition", "0.3s");	
@@ -1329,8 +1329,8 @@ var countFeatures = 0;
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "translate3d(0px,0,0)");
     	    
-    	    $("#access").css("-moz-transition", "0.3s");
-    	    $("#access").css("-moz-transform", "translate3d(240px,0,0)");
+    	    //$("#access").css("-moz-transition", "0.3s");
+    	    //$("#access").css("-moz-transform", "translate3d(240px,0,0)");
     	    
     	    menushown = true;
     	    $("#mobile-menu").css("opacity", "1");
@@ -1369,8 +1369,8 @@ var countFeatures = 0;
     	    $("#mobile-filter").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-filter-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-webkit-transform", "scale(0.8)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	    
     	    setTimeout(function() { $("#mobile-menu").show(); },500);
@@ -1385,8 +1385,8 @@ var countFeatures = 0;
     	    $("#mobile-filter").css("-webkit-transform", "translate3d(0px,0,0)");
     	    $("#mobile-filter-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-webkit-transform", "translate3d(0px,0,0)");
-    	    $("#access").css("-webkit-transition", "0.3s");
-    	    $("#access").css("-webkit-transform", "translate3d(-240px,0,0)");
+    	    //$("#access").css("-webkit-transition", "0.3s");
+    	    //$("#access").css("-webkit-transform", "translate3d(-240px,0,0)");
     	    filtershown = true;
     	    
     	    

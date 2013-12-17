@@ -8133,19 +8133,11 @@ body.search .filtered {
 a.mobileNavTrigger {
 	display: none;
 	position: absolute;
-	top: 3.7em;
+	top: 3.5em;
 	right: 1em;
 	z-index:92;
 }
 
-
-.mobile a.mobileNavTrigger {
-	display: block;
-	position: absolute;
-	top: 1em;
-	right: 1em;
-	z-index:92;
-}
 
 #mobile-menu {
 	position:fixed;

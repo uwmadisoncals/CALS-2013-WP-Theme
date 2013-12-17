@@ -1,4 +1,16 @@
 /*  */
+
+@media only screen and (min-width : 960px) {
+	.mobileScroll {
+		-webkit-transform: none !important;
+		-moz-transform: none !important;
+		transform: none !important;
+		-webkit-transition: none !important;
+		-moz-transition: none !important;
+		transition: none !important;
+	}
+}
+
 @media only screen and (min-width : 640px) and (max-width : 960px) {
 	.page #primary, .single #primary, .page #content.fullWidth, #primary {
 		width: 98%;
@@ -6,7 +18,14 @@
 		margin-left: 1%;
 	}
 	
-	
+	.mobileScroll {
+		-webkit-transform: none !important;
+		-moz-transform: none !important;
+		transform: none !important;
+		-webkit-transition: none !important;
+		-moz-transition: none !important;
+		transition: none !important;
+	}
 	
 	.box.span-50:first-child {
 		margin-left: 1%;
@@ -146,6 +165,10 @@
 	display: block;
 	
 }
+
+#access {
+		opacity: 0;
+	}
 	
 	.mobileNavTriggerLarge {
 		position: fixed;
@@ -292,6 +315,14 @@
 		display: block;
 	}
 	
+	.mobile a.mobileNavTrigger {
+		display: block;
+		position: absolute;
+		top: 3em;
+		right: 1em;
+		z-index:92;
+	}
+	
 	#access .centerfix .navWrapper .menu {
 		display: none;
 	}
@@ -335,6 +366,10 @@
 		width: 98%;
 		margin-right: 1%;
 		margin-left: 1%;
+	}
+	
+	#access {
+		opacity: 0;
 	}
 	
 	.iPhone .mobileScroll {
@@ -474,6 +509,14 @@
 	
 	a.mobileNavTrigger {
 		display: block;
+	}
+	
+	.mobile a.mobileNavTrigger {
+		display: block;
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		z-index:92;
 	}
 	
 	#access .centerfix .navWrapper .menu {
