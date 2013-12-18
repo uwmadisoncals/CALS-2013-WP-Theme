@@ -1159,7 +1159,7 @@ var countFeatures = 0;
     	   return false; 
     });
 			
-			    $('.mobileSettingsTrigger').bind('touchend','click', function(){
+			    $('.mobileSettingsTrigger').bind('touchend', function(){
 				   
 				    $("#mobile-menu").hide();
 				    
@@ -1199,7 +1199,7 @@ var countFeatures = 0;
     	    $("#mobile-filter-inner").css("-moz-transform", "translate3d(0px,0,0)");
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(-240px,0,0)");
-    	    
+    	     
     	    filtershown = true;
     	    
     	    
