@@ -40,8 +40,9 @@ University of Wisconsin Foundation.</p>
         </div>
         
         <div class="copyright">
+        	<img src="<?php echo get_template_directory_uri(); ?>/images/footercrest2.png" alt="University of Wisconsin Madison" align="center" />
         	<div>&copy;Copyright 2013. All rights reserved. College of Agricultural and Life Sciences <a href="http://wisc.edu">University of Wisconsin-Madison</a></div>
-	        <img src="<?php echo get_template_directory_uri(); ?>/images/footer_crest.png" alt="University of Wisconsin Madison" align="center" />
+	        
 	        
 	       
         </div>
