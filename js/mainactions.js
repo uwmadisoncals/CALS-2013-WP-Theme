@@ -115,7 +115,7 @@ var countFeatures = 0;
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
-	  });
+	  }); 
 	  
 	  $('.newsItem .additionalContent').each(function(index) {
 		//console.log($(this).next().html());
