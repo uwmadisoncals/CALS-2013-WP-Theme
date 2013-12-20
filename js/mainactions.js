@@ -2,7 +2,32 @@ $(function(){
 
 
 
-
+$( "#page .box" ).each(function( index ) {
+  var imgS = $(this).find("img");
+  var imgSH = $(imgS).height();
+  var imgSW = $(imgS).width();
+  
+  var imgAR = imgSW / imgSH;
+  
+  
+  
+  
+  var boxH = $(this).height();
+  var boxW = $(this).width();
+  
+  var boxAR = boxW / boxH;
+  
+  
+  //console.log(imgAR + " " + boxAR);
+  if(boxAR >= imgAR) {
+	  $(imgS).css("width","100%");
+	  $(imgS).css("height","auto");
+  } else {
+	  $(imgS).css("height","100%");
+	  $(imgS).css("width","auto");
+  }
+  
+});
 
 var countFeatures = 0;
 	   var ieWarning = localStorage.getItem("ieWarning");
