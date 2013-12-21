@@ -1,33 +1,36 @@
 $(function(){
 
 
+function imageBoxFit() {
+	$( "#page .box" ).each(function( index ) {
+	  var imgS = $(this).find("img");
+	  var imgSH = $(imgS).height();
+	  var imgSW = $(imgS).width();
+	  
+	  var imgAR = imgSW / imgSH;
+	  
+	  
+	  
+	  
+	  var boxH = $(this).height();
+	  var boxW = $(this).width();
+	  
+	  var boxAR = boxW / boxH;
+	  
+	  
+	  //console.log(imgAR + " " + boxAR);
+	  if(boxAR >= imgAR) {
+		  $(imgS).css("width","100%");
+		  $(imgS).css("height","auto");
+	  } else {
+		  $(imgS).css("height","100%");
+		  $(imgS).css("width","auto");
+	  }
+	  
+	});
+}
 
-$( "#page .box" ).each(function( index ) {
-  var imgS = $(this).find("img");
-  var imgSH = $(imgS).height();
-  var imgSW = $(imgS).width();
-  
-  var imgAR = imgSW / imgSH;
-  
-  
-  
-  
-  var boxH = $(this).height();
-  var boxW = $(this).width();
-  
-  var boxAR = boxW / boxH;
-  
-  
-  //console.log(imgAR + " " + boxAR);
-  if(boxAR >= imgAR) {
-	  $(imgS).css("width","100%");
-	  $(imgS).css("height","auto");
-  } else {
-	  $(imgS).css("height","100%");
-	  $(imgS).css("width","auto");
-  }
-  
-});
+imageBoxFit();
 
 var countFeatures = 0;
 	   var ieWarning = localStorage.getItem("ieWarning");
@@ -117,6 +120,7 @@ var countFeatures = 0;
 	  //recheck when the window is resized
 	  $( window ).resize(function() {
 	 		anchoredFooter(); 
+	 		imageBoxFit();
 	 		$(".headeroverlay, .headerbgBlur, .headerbgBlurImage").height($(".navWrapper").height());
 	 		$(".headerbgBlur, .headerbgBlurImage").width($(".navWrapper").width()); 
 	 		
