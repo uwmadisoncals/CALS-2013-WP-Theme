@@ -141,11 +141,9 @@ $current_colorscheme = $options['link_color'];
 		 } ?>
 		<ul>
 		
-			<?php if( is_home() ) { ?>
-				<li class="current-menu-item"><a href="<?php echo home_url(); ?>">Home</a></li>
-			<?php } else { ?>
-				<li><a href="<?php echo home_url(); ?>">Home</a></li>
-			<?php } ?>
+			
+			<li><a href="<?php echo home_url(); ?>">Home</a></li>
+			
 		</ul>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</div>
