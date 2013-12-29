@@ -8146,24 +8146,216 @@ a.mobileNavTrigger {
 	height: 100%;
 	z-index:-1;
 	opacity: 0;
+	overflow: auto;
+}
+
+#mobile-menu h3.mainmenulabel {
+	margin-top: 3em;
+}
+
+#mobile-menu h3 {
+	padding-left: 1.2em;
+	padding-right: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 0px;
+	color: rgba(0,0,0,0.3);
 }
 
 #mobile-menu ul {
 	list-style: none;
-	margin-left: 1em;
+	margin-left: 0em;
 	margin-top: 1em;
 }
 
 #mobile-menu ul li {
 	margin-bottom: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
+	
 }
 
 #mobile-menu ul li a {
 	display: block;
 	font-size: 1.4em;
-	font-weight: bold;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	font-weight: 300;
+	padding: 1em;
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	border-radius: 3px;
+	-webkit-border-radius: 3px; 
+	
+}
+
+#mobile-menu ul li a:hover, #mobile-menu ul li a:focus {
+	background: rgba(0,0,0,0.1);
+	text-decoration: none;
+	color: rgba(0,0,0,0.7);
+}
+
+#mobile-menu ul li a.currentPage {
+	background: rgba(0,0,0,0.3);
+	color: #fff;
+}
+
+//Academics Mobile Menu Item
+#mobile-menu .Academics { 
+	background: url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px 12px; 
+	padding-left: 40px;
+}
+
+#mobile-menu ul li.current-menu-item a.Academics {
+	background: rgba(0,0,0,0.3) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -62px;
+	color: #fff;
+}
+
+#mobile-menu a.Academics:hover, #mobile-menu a.Academics:focus {
+	background: rgba(0,0,0,0.1) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -26px; 
+	
+}
+
+//Home Mobile Menu Item
+#mobile-menu .Home { 
+	background: url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -640px; 
+	padding-left: 40px;
+}
+
+#mobile-menu ul li.current-menu-item a.Home {
+	background: rgba(0,0,0,0.3) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -716px; 
+	color: #fff;
+}
+
+#mobile-menu a.Home:hover, #mobile-menu a.Home:focus {
+	background: rgba(0,0,0,0.1) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -676px; 
+	
+}
+
+
+//Departments Mobile Menu Item
+#mobile-menu .Departments { 
+	background: url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -108px; 
+	padding-left: 40px;
+}
+
+#mobile-menu ul li.current-menu-item a.Departments {
+	background: rgba(0,0,0,0.3) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -183px; 
+	color: #fff;
+}
+
+#mobile-menu a.Departments:hover, #mobile-menu a.Departments:focus {
+	background: rgba(0,0,0,0.1) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -145px; 
+	
+}
+
+
+//Workplace Mobile Menu Item
+#mobile-menu .Workplace { 
+	background: url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -232px; 
+	padding-left: 40px;
+}
+
+#mobile-menu ul li.current-menu-item a.Workplace {
+	background: rgba(0,0,0,0.3) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -308px; 
+	color: #fff;
+}
+
+#mobile-menu a.Workplace:hover, #mobile-menu a.Workplace:focus {
+	background: rgba(0,0,0,0.1) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -269px; 
+	
+}
+
+
+//Alumni Mobile Menu Item
+#mobile-menu .Alumni { 
+	background: url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -359px; 
+	padding-left: 40px;
+}
+
+#mobile-menu ul li.current-menu-item a.Alumni {
+	background: rgba(0,0,0,0.3) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -434px; 
+	color: #fff;
+}
+
+#mobile-menu a.Alumni:hover, #mobile-menu a.Alumni:focus {
+	background: rgba(0,0,0,0.1) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -396px; 
+	
+}
+
+
+//Industry Mobile Menu Item
+#mobile-menu .Industry.Community { 
+	background: url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -479px; 
+	padding-left: 40px;
+}
+
+#mobile-menu ul li.current-menu-item a.Industry.Community {
+	background: rgba(0,0,0,0.3) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -587px; 
+	color: #fff;
+}
+
+
+#mobile-menu a.Industry.Community:hover, #mobile-menu a.Industry.Community:focus {
+	background: rgba(0,0,0,0.1) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -535px; 
+	
+}
+
+
+//About CALS Mobile Menu Item
+#mobile-menu .About { 
+	background: url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -766px; 
+	padding-left: 40px;
+}
+
+#mobile-menu ul li.current-menu-item a.About {
+	background: rgba(0,0,0,0.3) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -851px; 
+	color: #fff;
+}
+
+#mobile-menu a.About:hover, #mobile-menu a.About:focus {
+	background: rgba(0,0,0,0.1) url("dist/mobilenav-sprite.png") no-repeat;
+	background-size: 20px 938px;
+	background-position: 12px -806px; 
+	
 }
 
 @media only screen and (min-width : 960px) {

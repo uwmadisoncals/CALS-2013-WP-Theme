@@ -136,6 +136,17 @@ $current_colorscheme = $options['link_color'];
 	<!--<div class="mobile-search"><input type="search" placeholder="Search" /></div>-->
 	<!--<a href="/" class="mobileHome">Home</a>-->
 	<div id="mobile-menu-container" aria-hidden="true">
+		<?php if( !is_home() ) {
+			 get_template_part('nav_menu-mobile', 'explore');
+		 } ?>
+		<ul>
+		
+			<?php if( is_home() ) { ?>
+				<li class="current-menu-item"><a href="<?php echo home_url(); ?>">Home</a></li>
+			<?php } else { ?>
+				<li><a href="<?php echo home_url(); ?>">Home</a></li>
+			<?php } ?>
+		</ul>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</div>
 	</div>

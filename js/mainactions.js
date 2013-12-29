@@ -1,6 +1,10 @@
 $(function(){
 
 
+$( "#mobile-menu a" ).each(function( index ) {
+  $(this).addClass($(this).text());
+});
+
 function imageBoxFit() {
 	$( "#page .box" ).each(function( index ) {
 	  var imgS = $(this).find("img").first();
