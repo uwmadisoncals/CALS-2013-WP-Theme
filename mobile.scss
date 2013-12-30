@@ -175,6 +175,7 @@
 	
 }
 
+
 #access {
 		opacity: 0;
 	}
@@ -394,6 +395,21 @@
 		margin-left: 1%;
 	}
 	
+	
+	.home.page #mobile-menu .blurredBodyCopy .top {
+	height: 150px;
+	overflow: hidden;
+}
+
+.page #mobile-menu .blurredBodyCopy .top {
+	height: 70px;
+	overflow: hidden;
+}
+
+#mobile-menu .blurredBodyCopy .middle {
+	padding-top: 2em;
+}
+
 	
 	
 	#access {

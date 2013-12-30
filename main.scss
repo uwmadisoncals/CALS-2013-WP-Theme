@@ -8094,7 +8094,7 @@ body.search .filtered {
 }
 
 .mobileScroll img {
-	-webkit-transform: translateZ(0);
+	/*-webkit-transform: translateZ(0);*/
 }
 
 #access .mobileNavTrigger, #access .mobileSettingsTrigger, #access .mobileScrollTop {
@@ -8196,9 +8196,6 @@ a.mobileNavTrigger {
 	z-index:-3;
 	top: 0px;
 	left: 0px;
-	
-	
-	
 	-webkit-filter: blur(18px);
 	-moz-filter: blur(18px);
 	-o-filter: blur(18px);
