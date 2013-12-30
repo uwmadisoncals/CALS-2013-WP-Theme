@@ -147,6 +147,35 @@ $current_colorscheme = $options['link_color'];
 		</ul>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</div>
+	
+	
+	</div>
+	<div class="sheet"></div>
+	<div class="sheetbg"></div>
+	<div class="blurredBodyCopy" aria-hidden="true">
+		<div class="top">
+			
+			<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 1 );
+					$loop = new WP_Query( $args );
+					$loopcount = 0;
+					while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+					    				<?php if ( has_post_thumbnail() ) {
+						    				
+						    				
+						    				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'large' );
+$url = $thumb['0']; ?>
+
+<img src="<?php echo $url; ?>">
+				 
+						    				<?php } ?> 
+  					
+  	
+					<?php endwhile; ?>
+			
+		</div>
+		<div class="middle"></div>
+		<div class="bottom"></div>
 	</div>
 </div>
 <div id="mobile-filter">

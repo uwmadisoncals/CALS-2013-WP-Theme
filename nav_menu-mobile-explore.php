@@ -8,9 +8,9 @@
 
 	if(!empty($child_pages)){?>
 		
-		
+		<h3>Explore</h3>
         <ul>
-			<li><h3>Explore</h3></li>
+			
 			<?php
             foreach($child_pages as $post){
             	setup_postdata($post);?>
@@ -26,9 +26,9 @@
                      </li>
                      
             <?php } ?>
-            <li><h3 class="mainmenulabel">Main Menu</h3></li>
+            
             </ul><!-- #nav_explore --> 
-		  
+		  <h3 class="mainmenulabel">Main Menu</h3>
 	<?php 
 	}
 
