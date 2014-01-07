@@ -112,6 +112,9 @@ footer, header, hgroup, menu, nav, section {
 	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 	box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 	overflow: hidden;
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing: border-box;
 }
 
 .recentPostsSideBar {
@@ -171,6 +174,8 @@ footer, header, hgroup, menu, nav, section {
 	border-radius: 4px;
 	color: #343434;
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	-moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 	box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
@@ -5511,7 +5516,7 @@ background-size: 100% auto;
 }*/
 
 .headerPhotoBg {
-	
+	z-index:-1;
 	height: 500px;
 	position: relative;
 	

@@ -5,6 +5,7 @@ $( "#mobile-menu a" ).each(function( index ) {
   $(this).addClass($(this).text());
 });
 
+
 //var mmIH = $("#mobile-menu-inner").height();
 
 //console.log(mmIH + " " + wHeight);
@@ -27,10 +28,15 @@ $("#mobile-menu-inner").css("overflow-y","auto");*/
 setTimeout(function() {
 //var mobileCopyTop = $(".slideImage img").first().html();
 
+if($('body').hasClass('search')) {
+	
+} else {
 var mobileCopyMiddle = $("#main").html();
 
 //$(".blurredBodyCopy .top").html(mobileCopyTop);	
+	
 $(".blurredBodyCopy .middle").html(mobileCopyMiddle);	
+}
 },1000);
 
 
@@ -179,9 +185,10 @@ var countFeatures = 0;
 	 		
 	 		/*$("#mobile-menu").css("z-index", "-1");
     	$("#mobile-menu").css("opacity", "0");*/
-    	$(".mobileNavTriggerLarge").hide();
+    		
+    		$(".mobileNavTriggerLarge").hide();
 	    	$(".mobileScroll").css("-webkit-transition", "0.3s");	
-    	    $(".mobileScroll").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-webkit-transform", "");
     	    $("#mobile-menu").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
@@ -190,11 +197,12 @@ var countFeatures = 0;
     	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	     $(".mobileScroll").css("-moz-transition", "0.3s");	
-    	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-moz-transform", "");
     	    $("#mobile-menu").css("-moz-transition", "0.3s");
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
+    	    
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
 	  }); 
@@ -1117,7 +1125,7 @@ var countFeatures = 0;
     	$(".home canvas").show();
     	$(".mobileNavTriggerLarge").hide();
 	    	$(".mobileScroll").css("-webkit-transition", "0.3s");	
-    	    $(".mobileScroll").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-webkit-transform", "");
     	    $("#mobile-menu").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
@@ -1126,7 +1134,7 @@ var countFeatures = 0;
     	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	    $(".mobileScroll").css("-moz-transition", "0.3s");	
-    	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-moz-transform", "");
     	    $("#mobile-menu").css("-moz-transition", "0.3s");
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
@@ -1171,7 +1179,7 @@ var countFeatures = 0;
     		$(".home canvas").show();
     		$(".mobileNavTriggerLarge").hide();
 	    	$(".mobileScroll").css("-webkit-transition", "0.3s");	
-    	    $(".mobileScroll").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-webkit-transform", "");
     	    $("#mobile-menu").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
@@ -1181,7 +1189,7 @@ var countFeatures = 0;
     	    
     	    
     	    $(".mobileScroll").css("-moz-transition", "0.3s");	
-    	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-moz-transform", "");
     	    $("#mobile-menu").css("-moz-transition", "0.3s");
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
@@ -1329,7 +1337,7 @@ var countFeatures = 0;
     	$("#mobile-menu").css("opacity", "0");*/
     	$(".mobileNavTriggerLarge").hide();
 	    	$(".mobileScroll").css("-webkit-transition", "0.3s");	
-    	    $(".mobileScroll").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-webkit-transform", "");
     	    $("#mobile-menu").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
@@ -1338,7 +1346,7 @@ var countFeatures = 0;
     	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	     $(".mobileScroll").css("-moz-transition", "0.3s");	
-    	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-moz-transform", "");
     	    $("#mobile-menu").css("-moz-transition", "0.3s");
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
@@ -1379,7 +1387,7 @@ var countFeatures = 0;
     	if(menushown) {
     		$(".mobileNavTriggerLarge").hide();
 	    	$(".mobileScroll").css("-webkit-transition", "0.3s");	
-    	    $(".mobileScroll").css("-webkit-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-webkit-transform", "");
     	    $("#mobile-menu").css("-webkit-transition", "0.3s");
     	    $("#mobile-menu").css("-webkit-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-webkit-transition", "0.3s");
@@ -1388,7 +1396,7 @@ var countFeatures = 0;
     	    //$("#access").css("-webkit-transform", "translate3d(0px,0,0)");
     	    
     	     $(".mobileScroll").css("-moz-transition", "0.3s");	
-    	    $(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
+    	    $(".mobileScroll").css("-moz-transform", "");
     	    $("#mobile-menu").css("-moz-transition", "0.3s");
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
