@@ -1806,6 +1806,7 @@ var countFeatures = 0;
 		
 	});
 
+	 
     //Initial Isotope Call
     $container.isotope({
         masonry: {
@@ -2360,7 +2361,7 @@ var countFeatures = 0;
 			$("#cals_uwds-q").attr("value",filter);
 			
 			
-			$.ajax({
+			$.ajax({ 
                   
                     url: 'http://www.wisc.edu/directories/json/?jsonp=?',
                     type: 'GET',
@@ -2442,8 +2443,11 @@ var countFeatures = 0;
                             
                             }
                 });
-			
-			
+
+
+
+				
+						
 			
 			
 			

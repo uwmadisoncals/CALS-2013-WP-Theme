@@ -19,6 +19,7 @@ get_header(); ?>
 						<h2>CALS Directory Search <small class="small_title">(Powered by <a href="http://www.wisc.edu/directories/" title="Link to UW-Madison Directory Search" target="_blank">UW-Madison Directory Search</a>)</small></h2>
 						<?php the_content(); ?>
                         <?php cals_uw_directory_search(); ?>
+                        <div class="mainResults"></div>
 						<?php get_template_part('nav_menu', 'explore');?>
 						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
                     </div><!-- .entry-content -->
@@ -32,5 +33,4 @@ get_header(); ?>
 
 	</div>
 <?php get_footer(); ?>
-
 </div>
