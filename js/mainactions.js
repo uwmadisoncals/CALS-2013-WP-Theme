@@ -28,14 +28,14 @@ $("#mobile-menu-inner").css("overflow-y","auto");*/
 setTimeout(function() {
 //var mobileCopyTop = $(".slideImage img").first().html();
 
-if($('body').hasClass('search')) {
-	
-} else {
-var mobileCopyMiddle = $("#main").html();
+if($('body').hasClass('home')) {
+	var mobileCopyMiddle = $("#main").html();
 
 //$(".blurredBodyCopy .top").html(mobileCopyTop);	
 	
-$(".blurredBodyCopy .middle").html(mobileCopyMiddle);	
+	$(".blurredBodyCopy .middle").html(mobileCopyMiddle);
+} else {
+	
 }
 },1000);
 
