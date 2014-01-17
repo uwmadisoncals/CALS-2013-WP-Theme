@@ -333,7 +333,7 @@ $pages = get_pages();
 
 <div class="collegeFeature">
 <ul class="slides">
-<canvas id="canvas"></canvas>
+
 
 					<?php //get_template_part( 'content', 'page' ); ?>
 
@@ -351,6 +351,7 @@ $pages = get_pages();
 					
     			
     				<li class="flipin">
+    					<canvas id="canvas"></canvas>
     					<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php 
 				    					
 					    				if ( has_post_thumbnail() ) {
@@ -390,7 +391,7 @@ $url = $thumb['0']; echo $url;
   				<h2><?php the_title(); ?></h2>
   				
 	  				<div class="featuresubtitle">
-	  				<?php the_content_rss(); ?>
+	  				<?php the_content(); ?>
 	  				</div>
   				</div>
   			</div>

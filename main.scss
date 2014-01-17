@@ -36,9 +36,11 @@ canvas {
 	left: 0px;
 	z-index:50;
 }
-
+ 
 .home canvas {
 	display: block;
+	position: absolute;
+	z-index:1;
 }
 ol, ul {
 	list-style: none;
@@ -5516,7 +5518,7 @@ background-size: 100% auto;
 }*/
 
 .headerPhotoBg {
-	z-index:-1;
+	z-index:1;
 	height: 500px;
 	position: relative;
 	
@@ -5832,7 +5834,7 @@ display: block;
 	margin: 0px;
 	font-weight: 300;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
+	font-size: 15px;
 	color: #dadada;
 }
 
