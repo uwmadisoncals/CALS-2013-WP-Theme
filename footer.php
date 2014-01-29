@@ -77,5 +77,7 @@ University of Wisconsin Foundation.</p>
 
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/snowfeature.js"></script>
 
+
+
 </body>
 </html>
