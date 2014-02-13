@@ -85,6 +85,9 @@ function imageBoxFit() {
 }
 
 imageBoxFit();
+setTimeout(function() {
+	imageBoxFit();
+},1000);
 
 var countFeatures = 0;
 	   var ieWarning = localStorage.getItem("ieWarning");
