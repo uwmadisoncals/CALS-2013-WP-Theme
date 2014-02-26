@@ -63,6 +63,33 @@ blockquote, q {
 a img {
 	border: 0;
 }
+
+.pull-quote {
+	display:block;
+	float: right;
+	margin: 1em;
+	font-size: 2.2em;
+	line-height: 1em;
+	width: 40%;
+	color: #b22632;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	font-style: italic;
+	
+}
+
+.pull-quote.left {
+	display:block;
+	float: left;
+	margin-left: 0em;
+}
+
+.pull-quote.right {
+	display:block;
+	float: right;
+	margin-right: 0em;
+}
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;

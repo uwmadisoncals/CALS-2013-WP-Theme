@@ -47,6 +47,8 @@ module.exports = function(grunt) {
 	  }
 	},
 	
+
+	
 	imagemin: {                          // Task
 	    dynamic: {                         // Another target
 	      files: [{
@@ -77,6 +79,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['concat']);
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('default', ['imagemin']);
+  
   
  
 

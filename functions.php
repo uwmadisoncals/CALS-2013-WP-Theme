@@ -36,9 +36,7 @@
  * @subpackage CALSv1
  * @since CALS 1.0
  */
-
-
-
+// Callback function to insert 'styleselect' into the $buttons array
 
 
 /**
@@ -1364,6 +1362,7 @@ function cals_get_last_tweet(){
 		  
 
 }
+
 
 
 
