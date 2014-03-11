@@ -8120,8 +8120,12 @@ body.search .filtered {
 	background: rgba(255,255,255,1);
 }
 
-.ie11 #mobile-menu .sheet, .ie11 #mobile-menu .sheebg {
+.ie11 #mobile-menu .sheet, .ie11 #mobile-menu .sheetbg {
 	background: rgba(255,255,255,1);
+}
+
+.ie10 #mobile-menu .sheet, .ie10 #mobile-menu .sheetbg {
+	background: none;
 }
 
 .mobileScroll {
