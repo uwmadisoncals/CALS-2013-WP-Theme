@@ -8103,7 +8103,7 @@ body.search .filtered {
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	right: 0px; 
+	width:240px; 
 	bottom:-90px;
 	z-index:-2;
 	background: rgba(255,255,255,0.6);
@@ -8113,10 +8113,14 @@ body.search .filtered {
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	right: 0px; 
+	width:240px; 
 	
 	bottom:-90px;
 	z-index:-4;
+	background: rgba(255,255,255,1);
+}
+
+.ie11 #mobile-menu .sheet, .ie11 #mobile-menu .sheebg {
 	background: rgba(255,255,255,1);
 }
 

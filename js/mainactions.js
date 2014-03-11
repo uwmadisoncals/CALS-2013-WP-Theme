@@ -206,6 +206,14 @@ var countFeatures = 0;
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
     	    
+    	    
+    	     $(".mobileScroll").css("transition", "0.3s");	
+    	    $(".mobileScroll").css("transform", "");
+    	    $("#mobile-menu").css("transition", "0.3s");
+    	    $("#mobile-menu").css("transform", "translate3d(-240px,0,0)");
+    	    $("#mobile-menu-inner").css("transition", "0.3s");
+    	    $("#mobile-menu-inner").css("transform", "scale(0.8)");
+    	    
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
 	  }); 
@@ -1011,7 +1019,31 @@ var countFeatures = 0;
 			};
 			
 			
+			function getInternetExplorerVersion()
+			{
+			  var rv = -1;
+			  if (navigator.appName == 'Microsoft Internet Explorer')
+			  {
+			    var ua = navigator.userAgent;
+			    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+			    if (re.exec(ua) != null)
+			      rv = parseFloat( RegExp.$1 );
+			  }
+			  else if (navigator.appName == 'Netscape')
+			  {
+			    var ua = navigator.userAgent;
+			    var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+			    if (re.exec(ua) != null)
+			      rv = parseFloat( RegExp.$1 );
+			  }
+			  return rv;
+			}
 			
+			if(getInternetExplorerVersion() > 0) {
+				var iever = "ie"+getInternetExplorerVersion();
+				$("body").addClass(iever);
+				
+			}
 			
 			
 			
@@ -1087,7 +1119,8 @@ var countFeatures = 0;
     	    $("#mobile-filter-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-webkit-transform", "scale(0.8)");
 			
-			
+			$(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
 			
 				//Mobile
 				//$('body').addClass("mobile");
@@ -1142,6 +1175,17 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
+    	    
+    	    
+    	     $(".mobileScroll").css("transition", "0.3s");	
+    	    $(".mobileScroll").css("transform", "");
+    	    $("#mobile-menu").css("transition", "0.3s");
+    	    $("#mobile-menu").css("transform", "translate3d(-240px,0,0)");
+    	    $("#mobile-menu-inner").css("transition", "0.3s");
+    	    $("#mobile-menu-inner").css("transform", "scale(0.8)");
+    	    
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
     	    
@@ -1197,6 +1241,16 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
+    	    
+    	    $(".mobileScroll").css("transition", "0.3s");	
+    	    $(".mobileScroll").css("transform", "");
+    	    $("#mobile-menu").css("transition", "0.3s");
+    	    $("#mobile-menu").css("transform", "translate3d(-240px,0,0)");
+    	    $("#mobile-menu-inner").css("transition", "0.3s"); 
+    	    $("#mobile-menu-inner").css("transform", "scale(0.8)");
+    	    
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
     	    
@@ -1229,6 +1283,18 @@ var countFeatures = 0;
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "translate3d(0px,0,0)");
     	    
+    	    
+    	    $("#mobile-menu").css("transition", "0.3s");
+    	    $("#mobile-menu").css("transform", "translate3d(0px,0,0)");
+
+    	    
+    	   
+    	    $("#mobile-menu-inner").css("transition", "0.3s");
+    	    $("#mobile-menu-inner").css("transform", "translate3d(0px,0,0)");
+    	    
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(0px,0,0)");
+    	    
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(240px,0,0)");
     	    
@@ -1242,6 +1308,9 @@ var countFeatures = 0;
     	    	
     	    	$(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
     	    	$("#mobile-filter").css("-moz-transform", "translate3d(0px,0,0)");
+    	    	
+    	    	$(".mobileScroll").css("transform", "translate3d(0px,0,0)");
+    	    	$("#mobile-filter").css("transform", "translate3d(0px,0,0)");
     	    	//$("#mobile-menu").css("-webkit-transform", "translate3d(240px,0,0)");
     	    	filtershown = false;
     	    }
@@ -1298,6 +1367,17 @@ var countFeatures = 0;
     	    $("#mobile-filter").css("-moz-transform", "translate3d(0px,0,0)");
     	    $("#mobile-filter-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-moz-transform", "translate3d(0px,0,0)");
+    	    
+    	    
+    	    $(".mobileScroll").css("transition", "0.3s");	
+    	    $(".mobileScroll").css("transform", "translate3d(-240px,0,0)");
+    	    $("#mobile-filter").css("transition", "0.3s");
+    	    $("#mobile-filter").css("transform", "translate3d(0px,0,0)");
+    	    $("#mobile-filter-inner").css("transition", "0.3s");
+    	    $("#mobile-filter-inner").css("transform", "translate3d(0px,0,0)");
+    	    
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(-240px,0,0)");
     	     
@@ -1312,6 +1392,13 @@ var countFeatures = 0;
     	    	$(".mobileScroll").css("-moz-transform", "translate3d(0px,0,0)");
     	    	$("#mobile-filter").css("-moz-transform", "translate3d(0px,0,0)");
     	    	$("#mobile-menu").css("-moz-transform", "translate3d(0px,0,0)");
+    	    	
+    	    	$(".mobileScroll").css("transform", "translate3d(0px,0,0)");
+    	    	$("#mobile-filter").css("transform", "translate3d(0px,0,0)");
+    	    	$("#mobile-menu").css("transform", "translate3d(0px,0,0)");
+    	    	
+    	    	$(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(0px,0,0)");
     	    	menushown = false;
     	    }
     	    
@@ -1354,6 +1441,17 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
+    	    
+    	    
+    	    $(".mobileScroll").css("transition", "0.3s");	
+    	    $(".mobileScroll").css("transform", "");
+    	    $("#mobile-menu").css("transition", "0.3s");
+    	    $("#mobile-menu").css("transform", "translate3d(-240px,0,0)");
+    	    $("#mobile-menu-inner").css("transition", "0.3s");
+    	    $("#mobile-menu-inner").css("transform", "scale(0.8)");
+    	    
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
     	    
@@ -1404,6 +1502,17 @@ var countFeatures = 0;
     	    $("#mobile-menu").css("-moz-transform", "translate3d(-240px,0,0)");
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "scale(0.8)");
+    	    
+    	    
+    	     $(".mobileScroll").css("transition", "0.3s");	
+    	    $(".mobileScroll").css("transform", "");
+    	    $("#mobile-menu").css("transition", "0.3s");
+    	    $("#mobile-menu").css("transform", "translate3d(-240px,0,0)");
+    	    $("#mobile-menu-inner").css("transition", "0.3s");
+    	    $("#mobile-menu-inner").css("transform", "scale(0.8)");
+    	    
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(0px,0,0)");
     	    
@@ -1433,6 +1542,14 @@ var countFeatures = 0;
     	    $(".mobileScroll").css("-moz-transform", "translate3d(240px,0,0)");*/
     	    $("#mobile-menu-inner").css("-moz-transition", "0.3s");
     	    $("#mobile-menu-inner").css("-moz-transform", "translate3d(0px,0,0)");
+    	    
+    	    $("#mobile-menu").css("transition", "0.3s");
+    	    $("#mobile-menu").css("transform", "translate3d(0px,0,0)");
+    	    $("#mobile-menu-inner").css("transition", "0.3s");
+    	    $("#mobile-menu-inner").css("transform", "translate3d(0px,0,0)");
+    	    
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(0px,0,0)");
     	    
     	    //$("#access").css("-moz-transition", "0.3s");
     	    //$("#access").css("-moz-transform", "translate3d(240px,0,0)");
