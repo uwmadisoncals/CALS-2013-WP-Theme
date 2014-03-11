@@ -1042,6 +1042,8 @@ var countFeatures = 0;
 			if(getInternetExplorerVersion() > 0) {
 				var iever = "ie"+getInternetExplorerVersion();
 				$("body").addClass(iever);
+				$(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+				$(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
 				
 			}
 			
@@ -1119,8 +1121,7 @@ var countFeatures = 0;
     	    $("#mobile-filter-inner").css("-webkit-transition", "0.3s");
     	    $("#mobile-filter-inner").css("-webkit-transform", "scale(0.8)");
 			
-			$(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
-    	    $(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
+			
 			
 				//Mobile
 				//$('body').addClass("mobile");
@@ -1154,6 +1155,8 @@ var countFeatures = 0;
 			    	$(this).addClass("touched");
 			    	return false;
 			    });
+    
+    
     
     $('.mobileNavTriggerLarge').bind('touchstart', function(){
     	
