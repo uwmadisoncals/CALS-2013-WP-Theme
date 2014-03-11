@@ -135,11 +135,11 @@ function twentyeleven_setup() {
 		$default_background_color = 'f1f1f1';
 
 	// Add support for custom backgrounds.
-	add_theme_support( 'custom-background', array(
+	/*add_theme_support( 'custom-background', array(
 		// Let WordPress know what our default background color is.
 		// This is dependent on our current color scheme.
 		'default-color' => $default_background_color,
-	) );
+	) );*/
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
