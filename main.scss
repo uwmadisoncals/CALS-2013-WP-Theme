@@ -8128,6 +8128,10 @@ body.search .filtered {
 	background: none;
 }
 
+.ie10 #mobile-menu-inner {
+	background: rgba(255,255,255,1);
+}
+
 .mobileScroll {
 	position: relative;
 	z-index:1;
