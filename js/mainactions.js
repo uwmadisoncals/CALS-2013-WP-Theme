@@ -1039,12 +1039,11 @@ var countFeatures = 0;
 			  return rv;
 			}
 			
-			if(getInternetExplorerVersion() > 0) {
+			if(getInternetExplorerVersion() == 11) {
 				var iever = "ie"+getInternetExplorerVersion();
 				$("body").addClass(iever);
-				$(".ie11 .sheet, .ie11 .sheetbg").css("transition", "0.3s");
-				$(".ie11 .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
-				
+				$("."+iever+" .sheet, .ie11 .sheetbg").css("transition", "0.3s");
+				$("."+iever+" .sheet, .ie11 .sheetbg").css("transform", "translate3d(-240px,0,0)");
 			}
 			
 			
