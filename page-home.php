@@ -293,7 +293,7 @@ get_header(); ?>
 					</div>
 					
 					<div class="span-33 box dropin5">
-							<h2>Faces</h2>
+							<h2>CALS Faces</h2>
 							
 							<?php switch_to_blog(20); ?>
 <?php query_posts("posts_per_page=1&cat=17"); ?>
@@ -314,7 +314,10 @@ get_header(); ?>
 						} ?>
 			<div class="boxContent">
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_time('l, F jS, Y') ?></p>
+											<p><?php $academic_info = get_post_meta($post->ID, 'academic_info', true);
+				if($academic_info!=""){
+					return $academic_info;
+				} ?></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>			
@@ -327,7 +330,7 @@ get_header(); ?>
   <?php endwhile; ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>
-<a href="http://news.cals.wisc.edu/category/departments/cals-faces/" class="moreButton">More Faces</a>
+<a href="http://news.cals.wisc.edu/category/departments/cals-faces/" class="moreButton">More CALS Faces</a>
 <div class="windows8">
 							<div class="wBall" id="wBall_1">
 							<div class="wInnerBall">
