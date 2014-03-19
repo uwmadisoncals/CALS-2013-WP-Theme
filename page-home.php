@@ -316,7 +316,7 @@ get_header(); ?>
 											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
 											<p><?php $academic_info = get_post_meta($post->ID, 'academic_info', true);
 				if($academic_info!=""){
-					return $academic_info;
+					echo $academic_info;
 				} ?></p>
                                              </div>
                             <div class="topShade"></div>
