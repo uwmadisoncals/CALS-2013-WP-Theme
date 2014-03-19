@@ -167,7 +167,7 @@ get_header(); ?>
 							<h2>Announcements</h2>
 							
 							<?php switch_to_blog(19); ?>
-<?php query_posts("cat=17&posts_per_page=1&offset=1"); ?>
+<?php query_posts("cat=17&posts_per_page=1"); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
