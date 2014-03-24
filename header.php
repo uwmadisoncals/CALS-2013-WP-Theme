@@ -149,6 +149,10 @@ $current_colorscheme = $options['link_color'];
 					$loopcount = 0;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
+
+									
+
+
 					    				<?php if ( has_post_thumbnail() ) {
 						    				
 						    				
@@ -353,7 +357,81 @@ $pages = get_pages();
 					
     			
     				<li class="flipin">
-    					<canvas id="canvas"></canvas>
+    				
+    					<?php 
+			
+			$effectfield = get_field_object('banner_effect');
+			$effectvalue = get_field('banner_effect');?>
+			
+			<?php if($effectvalue == "rainy") { ?>
+				<img id="background" alt="background" src="" />
+				<div id="cholder">
+								    </div>
+				<script src="<?php echo get_template_directory_uri(); ?>/js/rainyday.min.js"></script>
+				<script>
+				
+				var isMobile = {
+				    Android: function() {
+				        return navigator.userAgent.match(/Android/i);
+				    },
+				    BlackBerry: function() {
+				        return navigator.userAgent.match(/BlackBerry/i);
+				    },
+				    iOS: function() {
+				        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+				    },
+				    Opera: function() {
+				        return navigator.userAgent.match(/Opera Mini/i);
+				    },
+				    Windows: function() {
+				        return navigator.userAgent.match(/IEMobile/i);
+				    },
+				    any: function() {
+				        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+			    }
+			};
+			console.log(isMobile.any());
+			if( isMobile.any() ) {
+				var isDevice = true;
+			}
+				
+				
+            
+            
+            function run() {
+            	var container = document.getElementById('cholder');
+                var image = document.getElementById('background');
+                image.onload = function() {
+                    var engine = new RainyDay({
+                        image: this,
+                        parentElement: container,
+                       
+                    });
+                    engine.trail = engine.TRAIL_SMUDGE;
+                    
+                    if(isDevice) {
+					   engine.rain([ [1, 2, 300] ]);
+					   engine.rain([ [1, 3, 0.18] ], 50);
+					 } else {
+						engine.rain([ [1, 2, 1000] ]);
+						engine.rain([ [1, 3, 0.18], [3, 5, 0.09] ], 50);
+				   }
+                };
+                image.crossOrigin = 'anonymous';
+                image.src = '<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+echo $src[0]; ?>';
+            }
+            
+           
+       
+	             run();
+            
+           
+        </script>
+			<?php } else { ?>
+			
+			<?php } ?>
+    					
     					<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php 
 				    					
 					    				if ( has_post_thumbnail() ) {
@@ -372,6 +450,8 @@ $url = $thumb['0']; echo $url;
 										}
 					    				
 				    				?>') no-repeat; background-size: 100% auto;">
+				    				
+				    				
 				    				
 				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>					
 				    				<div class="slideBlurImage"></div>
