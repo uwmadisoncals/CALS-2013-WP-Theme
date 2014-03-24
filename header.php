@@ -413,7 +413,7 @@ $pages = get_pages();
 					   engine.rain([ [1, 2, 300] ]);
 					   engine.rain([ [1, 3, 0.18] ], 50);
 					 } else {
-						engine.rain([ [1, 2, 1000] ]);
+						engine.rain([ [1, 2, 1500] ]);
 						engine.rain([ [1, 3, 0.18], [3, 5, 0.09] ], 50);
 				   }
                 };
