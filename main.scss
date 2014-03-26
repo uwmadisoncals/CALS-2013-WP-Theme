@@ -4211,6 +4211,15 @@ min-height: 220px;
 	margin-bottom: 1em;
 }
 
+.sidebarRow {
+	float: right;
+	width: 230px;
+}
+
+.sidebarRow.row .box {
+	height: 160px;
+}
+
 .row {
 	margin-bottom: 0px;
 }

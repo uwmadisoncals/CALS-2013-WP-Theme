@@ -100,6 +100,29 @@ function create_post_type() {
 		)
 	);
 }
+
+add_action( 'init', 'create_promo' );
+function create_promo() {
+	register_post_type( 'promo',
+		array(
+			'labels' => array(
+				'name' => __( 'Promotions' ),
+				'singular_name' => __( 'Promotion' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'supports' => array(
+	  'title',
+	  'editor',
+	  'excerpt',
+	  'revisions',
+	  'thumbnail',
+	  'author',
+	  'page-attributes',
+	  )
+		)
+	);
+}
  
 function twentyeleven_setup() {
 

@@ -16,7 +16,11 @@ if ( 'content' != $current_layout ) :
 ?>
 		<div id="secondary" class="widget-area" role="complementary">
 		
-			<?php if ( !is_home() ) { get_template_part('nav_menu', 'sidebar'); } ?>
+			<?php if ( !is_home() ) { get_template_part('nav_menu', 'sidebar');  } ?>
+			
+			<?php //get_template_part('nav_side', 'promo'); ?>
+			
+			
 		
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
@@ -126,9 +130,11 @@ function googlesearch() {
 google.setOnLoadCallback(googlesearch);
 </script>
 		
-	 <?php } else { 
+	 <?php } else {  ?>
 			
-	 get_template_part('nav_menu', 'sidebar'); } ?>
+	 <?php get_template_part('nav_menu', 'sidebar');  ?>
+	 <?php get_template_part('nav_side', 'promo'); ?>
+	 <?php } ?>
 	
 	
 	
