@@ -46,12 +46,12 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
 
 	?></title>
-	
-<meta name="viewport" content="width=320.1, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> 
+
+<meta name="viewport" content="width=320.1, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="apple-mobile-web-app-capable" content="no">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
  <!-- iOS Device Startup Images -->
- 
+
 <!-- iPhone -->
 <!--<link rel="apple-touch-startup-image"
       media="(device-width: 320px)"
@@ -61,7 +61,7 @@
       media="(device-width: 320px)
          and (-webkit-device-pixel-ratio: 2)"
       href="<?php echo get_template_directory_uri(); ?>/images/startup-iphone4.png">-->
-      
+
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/default_app_logo.png" />
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/default_app_logo@2x.png" />
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/default_app_logo@2x.png" />
@@ -70,7 +70,7 @@
 
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" /> 
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/master.css" />
 
 <!--[if IE]>
@@ -82,13 +82,13 @@
 <!--[if IE 8]>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/ie8.css" />
 <![endif]-->
- 
+
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
 
 
-  
+
 
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/styles/vallenato.css" type="text/css" media="screen">
@@ -113,7 +113,7 @@
 </head>
 
 <?php $options = twentyeleven_get_theme_options();
-$current_colorscheme = $options['link_color']; 
+$current_colorscheme = $options['link_color'];
 
 
 ?>
@@ -129,43 +129,43 @@ $current_colorscheme = $options['link_color'];
 			 get_template_part('nav_menu-mobile', 'explore');
 		 } ?>
 		<ul>
-		
-			
+
+
 			<li><a href="<?php echo home_url(); ?>">Home</a></li>
-			
+
 		</ul>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</div>
-	
-	
+
+
 	</div>
 	<div class="sheet"></div>
 	<div class="sheetbg"></div>
 	<div class="blurredBodyCopy" aria-hidden="true">
 		<div class="top">
-			
+
 			<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 1 );
 					$loop = new WP_Query( $args );
 					$loopcount = 0;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 
-									
+
 
 
 					    				<?php if ( has_post_thumbnail() ) {
-						    				
-						    				
+
+
 						    				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'large' );
 $url = $thumb['0']; ?>
 
 <img src="<?php echo $url; ?>">
-				 
-						    				<?php } ?> 
-  					
-  	
+
+						    				<?php } ?>
+
+
 					<?php endwhile; ?>
-			
+
 		</div>
 		<div class="middle"></div>
 		<div class="bottom"></div>
@@ -186,7 +186,7 @@ $url = $thumb['0']; ?>
 	<a href="#" class="button ieWarningDismissOnce">Dismiss</a> or <a href="#" class="button ieWarningDismiss">Dismiss and don't bother me again</a>
 </div>
 <div id="page" class="hfeed">
-	
+
 	<header id="branding" role="banner">
 		<div class="headerCentered">
 			<hgroup class="heading">
@@ -206,7 +206,7 @@ $url = $thumb['0']; ?>
 						$header_image_width = HEADER_IMAGE_WIDTH;
 					}
 					?>
-			
+
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logoImage">
 				<?php
 					// The header image
@@ -235,15 +235,15 @@ $url = $thumb['0']; ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
 			</div>
 
-			
+
 			</hgroup>
-			
-			
-			
+
+
+
 			<nav id="access" role="navigation">
 				<div class="headeroverlay">
-				
-				
+
+
 				<div class="mobileScrollTop"></div>
 				<div class="centerfix relative">
 				<a href="#" class="totop" title="Go to the top of the page">Go to the top of the page</a>
@@ -254,7 +254,7 @@ $url = $thumb['0']; ?>
 				<?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?>
 				<div class="navWrapper clearfix">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				
+
 				</div>
 				<!-- The markup of the navigation if it is hard coded -->
 				<!--<ul class="clearfix">
@@ -265,8 +265,8 @@ $url = $thumb['0']; ?>
 			  		<li><a href="#">Research</a></li>
 			  		<li><a href="#">Outreach</a></li>
   				</ul>-->
-  				
-  				
+
+
   						<?php
 				// Has the text been hidden?
 				if ( 'blank' == get_header_textcolor() ) :
@@ -287,31 +287,31 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 	<li>
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 	</li>
-<?php endforeach; 
-wp_reset_postdata(); 
+<?php endforeach;
+wp_reset_postdata();
 
-$pages = get_pages(); 
+$pages = get_pages();
   foreach ( $pages as $page ) {
   	echo '<li>';
   	echo '<a href="' . get_page_link( $page->ID ) . '">';
 	echo $page->post_title;
 	echo '</a>';
 	echo '</li>';
-	
-  } 
-  
-  
+
+  }
+
+
   //cals_uw_directory_search($small=true, $add_class = 'search_results');
-  
+
   ?>
-  
-<li><a href="http://grow.cals.wisc.edu"><img src="http://grow.cals.wisc.edu/wp-content/themes/grow/thumb.php?src=/wp-content/blogs.dir/9/files/2014/03/spring-2014-cover.jpg&h=100&w=76&zc=1&q=90" style="float: left; margin-right: 8px;"> <strong>Grow Magazine</strong><div>Celebrating 125 years of CALS</div></a></li>	
+<li><a href="http://www.cals.wisc.edu/agoutlook/">Wisconsin Agricultural Economic Outlook Forum</a></li>
+<li><a href="http://grow.cals.wisc.edu"><img src="http://grow.cals.wisc.edu/wp-content/themes/grow/thumb.php?src=/wp-content/blogs.dir/9/files/2014/03/spring-2014-cover.jpg&h=100&w=76&zc=1&q=90" style="float: left; margin-right: 8px;"> <strong>Grow Magazine</strong><div>Celebrating 125 years of CALS</div></a></li>
 
 						<!-- Hard code any additional search terms here -->
 						<!--<li><a href="#">Search Item 1</a></li>-->
-						
+
 					</ul>
-					
+
 					<div class="directory"></div>
 				</div>
 				</div>
@@ -321,12 +321,12 @@ $pages = get_pages();
 				<?php get_search_form(); ?>
 			<?php endif; ?>
 				</div>
-				
-				
+
+
 				</div>
 			</nav><!-- #access -->
-			
-			
+
+
 <div class="headingbg clearfix"></div>
 		</div>
 	</header><!-- #branding -->
@@ -344,32 +344,32 @@ $pages = get_pages();
 					<?php //get_template_part( 'content', 'page' ); ?>
 
 					<?php //comments_template( '', true ); ?>
-					
+
 					<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 1 );
 					$loop = new WP_Query( $args );
 					$loopcount = 0;
-					while ( $loop->have_posts() ) : $loop->the_post(); 
+					while ( $loop->have_posts() ) : $loop->the_post();
 					$loopcount = $loopcount + 1;
 					$slideclass = "slideImage".$loopcount;
 					$slideblurclass = "slideBlur".$loopcount;
 					?>
-					
-					
-    			
+
+
+
     				<li class="flipin">
-    				
-    					<?php 
-			
+
+    					<?php
+
 			$effectfield = get_field_object('banner_effect');
 			$effectvalue = get_field('banner_effect');?>
-			
+
 			<?php if($effectvalue == "rainy") { ?>
 				<img id="background" alt="background" src="" />
 				<div id="cholder">
 								    </div>
 				<script src="<?php echo get_template_directory_uri(); ?>/js/rainyday.min.js"></script>
 				<script>
-				
+
 				var isMobile = {
 				    Android: function() {
 				        return navigator.userAgent.match(/Android/i);
@@ -394,10 +394,10 @@ $pages = get_pages();
 			if( isMobile.any() ) {
 				var isDevice = true;
 			}
-				
-				
-            
-            
+
+
+
+
             function run() {
             	var container = document.getElementById('cholder');
                 var image = document.getElementById('background');
@@ -405,10 +405,10 @@ $pages = get_pages();
                     var engine = new RainyDay({
                         image: this,
                         parentElement: container,
-                       
+
                     });
                     engine.trail = engine.TRAIL_SMUDGE;
-                    
+
                     if(isDevice) {
 					   engine.rain([ [1, 2, 300] ]);
 					   engine.rain([ [1, 3, 0.18] ], 50);
@@ -421,77 +421,77 @@ $pages = get_pages();
                 image.src = '<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
 echo $src[0]; ?>';
             }
-            
-           
-       
+
+
+
 	             run();
-            
-           
+
+
         </script>
 			<?php } else { ?>
-			
+
 			<?php } ?>
-    					
-    					<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php 
-				    					
+
+    					<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php
+
 					    				if ( has_post_thumbnail() ) {
-						    				
+
 						    				//the_post_thumbnail();
 						    				//echo get_the_post_thumbnail($page->ID, 'large');
 						    				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'large' );
 $url = $thumb['0']; echo $url;
-				 
+
 						    				} else {
-				 
+
 											 //echo '<img src="';
 											 //echo catch_that_image();
 											// echo '" alt="" />';
-				
+
 										}
-					    				
+
 				    				?>') no-repeat; background-size: 100% auto;">
-				    				
-				    				
-				    				
-				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>					
+
+
+
+				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>
 				    				<div class="slideBlurImage"></div>
-				    				
-				    				
+
+
 				    				<div class="slideBlur <?php echo $slideblurclass ?>"></div>
 				    				<div class="contrastmask2"></div>
     					</div>
-    					
-    					
-				    			
-				    		
-    			
-    			
-  	
-  		
+
+
+
+
+
+
+
+
   			<div class="featureCaption">
   				<div class="centered">
   				<h2><?php the_title(); ?></h2>
-  				
+
 	  				<div class="featuresubtitle">
 	  				<?php the_content(); ?>
 	  				</div>
   				</div>
   			</div>
-  			
-  		</li>
-  					
-  	
-					<?php endwhile; ?>
-				
-					
 
-				
-				
+  		</li>
+
+
+					<?php endwhile; ?>
+
+
+
+
+
 				</ul>
-  	
+
   	<a href="#" class="next">Next</a>
   	<a href="#" class="previous">Previous</a>
-  	
+
   	<div class="timer">
   		<a href="#">Pause Slide Rotation</a>
 	  	<div class="timerLeft">
@@ -500,35 +500,34 @@ $url = $thumb['0']; echo $url;
 	  	<div class="timerRight">
 	  	<div class="timer2"></div>
 	  	</div>
-	  	
+
   	</div>
   </div>
   <div class='fluidHeight' style="display: none;">
-			
+
 			<div class = 'sliderContainer'>
-			
+
 				<div class = 'iosSlider'>
-				
+
 					<div class = 'slider'>
-					
-						
-						
-						
-					
+
+
+
+
+
 					</div>
-				
+
 				</div>
-				
-				
-				
+
+
+
 				<div class = 'scrollbarContainer'></div>
-				
+
 			</div>
-			
-		
+
+
 		</div>
 		<div class="headershade"></div>
 		<!-- end of feature slider -->
-		
+
 </div>
-	
