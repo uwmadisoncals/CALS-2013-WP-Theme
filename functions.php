@@ -51,6 +51,24 @@ add_filter( ‘xmlrpc_methods’, function( $methods ) {
    return $methods;
 } );
 
+
+
+function my_uw_events_date_formats($date_formats) {
+    // Change the default time beside each event
+    $date_formats['default'] = '%A %b %e';
+
+    // Add a custom time format, made available in the $event
+    // object passed to other filters
+    $date_formats['my_time'] = 'My Time %F';
+
+    // Custom header format for each group of events
+    // in the grouped event view
+    $date_formats['group_header'] = 'On - %a';
+
+    return $date_formats;
+}
+add_filter('uwmadison_events_date_formats', 'my_uw_events_date_formats');
+
 /**
  * Tell WordPress to run twentyeleven_setup() when the 'after_setup_theme' hook is run.
  */
@@ -123,7 +141,7 @@ function create_promo() {
 		)
 	);
 }
- 
+
 function twentyeleven_setup() {
 
 
@@ -152,8 +170,8 @@ function twentyeleven_setup() {
 	register_nav_menu( 'primary', __( 'Primary Menu', 'twentyeleven' ) );
 	register_nav_menu( 'footer1', __( 'Footer Menu Column 1', 'twentyeleven' ) );
 	register_nav_menu( 'footer2', __( 'Footer Menu Column 2', 'twentyeleven' ) );
-	
-	
+
+
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
@@ -191,7 +209,7 @@ function twentyeleven_setup() {
 		// Callback used to display the header preview in the admin.
 		'admin-preview-callback' => 'twentyeleven_admin_header_image',
 	);
-	
+
 	add_theme_support( 'custom-header', $custom_header_support );
 
 	if ( ! function_exists( 'get_custom_header' ) ) {
@@ -239,7 +257,7 @@ function twentyeleven_header_style() {
 	// If no custom options for text are set, let's bail.
 	if ( $text_color == HEADER_TEXTCOLOR )
 		return;
-		
+
 	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
@@ -363,67 +381,67 @@ function twentyeleven_continue_reading_link() {
 }
 
 function cals_get_current_committee_members($atts){
-	
+
 	$committee_name = $atts['committee_name'];
-	
+
 	include_once(get_stylesheet_directory().'/library/scripts/phpExcelReader/Excel/reader.php');
-	
+
 	// ExcelFile($filename, $encoding);
 	$data = new Spreadsheet_Excel_Reader();
-	
+
 	// Set output Encoding.
-	$data->setOutputEncoding('CP1251');	
-	
+	$data->setOutputEncoding('CP1251');
+
 	//Add row offsset
 	$data->_rowoffset = 0;
-	
+
 	//Load file
 	$data->read($_SERVER['DOCUMENT_ROOT'].'/wp-content/uploads/cals_committees/cals_committee_member.xls');
-	
+
 	//error_reporting(E_ALL ^ E_NOTICE);
 	error_reporting(0);
 
 	$now = time();
-	
+
 	for ($i = 1; $i <= $data->sheets[0]['numRows']; $i++) {
 		$start_date = strtotime($data->sheets[0]['cells'][$i][5]);
 		$end_date = strtotime($data->sheets[0]['cells'][$i][6]);
-		
+
 		//for ($j = 1; $j <= $data->sheets[0]['numCols']; $j++) {
 			if ($committee_name == $data->sheets[0]['cells'][$i][1] && $now >= $start_date && $now <=$end_date){
-				
-				$records[] = array('name' => $data->sheets[0]['cells'][$i][2], 
+
+				$records[] = array('name' => $data->sheets[0]['cells'][$i][2],
 								   'last_name' => $data->sheets[0]['cells'][$i][3] ,
 								   'start_date' => $start_date,
 								   'end_date' => $end_date,
-								   'classification' => $data->sheets[0]['cells'][$i][4] 
-								   );				
+								   'classification' => $data->sheets[0]['cells'][$i][4]
+								   );
 			}
-		//}	
+		//}
 	}
-	
+
 	//Sort records by last name
-		
+
 		//Obtain list of columns
 		foreach ($records as $key => $row){
 			$name[$key] = $row['name'];
 			$last_name[$key] = $row['last_name'];
 		}
-		
+
 		//Sort data by last_name, ascending
 		array_multisort($last_name, SORT_ASC, $records);
-		
+
 	//print records
 	foreach($records as $record){
-	
+
 		//$output.= '<li><strong>'.$record['name'].' '.$record['last_name'] .'</strong>, '.$record['classification'].' ('.date('Y', $record['start_date']). ' - '.date('Y', $record['end_date']).')</li>';
 
 		$output.= '<li><strong>'.$record['name'].' '.$record['last_name'] .'</strong>, '.$record['classification'].' ('.date('Y', $record['end_date']).')</li>';
-	
+
 	}
-	
+
 	return '<h4>Current members</h4><ul>'.$output.'</ul>';
-	
+
 }
 
 add_shortcode('cals_committee_members', 'cals_get_current_committee_members');
@@ -519,7 +537,7 @@ function twentyeleven_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
+
 	register_sidebar( array(
 		'name' => __( 'Footer Area Four', 'twentyeleven' ),
 		'id' => 'sidebar-6',
@@ -711,14 +729,14 @@ function catch_that_image() {
   global $post, $posts;
   $first_img = '';
   $first_vid = '';
-  
+
   ob_start();
   ob_end_clean();
   $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $imgmatches);
   $output = preg_match('/<iframe.*src=\"(.*)\".*><\/iframe>/isU', $post->post_content, $vidmatches);
   $first_img = $imgmatches[1][0];
   $first_vid = $vidmatches[0];
-  
+
   /*if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->post_content, $vidmatch)) {
   	$video = "yes";
     $first_img = $vidmatch[1][0];
@@ -727,11 +745,11 @@ function catch_that_image() {
   if(empty($first_img) && empty($first_vid)) {
     //placeholder
     //$first_img = "<div class='noImageSpacer2'></div>";
-    
+
   }  else {
 	//$first_vid = "<img src='".$first_vid;
 	//return $first_vid;
- 
+
 	// placeholder image
 	if(empty($first_vid)) {
 		$first_img = "<img src='".$first_img."' alt=' '>";
@@ -739,10 +757,10 @@ function catch_that_image() {
 	} else {
 		return $first_vid;
 	}
-	
-	
+
+
   }
-  
+
 }
 
 
@@ -750,14 +768,14 @@ function catch_that_news_image() {
   global $post, $posts;
   $first_img = '';
   $first_vid = '';
-  
+
   ob_start();
   ob_end_clean();
   $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $imgmatches);
   $output = preg_match('/<iframe.*src=\"(.*)\".*><\/iframe>/isU', $post->post_content, $vidmatches);
   $first_img = $imgmatches[1][0];
   $first_vid = $vidmatches[0];
-  
+
   /*if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->post_content, $vidmatch)) {
   	$video = "yes";
     $first_img = $vidmatch[1][0];
@@ -770,7 +788,7 @@ function catch_that_news_image() {
   }  else {
 	//$first_vid = "<img src='".$first_vid;
 	//return $first_vid;
-	
+
 	// placeholder image
 	if(empty($first_vid)) {
 		$first_img = "<img src='".$first_img."' alt=' '>";
@@ -778,10 +796,10 @@ function catch_that_news_image() {
 	} else {
 		return $first_vid;
 	}
-	
-	
+
+
   }
-  
+
 }
 
 
@@ -789,14 +807,14 @@ function catch_that_announcements_image() {
   global $post, $posts;
   $first_img = '';
   $first_vid = '';
-  
+
   ob_start();
   ob_end_clean();
   $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $imgmatches);
   $output = preg_match('/<iframe.*src=\"(.*)\".*><\/iframe>/isU', $post->post_content, $vidmatches);
   $first_img = $imgmatches[1][0];
   $first_vid = $vidmatches[0];
-  
+
   /*if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $post->post_content, $vidmatch)) {
   	$video = "yes";
     $first_img = $vidmatch[1][0];
@@ -805,12 +823,12 @@ function catch_that_announcements_image() {
   if(empty($first_img) && empty($first_vid)) {
     //placeholder
     //$first_img = "<div class='noImageSpacer2'></div>";
-    
+
     return "<img src='".get_template_directory_uri()."/images/announcementsplaceholder1.jpg' alt=' '>";
   }  else {
 	//$first_vid = "<img src='".$first_vid;
 	//return $first_vid;
-	
+
 	// placeholder image
 	if(empty($first_vid)) {
 		$first_img = "<img src='".$first_img."' alt=' '>";
@@ -818,10 +836,10 @@ function catch_that_announcements_image() {
 	} else {
 		return $first_vid;
 	}
-	
-	
+
+
   }
-  
+
 }
 
 function custom_text_length($charlength, $more_link, $c_type, $post=NULL){
@@ -847,83 +865,83 @@ function custom_text_length($charlength, $more_link, $c_type, $post=NULL){
 add_filter('wp_feed_cache_transient_lifetime', create_function('$a', 'return 1400;'));
 
 function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=''){
-	//NOTE: to disable cache, go to feed.php and replace timestamp in 
-	// $feed->set_cache_duration(apply_filters('wp_feed_cache_transient_lifetime', 43200, $url)); 
+	//NOTE: to disable cache, go to feed.php and replace timestamp in
+	// $feed->set_cache_duration(apply_filters('wp_feed_cache_transient_lifetime', 43200, $url));
 	$i = rand(1,5);
 	// Get RSS Feed(s)
 	include_once(ABSPATH . WPINC . '/feed.php');
-	
+
 	// Get a SimplePie feed object from the specified feed source.
 	$rss = fetch_feed($feed_uri);
-	 
-	if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
-		
+
+	if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
+
 		//enable order by date
 		$rss->enable_order_by_date(true);
-		
-		// Figure out how many total items there are, but limit it to $num_items. 
-		$maxitems = $rss->get_item_quantity($num_items); 
-	
+
+		// Figure out how many total items there are, but limit it to $num_items.
+		$maxitems = $rss->get_item_quantity($num_items);
+
 		// Build an array of all the items, starting with element 0 (first element).
-		$rss_items = $rss->get_items(0, $maxitems); 
+		$rss_items = $rss->get_items(0, $maxitems);
 	endif;
-	
+
 	if($echo == 1){
-	
+
 		if (count($rss_items) == 0) {
 			//echo '<li>No items.</li>';
 			echo 'no items';
 		} else {
-			foreach ( $rss_items as $item ) { 
-			
+			foreach ( $rss_items as $item ) {
+
 				//check for excluded posts
 				if($exclude!='' && $exclude == $item->get_id()){
 					continue;
 				}
-				
-				
-				$featuredImageSrc = $item->get_item_tags('', 'featuredimage'); 
-				
-				
+
+
+				$featuredImageSrc = $item->get_item_tags('', 'featuredimage');
+
+
 				$featuredImage = $featuredImageSrc[0]['data'];
-				
-				
-				
+
+
+
 				?>
-				
-				<?php  
+
+				<?php
 				/*if($featuredImage) {*/
-				
+
     				echo '<div class="newsItem ';
     				if(!$featuredImage) {echo 'noImage ';}
-    				
-    				
-    				
-    				
+
+
+
+
     				foreach ($item->get_categories() as $category)
 						{
 							echo $category->get_label()." ";
-							
-							
+
+
 							/*$imageCat = $category->get_label();
-						
+
 						if($imageCat == "Agriculture" || $imageCat == "Food" || $imageCat == "Environment" || $imageCat == "Energy" || $imageCat == "Health" || $imageCat == "People" || $imageCat == "Communities" || $imageCat == "Events") {
-							
+
 							break;
-							
+
 						} else {
-							
-							
+
+
 							echo "Announcements ";
 							break;
 						}*/
-							
+
 						}
-	
+
 		    		echo '"><div class="previousa"><div class="additionalContent">';
-		    		
+
 		    		$notdisplayed = true;
-    		
+
     			if($featuredImage1) {
     				echo '<img src="'.$featuredImage1.'" alt="" />';
     			} else if($featuredImage) {
@@ -933,9 +951,9 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
     				/*foreach ($item->get_categories() as $category)
 					{
 						$imageCat = $category->get_label();
-						
+
 						if($imageCat == "Agriculture") {
-							
+
 							echo '<img src="';
 							echo bloginfo('template_url');
 							echo '/images/agriculture-pic-';
@@ -943,7 +961,7 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 							echo '.jpg" alt=" " />';
 							break;
 						} else if($imageCat == "Food") {
-							
+
 							echo '<img src="';
 							echo bloginfo('template_url');
 							echo '/images/food-pic-';
@@ -951,7 +969,7 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 							echo '.jpg" alt=" " />';
 							break;
 						} else if($imageCat == "Environment") {
-							
+
 							echo '<img src="';
 							echo bloginfo('template_url');
 							echo '/images/environment-pic-';
@@ -959,7 +977,7 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 							echo '.jpg" alt=" " />';
 							break;
 						} else if($imageCat == "Energy") {
-							
+
 							echo '<img src="';
 							echo bloginfo('template_url');
 							echo '/images/energy-pic-';
@@ -967,7 +985,7 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 							echo '.jpg" alt=" " />';
 							break;
 						} else if($imageCat == "Health") {
-							
+
 							echo '<img src="';
 							echo bloginfo('template_url');
 							echo '/images/health-pic-';
@@ -975,7 +993,7 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 							echo '.jpg" alt=" " />';
 							break;
 						} else if ($imageCat == "People" || $imageCat == "Communities") {
-							
+
 							echo '<img src="';
 							echo bloginfo('template_url');
 							echo '/images/people-pic-';
@@ -983,7 +1001,7 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 							echo '.jpg" alt=" " />';
 							break;
 						} else if ($imageCat == "Events") {
-							
+
 							echo '<img src="';
 							echo bloginfo('template_url');
 							echo '/images/twitter-bg-';
@@ -991,8 +1009,8 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 							echo '.jpg" alt=" " />';
 							break;
 						} else {
-							
-							
+
+
 							echo '<img src="';
 							echo bloginfo('template_url');
 							echo '/images/generalcals-bg-';
@@ -1005,28 +1023,28 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 							}
 							break;
 						}
-						 
-						
-						
+
+
+
 					}*/
-	    			
-	    			
+
+
     			}
     			echo '</div>';
-		    		
+
 		    		echo '<div class="text"><div class="glyph"><div class="symbol"></div></div><div class="titleheading"><h3>';
 		    		$title = $item->get_title();
 					if($length != -1){
-						if(strlen($title)>$length){ 
-							echo substr($title,0,$length).'...'; } 
-						else { 
-							echo $title; 
+						if(strlen($title)>$length){
+							echo substr($title,0,$length).'...'; }
+						else {
+							echo $title;
 						}
-					} else { 
-						echo $title; 
+					} else {
+						echo $title;
 					}
 				echo '</h3></div><div class="excerpt">';
-				$content = $item->get_description(); 
+				$content = $item->get_description();
     			echo $content;
 				echo '</div><div class="dateheading">';
 				echo $item->get_date('F j, Y');
@@ -1036,11 +1054,11 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 		    	$cattemp = $item->get_category();
     			echo $cattemp->get_label();
     			echo '</div><span class="number">10</span></div>';
-		    		
-		    		
-    		
-    		
-    			
+
+
+
+
+
     		echo '<a href="';
     		echo $item->get_permalink();
     		echo '" class="highlight" title="';
@@ -1048,31 +1066,31 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
     		echo '">Read more about ';
     		echo $item->get_title();
     		echo '<div class="loadingSpinner"><div class="progress"></div></div></a></div></div>';
-    		
-    		
+
+
     		/*}  else {
-	    		
+
 	    		//What to display if no image is supplied by the article
-	    		
+
 	    		echo '<div class="newsItem noImage ';
     				foreach ($item->get_categories() as $category)
 						{
 							echo $category->get_label()." ";
 						}
-	
+
 		    		echo '"><div class="previousa"><div class="titleheading"><h3>';
 		    		$title = $item->get_title();
 					if($length != -1){
-						if(strlen($title)>$length){ 
-							echo substr($title,0,$length).'...'; } 
-						else { 
-							echo $title; 
+						if(strlen($title)>$length){
+							echo substr($title,0,$length).'...'; }
+						else {
+							echo $title;
 						}
-					} else { 
-						echo $title; 
+					} else {
+						echo $title;
 					}
 				echo '</h3></div><div class="text"><div class="glyph"><div class="symbol"></div></div><div class="excerpt">';
-				$content = $item->get_description(); 
+				$content = $item->get_description();
     			echo $content;
 				echo '</div><div class="dateheading">';
 				echo $item->get_date('F j, Y');
@@ -1082,15 +1100,15 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
 		    	$cattemp = $item->get_category();
     			echo $cattemp->get_label();
     			echo '</div><span class="number">10</span></div><div class="additionalContent">';
-		    		
-		    			
-		    	
-    		
-    		
-							
-    		
-    		
-    			
+
+
+
+
+
+
+
+
+
     		echo '</div><a href="';
     		echo $item->get_permalink();
     		echo '" class="highlight" title="';
@@ -1098,103 +1116,103 @@ function cals_fetch_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=
     		echo '">Read more about ';
     		echo $item->get_title();
     		echo '<div class="loadingSpinner"><div class="progress"></div></div></a></div></div>';
-	    		
-	    		
+
+
     		}*/
     		 ?>
-    			
-    		
 
-				
+
+
+
 			<?php }
 		}
 
 	} else {
-	
+
 		return $rss_items;
-	
+
 	}
 }
 
 
 
 function cals_search_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=''){
-	//NOTE: to disable cache, go to feed.php and replace timestamp in 
-	// $feed->set_cache_duration(apply_filters('wp_feed_cache_transient_lifetime', 43200, $url)); 
-	
+	//NOTE: to disable cache, go to feed.php and replace timestamp in
+	// $feed->set_cache_duration(apply_filters('wp_feed_cache_transient_lifetime', 43200, $url));
+
 	// Get RSS Feed(s)
 	include_once(ABSPATH . WPINC . '/feed.php');
-	
+
 	// Get a SimplePie feed object from the specified feed source.
 	$rss = fetch_feed($feed_uri);
-	 
-	if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
-		
+
+	if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
+
 		//enable order by date
 		$rss->enable_order_by_date(true);
-		
-		// Figure out how many total items there are, but limit it to $num_items. 
-		$maxitems = $rss->get_item_quantity($num_items); 
-	
+
+		// Figure out how many total items there are, but limit it to $num_items.
+		$maxitems = $rss->get_item_quantity($num_items);
+
 		// Build an array of all the items, starting with element 0 (first element).
-		$rss_items = $rss->get_items(0, $maxitems); 
+		$rss_items = $rss->get_items(0, $maxitems);
 	endif;
-	
+
 	if($echo == 1){
-	
+
 		if (count($rss_items) == 0) {
 			//echo '<li>No items.</li>';
 			echo 'no items';
 		} else {
-			foreach ( $rss_items as $item ) { 
-			
+			foreach ( $rss_items as $item ) {
+
 				//check for excluded posts
 				if($exclude!='' && $exclude == $item->get_id()){
 					continue;
 				}
-				
-				
-				//$featuredImageSrc = $item->get_item_tags('', 'featuredimage'); 
-				
-				
+
+
+				//$featuredImageSrc = $item->get_item_tags('', 'featuredimage');
+
+
 				//$featuredImage = $featuredImageSrc[0]['data'];
-				
-				
-				
+
+
+
 				?>
-				
-				
+
+
 
 				<li><a href="<?php echo $item->get_permalink(); ?>"><?php
                    $title = $item->get_title();
 					if($length != -1){
-						if(strlen($title)>$length){ 
-							echo substr($title,0,$length).'...'; } 
-						else { 
-							echo $title; 
+						if(strlen($title)>$length){
+							echo substr($title,0,$length).'...'; }
+						else {
+							echo $title;
 						}
-					} else { 
-						echo $title; 
+					} else {
+						echo $title;
 					}
 					//echo $featuredImage;
 					//var_dump($featuredImage);
 					?></a>
 				</li>
-    			
-    			
-    			
-    		
-    			
-    		
 
-				
+
+
+
+
+
+
+
 			<?php }
 		}
 
 	} else {
-	
+
 		return $rss_items;
-	
+
 	}
 }
 
@@ -1204,16 +1222,16 @@ function cals_search_feed($feed_uri,$num_items, $echo = 1, $length =-1, $exclude
  * Gets last tweet from specified account
  *
  * Based on script developed by Joost de Valk, which used Snoopy class to connect to twitter.com
- * Replaced Snoopy with WP_Http object to request URL, and added regular expression to format urls in 
+ * Replaced Snoopy with WP_Http object to request URL, and added regular expression to format urls in
  * tweet's body.
- * 
+ *
  *
  * Since CALS News 1.0
  * @uses WP_Http (replaces Snoopy)
  * @print $output (twitter html)
- * @link http://yoast.com/display-latest-tweet/ 
+ * @link http://yoast.com/display-latest-tweet/
  * @link http://stackoverflow.com/questions/1959062/how-to-add-anchor-tag-to-a-url-from-text-input
- * 
+ *
 */
 function cals_get_last_tweet(){
 	//require_once(ABSPATH . 'wp-includes/class-snoopy.php');
@@ -1223,18 +1241,18 @@ function cals_get_last_tweet(){
 	//$url  = "http://twitter.com/statuses/user_timeline/uwmadisoncals.json?count=5";
 	$url  = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=".$twitterid."&count=10";
 	if ($tweet['lastcheck'] < ( mktime() - 2700 ) ) {
-		
+
 		$http = new WP_Http;
 		$result = $http->get($url);
-		
+
 		global $current_user;
-		if (!is_admin() && current_user_can('level_10') && ($current_user->user_login=="amnemec")) : 
-		//print_r ($result);	
+		if (!is_admin() && current_user_can('level_10') && ($current_user->user_login=="amnemec")) :
+		//print_r ($result);
 		//include('../../plugins/ecals_submissions_form/ecals_submission_form.php');
-	
+
 		endif;
-		
-	  if (!is_object($result)) { //check if an WP_error object was returned... if so, display error message below 
+
+	  if (!is_object($result)) { //check if an WP_error object was returned... if so, display error message below
 		$twitterdata   = json_decode($result['body'],true);
 
 		$i = 0;
@@ -1245,27 +1263,27 @@ function cals_get_last_tweet(){
 		//add anchor tag to urls found in tweet's text (i.e. "http://bit.ly/b54pIs")
 		$pattern = '#\b(([\w-]+://?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))#';
 		$replace = '<a href="'.strtolower('\1').'">\1</a>';
-		$output   = preg_replace($pattern,$replace,$twitterdata[$i]["text"]); 
-		
-		
+		$output   = preg_replace($pattern,$replace,$twitterdata[$i]["text"]);
+
+
 
 		//add anchor tag to twitter handles found in tweet's text (i.e. "@uwmadison")
 		$pattern  = '/\@([a-zA-Z0-9_]+)/';
 		$replace  = '<a href="http://twitter.com/'.strtolower('\1').'">@\1</a>';
-		$output   = preg_replace($pattern,$replace,$output);  
-	 
+		$output   = preg_replace($pattern,$replace,$output);
+
 		//add anchor tag to hashtags found in tweet's text (i.e. "#uw2014")
 		$pattern  = '/(^|\s)#(\w+)/';
 		$replace  = ' <a href="http://twitter.com/search?q=%23'.strtolower('\2').'">#\2</a>';
-		$output   = preg_replace($pattern,$replace,$output);  
-		
-	 
+		$output   = preg_replace($pattern,$replace,$output);
+
+
 		$tweet['lastcheck'] = mktime();
 		$tweet['datemonth'] = date('M');
 		$tweet['dateday'] = date('d');
 		$tweet['dateyear'] = date('Y');
 		$tweet['data']    = $output;
-		
+
 		$tweet['rawdata']  = $twitterdata;
 		$tweet['followers'] = $twitterdata[0]['user']['followers_count'];
 		$date_month = date('M');
@@ -1277,19 +1295,19 @@ function cals_get_last_tweet(){
 	  }
 	} else {
 	  $output = $tweet['data'];
-	  
+
 	  $dateoutput = $tweet['rawdata'][0]['created_at'];
 	  $rawtext = $tweet['rawdata'][0]['text'];
 	  $date_month= substr($dateoutput, 4,3);
 	  $date_day= substr($dateoutput, 8,2);
 	  $date_year= substr($dateoutput, 26,4);
-	  
-	  
+
+
 	 if($output == '') {
 		 $output = $rawtext;
 	 }
-	 
- 	  
+
+
 }
 
 	if($date_month == "Jan") {
@@ -1329,8 +1347,8 @@ function cals_get_last_tweet(){
 		  $date_month = "December";
 		  $date_month_hidden = "12";
 	  }
-	  
-	  
+
+
 	  if($date_day == "01") {
 		  $date_day_formatted = "1";
 	  } else if($date_day == "02") {
@@ -1352,12 +1370,12 @@ function cals_get_last_tweet(){
 	  } else {
 		  $date_day_formatted = $date_day;
 	  }
-	
-	
-		
-		  
+
+
+
+
 		echo '<div class="newsItem social twitter">
-    	
+
     		<div class="previousa">
     		<div class="additionalContent" style="min-height: 130px;"><img src="http://beta.cals.wisc.edu/wp-content/themes/CALSv1_0/images/twitter-bg-'.rand(1, 3).'.jpg" alt=" " /></div>
     		<div class="text">
@@ -1366,32 +1384,28 @@ function cals_get_last_tweet(){
     			<h3>'.$output.'</h3>
     			</div>
     			<div class="excerpt">
-    			
-    			
-    			
-    			
-			
-    			
+
+
+
+
+
+
     			</div>
     			<div class="dateheading">
     			'.$date_month.' '.$date_day_formatted.', '.$date_year.'
     			</div>
     			<div class="hiddendate">-'.$date_year.''.$date_month_hidden.''.$date_day.'</div>
-					
+
 					<span class="number">10</span>
     		</div>
-    		
+
     		<a href="http://twitter.com/uwmadisoncals/" title="Follow UWMadisonCALS on Twitter" class="highlight">Follow UWMadisonCALS on Twitter</a>
-    		
-    		
+
+
     		</div>
     </div>';
-		  
-		  
-		  
+
+
+
 
 }
-
-
-
-
