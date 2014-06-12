@@ -67,18 +67,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/default_app_logo@2x.png" />
 
 
-<!-- iPhone SPLASHSCREEN-->
-        <link href="apple-touch-startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
-        <!-- iPhone (Retina) SPLASHSCREEN-->
-        <link href="apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-        <!-- iPad (portrait) SPLASHSCREEN-->
-        <link href="apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
-        <!-- iPad (landscape) SPLASHSCREEN-->
-        <link href="apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
-        <!-- iPad (Retina, portrait) SPLASHSCREEN-->
-        <link href="apple-touch-startup-image-1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-        <!-- iPad (Retina, landscape) SPLASHSCREEN-->
-        <link href="apple-touch-startup-image-1496x2048.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
@@ -96,7 +85,7 @@
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+
 
 
 
@@ -159,6 +148,10 @@ $current_colorscheme = $options['link_color'];
 					$loop = new WP_Query( $args );
 					$loopcount = 0;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+
+
+
 
 					    				<?php if ( has_post_thumbnail() ) {
 
@@ -238,7 +231,9 @@ $url = $thumb['0']; ?>
 			</a>
 			<?php endif; // end check for removed header image ?>
 
-
+			<div class="utilityMenu">
+				<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
+			</div>
 
 
 			</hgroup>
@@ -309,6 +304,8 @@ $pages = get_pages();
   //cals_uw_directory_search($small=true, $add_class = 'search_results');
 
   ?>
+<li><a href="http://www.cals.wisc.edu/agoutlook/">Wisconsin Agricultural Economic Outlook Forum</a><span style="display:none;">Ag outlook</span></li>
+<li><a href="http://grow.cals.wisc.edu"><img src="http://grow.cals.wisc.edu/wp-content/themes/grow/thumb.php?src=/wp-content/blogs.dir/9/files/2014/03/spring-2014-cover.jpg&h=100&w=76&zc=1&q=90" style="float: left; margin-right: 8px;"> <strong>Grow Magazine</strong><div>Celebrating 125 years of CALS</div></a></li>
 
 						<!-- Hard code any additional search terms here -->
 						<!--<li><a href="#">Search Item 1</a></li>-->
@@ -348,7 +345,7 @@ $pages = get_pages();
 
 					<?php //comments_template( '', true ); ?>
 
-					<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 5 );
+					<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 1 );
 					$loop = new WP_Query( $args );
 					$loopcount = 0;
 					while ( $loop->have_posts() ) : $loop->the_post();
@@ -360,6 +357,81 @@ $pages = get_pages();
 
 
     				<li class="flipin">
+
+    					<?php
+
+			$effectfield = get_field_object('banner_effect');
+			$effectvalue = get_field('banner_effect');?>
+
+			<?php if($effectvalue == "rainy") { ?>
+				<img id="background" alt="background" src="" />
+				<div id="cholder">
+								    </div>
+				<script src="<?php echo get_template_directory_uri(); ?>/js/rainyday.min.js"></script>
+				<script>
+
+				var isMobile = {
+				    Android: function() {
+				        return navigator.userAgent.match(/Android/i);
+				    },
+				    BlackBerry: function() {
+				        return navigator.userAgent.match(/BlackBerry/i);
+				    },
+				    iOS: function() {
+				        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+				    },
+				    Opera: function() {
+				        return navigator.userAgent.match(/Opera Mini/i);
+				    },
+				    Windows: function() {
+				        return navigator.userAgent.match(/IEMobile/i);
+				    },
+				    any: function() {
+				        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+			    }
+			};
+			console.log(isMobile.any());
+			if( isMobile.any() ) {
+				var isDevice = true;
+			}
+
+
+
+
+            function run() {
+            	var container = document.getElementById('cholder');
+                var image = document.getElementById('background');
+                image.onload = function() {
+                    var engine = new RainyDay({
+                        image: this,
+                        parentElement: container,
+
+                    });
+                    engine.trail = engine.TRAIL_SMUDGE;
+
+                    if(isDevice) {
+					   engine.rain([ [1, 2, 300] ]);
+					   engine.rain([ [1, 3, 0.18] ], 50);
+					 } else {
+						engine.rain([ [1, 2, 1500] ]);
+						engine.rain([ [1, 3, 0.18], [3, 5, 0.09] ], 50);
+				   }
+                };
+                image.crossOrigin = 'anonymous';
+                image.src = '<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+echo $src[0]; ?>';
+            }
+
+
+
+	             run();
+
+
+        </script>
+			<?php } else { ?>
+
+			<?php } ?>
+
     					<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php
 
 					    				if ( has_post_thumbnail() ) {
@@ -378,6 +450,8 @@ $url = $thumb['0']; echo $url;
 										}
 
 				    				?>') no-repeat; background-size: 100% auto;">
+
+
 
 				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>
 				    				<div class="slideBlurImage"></div>
@@ -399,7 +473,7 @@ $url = $thumb['0']; echo $url;
   				<h2><?php the_title(); ?></h2>
 
 	  				<div class="featuresubtitle">
-	  				<?php the_content_rss(); ?>
+	  				<?php the_content(); ?>
 	  				</div>
   				</div>
   			</div>
