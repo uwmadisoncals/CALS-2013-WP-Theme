@@ -4191,7 +4191,7 @@ min-height: 220px;
   -webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 	box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
   float: left;
-  
+
   margin-right: -20px;
 }
 
@@ -4825,6 +4825,10 @@ border-radius: 0px;
 	width: 49.1%;
 	margin-right: 1%;
 	float:left;
+}
+
+.span-100 {
+	width: 99.1%;
 }
 
 .box.span-50:last-child {

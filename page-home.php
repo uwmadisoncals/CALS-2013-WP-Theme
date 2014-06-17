@@ -67,7 +67,7 @@ get_header(); ?>
 
 	<?php endwhile; ?>
 <?php endif; ?>
-<?php restore_current_blog(); ?>
+<?php restore_current_blog(); wp_reset_query(); ?>
 							<a href="http://news.cals.wisc.edu" class="moreButton">More News</a>
 
 
@@ -163,56 +163,107 @@ get_header(); ?>
 
 				</div>
 
-				<div class="row clearfix">
-
-					<div class="span-100 box dropin">
-
-						<div class="boxContent">
-														<h3 class="spotlight_title"><a href="#" rel="bookmark" title="Permanent Link to Title">Title</a> </h3>
-														<p>Date Stamp</p>
-																									</div>
-																	<div class="topShade"></div>
-										<div class="bottomShade"></div>
 
 
 
 
+				<?php
+				wp_reset_query();
+				$my_query = new WP_Query( 'paged=' . get_query_var( 'page' ) );
+				while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+
+
+<?php if( have_rows('home_page_feature') ):
+
+     // loop through the rows of data
+    while ( have_rows('home_page_feature') ) : the_row();
+
+        if( get_row_layout() == 'full_width_promotion' ): ?>
+
+          <div class="row clearfix">
+
+
+
+
+						<div class="span-100 box dropin">
+
+							<?php if( function_exists('get_field') && get_sub_field('promotion_image') ):
+
+								$attachment_id = get_sub_field('promotion_image'); $size = "large";
+								$image = wp_get_attachment_image_src($attachment_id, $size);
+
+								$backgroundImg = "background: url('" . $image[0] . "') no-repeat; background-size: auto 100%; background-position: center center";
+								$slide = '<img height="' . $image[1] . '" width="' . $image[2] . '" src="' . $image[0] . '" alt=" ">';
+								echo $slide;
+							endif; ?>
+
+
+							<div class="boxContent">
+															<h3 class="spotlight_title"><a href="<?php the_sub_field('promotion_link'); ?>" rel="bookmark" title="Permanent Link to Title"><?php the_sub_field('promotion_title'); ?></a> </h3>
+															<p><?php the_sub_field('promotion_caption'); ?></p>
+																										</div>
+																		<div class="topShade"></div>
+											<div class="bottomShade"></div>
 
 
 
 
 
-									<div class="windows8">
-										<div class="wBall" id="wBall_1">
-										<div class="wInnerBall">
+
+
+
+
+										<div class="windows8">
+											<div class="wBall" id="wBall_1">
+											<div class="wInnerBall">
+											</div>
+											</div>
+											<div class="wBall" id="wBall_2">
+											<div class="wInnerBall">
+											</div>
+											</div>
+											<div class="wBall" id="wBall_3">
+											<div class="wInnerBall">
+											</div>
+											</div>
+											<div class="wBall" id="wBall_4">
+											<div class="wInnerBall">
+											</div>
+											</div>
+											<div class="wBall" id="wBall_5">
+											<div class="wInnerBall">
+											</div>
+											</div>
 										</div>
-										</div>
-										<div class="wBall" id="wBall_2">
-										<div class="wInnerBall">
-										</div>
-										</div>
-										<div class="wBall" id="wBall_3">
-										<div class="wInnerBall">
-										</div>
-										</div>
-										<div class="wBall" id="wBall_4">
-										<div class="wInnerBall">
-										</div>
-										</div>
-										<div class="wBall" id="wBall_5">
-										<div class="wInnerBall">
-										</div>
-										</div>
+
+										<div class="shade"></div>
+
 									</div>
 
-									<div class="shade"></div>
-
-								</div>
 
 
-					</div>
+          </div>
 
-				</div>
+        <?php endif;
+
+
+
+
+    endwhile;
+
+else :
+
+    // no layouts found
+
+endif;
+
+?>
+
+<?php endwhile; // end of the loop. ?>
+
+
+
+
 
 				<div class="row clearfix">
 
