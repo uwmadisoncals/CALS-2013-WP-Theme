@@ -191,7 +191,7 @@ $url = $thumb['0']; ?>
 		<div class="headerCentered">
 			<hgroup class="heading">
 				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-				<?php if(bloginfo( 'description' )) { ?><h2 id="site-description"><?php bloginfo( 'description' ); ?></h2><?php } ?>
+				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 
 			<?php
 				// Check to see if the header image has been removed
@@ -432,7 +432,9 @@ echo $src[0]; ?>';
 
 			<?php } ?>
 
-    					<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php
+    					<div class="slideImage <?php echo $slideclass ?>">
+    								<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>
+    								<div class="slideImageSeperate <?php echo $slideclass ?>" style="background: url('<?php
 
 					    				if ( has_post_thumbnail() ) {
 
@@ -449,12 +451,10 @@ $url = $thumb['0']; echo $url;
 
 										}
 
-				    				?>') no-repeat; background-size: 100% auto;">
+				    				?>') no-repeat; background-size: 100% auto;"></div>
 
-
-
-				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>
-				    				<div class="slideBlurImage"></div>
+				    				
+				    				<div class="slideBlurImage"><div class="slideBlurImageInner"></div></div>
 
 
 				    				<div class="slideBlur <?php echo $slideblurclass ?>"></div>

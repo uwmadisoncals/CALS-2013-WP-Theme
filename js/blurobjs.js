@@ -3,8 +3,8 @@ $(document).ready(function(){
 	
 		$( ".slideImage" ).each(function( index ) {
 				
-				var orightml = $(this).css("background-image");
-				$(this).find(".slideBlurImage").css("background-image",orightml);
+				var orightml = $(this).find(".slideImageSeperate").css("background-image");
+				$(this).find(".slideBlurImageInner").css("background-image",orightml);
 				$(this).find(".headerbgBlurImage").css("background-image",orightml);	
 				
   		});
