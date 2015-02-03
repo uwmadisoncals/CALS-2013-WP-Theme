@@ -331,7 +331,7 @@ endif;
 
 					<div class="span-33 box eventsBox dropin4">
 							<h2>Events</h2>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/aghall1.jpg" alt=" ">
+							<img src="<?php echo get_template_directory_uri(); ?>/images/aghall1.jpg" alt="CALS Events">
 							<div class="boxContent">
 
 

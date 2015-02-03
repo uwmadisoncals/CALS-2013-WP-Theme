@@ -191,7 +191,7 @@ $url = $thumb['0']; ?>
 		<div class="headerCentered">
 			<hgroup class="heading">
 				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<?php if(bloginfo( 'description' )) { ?><h2 id="site-description"><?php bloginfo( 'description' ); ?></h2><?php } ?>
 
 			<?php
 				// Check to see if the header image has been removed
