@@ -305,7 +305,7 @@ $pages = get_pages();
 
   ?>
 <li><a href="http://www.cals.wisc.edu/agoutlook/">Wisconsin Agricultural Economic Outlook Forum</a><span style="display:none;">Ag outlook</span></li>
-<li><a href="http://grow.cals.wisc.edu"><img src="http://grow.cals.wisc.edu/wp-content/themes/grow/thumb.php?src=/wp-content/blogs.dir/9/files/2014/03/spring-2014-cover.jpg&h=100&w=76&zc=1&q=90" style="float: left; margin-right: 8px;"> <strong>Grow Magazine</strong><div>Celebrating 125 years of CALS</div></a></li>
+<li><a href="http://grow.cals.wisc.edu"><img src="http://grow.cals.wisc.edu/wp-content/themes/grow/thumb.php?src=/wp-content/blogs.dir/9/files/2014/03/spring-2014-cover.jpg&h=100&w=76&zc=1&q=90" alt="Grow Magazine" style="float: left; margin-right: 8px;"> <strong>Grow Magazine</strong><div>Celebrating 125 years of CALS</div></a></li>
 
 						<!-- Hard code any additional search terms here -->
 						<!--<li><a href="#">Search Item 1</a></li>-->
