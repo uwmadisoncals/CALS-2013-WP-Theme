@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Feature Landing Page
+ * Template Name: 2 Features on Landing Page
  *
  * Description: Twenty Twelve loves the no-sidebar look as much as
  * you do. Use this page template to remove the sidebar from any page.
@@ -27,7 +27,7 @@ get_header(); ?>
 					<?php if(is_page( 'faculty-staff' )) { ?>
 						<?php get_template_part( 'content', 'page-features-workplace' ); ?>
 					<?php } else if(is_page('careers')) { ?>
-						<?php get_template_part( 'content', 'page-features-careers' ); ?>
+						<?php get_template_part( 'content', 'page-features-careers2' ); ?>
 					<?php } else { ?>
 						<?php get_template_part( 'content', 'page-features' ); ?>
 					<?php } ?>
