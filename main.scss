@@ -9651,3 +9651,28 @@ a.mobileNavTrigger {
 .cb-theme b {
 	font-weight: bold;
 }
+
+.page-template-page-2features {
+	.pagefeatureboxes {
+		.box {
+			position: relative; 
+			 
+			a.coverLink {
+				display: block;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index:2;
+				background: rgba(0,0,0,0);
+				transition: 0.4s;
+				
+			}
+			
+			a.coverLink:hover, a.coverLink:focus {
+				background: rgba(0,0,0,0.7);
+			}
+		}
+	}
+}

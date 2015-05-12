@@ -23,8 +23,10 @@
 		<?php the_content(); ?>
 		<div class="pagefeatureboxes">
 		<div class="row clearfix">
-						<div class="span-50 box fullbleed" style="height: 400px;">
-						
+						<div class="span-50 box fullbleed" style="height: 300px;">
+							<?php if(get_field('feature_container_1_page')) { ?>
+							<a href="<?php the_field('feature_container_1_page'); ?>" class="coverLink"></a>
+							<?php } ?>
 							<h2><?php the_field('feature_container_1_title'); ?></h2>
 							<img src="<?php the_field('feature_container_1_image'); ?>" alt="" />
 							
@@ -60,7 +62,10 @@
 						<div class="shade"></div>	
 							
 						</div>
-						<div class="span-50 box fullbleed" style="height: 400px;">
+						<div class="span-50 box fullbleed" style="height: 300px;">
+							<?php if(get_field('feature_container_2_page')) { ?>
+							<a href="<?php the_field('feature_container_2_page'); ?>" class="coverLink"></a>
+							<?php } ?>
 							<h2><?php the_field('feature_container_2_title'); ?></h2>
 							<img src="<?php the_field('feature_container_2_image'); ?>" alt="" />
 							<div class="boxContent">

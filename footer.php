@@ -74,9 +74,8 @@ University of Wisconsin Foundation.</p>
 <?php wp_footer(); ?>
 
  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/master.min.js"></script>
-
-<!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/snowfeature.js"></script>-->
-<script>
+ 
+ <script>
     (function(f,b){
         var c;
         f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
@@ -85,7 +84,10 @@ University of Wisconsin Foundation.</p>
         c.src="//static.hotjar.com/c/hotjar-13024.js?sv=3";
         b.getElementsByTagName("head")[0].appendChild(c); 
     })(window,document);
-</script>
+</script> 
+
+<!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/snowfeature.js"></script>-->
+
 
 
 </body>
