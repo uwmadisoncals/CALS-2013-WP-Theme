@@ -1267,7 +1267,7 @@ border-radius: 0px;
 #main {
 	clear: both;
 	padding: 0 0 0;
-	margin-top: -400px;
+	margin-top: -340px;
 
 	z-index:3;
 	position: relative;
@@ -4229,6 +4229,8 @@ min-height: 220px;
 	margin-bottom: 1em;
 }
 
+
+
 .sidebarRow {
 	float: right;
 	width: 230px;
@@ -4780,6 +4782,21 @@ transform: rotate(900deg);
 	height: 200px;
 }
 
+.home.page .fullWidth .row .box.doubleHeight {
+	height: 410px;
+}
+
+.home.page .fullWidth .row.thirdRow {
+	position: absolute;
+	top: 422px;
+	left: 0px;
+	width: 100%;
+}
+
+.home.page .fullWidth .row .box.invisible {
+	box-shadow: none;
+}
+
 .page-id-64 .row .box {
 	height: 230px;
 }
@@ -5205,7 +5222,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 .collegeFeature {
 	width: 100%;
 	margin: 0 auto;
-	height: 580px;
+	height: 520px;
 	position: relative;
 	z-index:2;
 	overflow: hidden;
@@ -5216,7 +5233,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 	}
 
 .collegeFeature .slideImage {
-	height: 580px;
+	height: 520px;
 	-ms-filter: blur(8px);
 	-webkit-filter: blur(8px);
 	-moz-filter: blur(8px);
@@ -5232,7 +5249,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', e
 }
 
 .collegeFeature .slideImageSeperate {
-	height: 580px;
+	height: 520px;
 	overflow: hidden;
 	width: 100%;
 
@@ -5663,7 +5680,7 @@ background-size: 100% auto;
 
 .headerPhotoBg {
 	z-index:1;
-	height: 580px;
+	height: 520px;
 	position: relative;
 
 	transform: translateZ(0);
@@ -5715,7 +5732,7 @@ background-size: 100% auto;
 	overflow: hidden;
 	float: left;
 	width: auto;
-	height: 580px;
+	height: 520px;
 
 }
 
