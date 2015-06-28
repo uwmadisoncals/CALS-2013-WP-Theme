@@ -163,7 +163,50 @@ get_header(); ?>
 
 				<div class="row clearfix">
 
-					<div class="span-33 box dropin3 doubleHeight">
+					<div class="span-33 box dropin3 eventsBox doubleHeight">
+							<h2>Events</h2>
+							<img src="<?php echo get_template_directory_uri(); ?>/images/aghall1.jpg" alt=" ">
+							<div class="boxContent">
+	
+
+  <?php uwmadison_events('http://www.today.wisc.edu/events/feed/30', array('limit' => 4)) ?>
+
+
+
+
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>
+
+								<a href="http://www.today.wisc.edu/events/feed/30" class="moreButton">More Events</a>
+
+								<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div>
+
+						<div class="shade"></div>
+					</div>
+
+					<div class="span-33 box dropin4">
 							<h2>Announcements</h2>
 
 							<?php switch_to_blog(19); ?>
@@ -223,49 +266,7 @@ get_header(); ?>
 						</div>
 
 						<div class="shade"></div>
-					</div>
-
-					<div class="span-33 box eventsBox dropin4">
-							<h2>Events</h2>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/aghall1.jpg" alt=" ">
-							<div class="boxContent">
-	
-
-  <?php uwmadison_events('http://www.today.wisc.edu/events/feed/30', array('limit' => 2)) ?>
-
-
-
-
-                                             </div>
-                            <div class="topShade"></div>
-							<div class="bottomShade"></div>
-
-								<a href="http://www.today.wisc.edu/events/feed/30" class="moreButton">More Events</a>
-
-								<div class="windows8">
-							<div class="wBall" id="wBall_1">
-							<div class="wInnerBall">
-							</div>
-							</div>
-							<div class="wBall" id="wBall_2">
-							<div class="wInnerBall">
-							</div>
-							</div>
-							<div class="wBall" id="wBall_3">
-							<div class="wInnerBall">
-							</div>
-							</div>
-							<div class="wBall" id="wBall_4">
-							<div class="wInnerBall">
-							</div>
-							</div>
-							<div class="wBall" id="wBall_5">
-							<div class="wInnerBall">
-							</div>
-							</div>
-						</div>
-
-						<div class="shade"></div>
+							
 
 					</div>
 
@@ -390,8 +391,10 @@ get_header(); ?>
 					<div class="span-33 box dropin5 doubleHeight">
 							<h2>Social</h2>
 
-							<?php switch_to_blog(20); ?>
-<?php query_posts("posts_per_page=1&cat=17"); ?>
+							<?php restore_current_blog(); ?>
+<?php 
+	$args = array( 'post_type' => 'social-highlight', 'posts_per_page' => 1 );
+	query_posts($args); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
@@ -425,7 +428,7 @@ get_header(); ?>
   <?php endwhile; ?>
 <?php endif; ?>
 <?php restore_current_blog(); ?>
-<a href="http://news.cals.wisc.edu/category/departments/cals-faces/" class="moreButton">More CALS Faces</a>
+<!--<a href="http://news.cals.wisc.edu/category/departments/cals-faces/" class="moreButton">More CALS Faces</a>-->
 <div class="windows8">
 							<div class="wBall" id="wBall_1">
 							<div class="wInnerBall">
@@ -453,6 +456,63 @@ get_header(); ?>
 					</div>
 
 				</div>
+				
+				
+				<div class="row clearfix fourthRow">
+
+					
+
+					<div class="span-66 box eventsBox dropin4">
+							<h2>Events</h2>
+							<img src="<?php echo get_template_directory_uri(); ?>/images/aghall1.jpg" alt=" ">
+							<div class="boxContent">
+	
+
+  <?php uwmadison_events('http://www.today.wisc.edu/events/feed/30', array('limit' => 2)) ?>
+
+
+
+
+                                             </div>
+                            <div class="topShade"></div>
+							<div class="bottomShade"></div>
+
+								<a href="http://www.today.wisc.edu/events/feed/30" class="moreButton">More Events</a>
+
+								<div class="windows8">
+							<div class="wBall" id="wBall_1">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_2">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_3">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_4">
+							<div class="wInnerBall">
+							</div>
+							</div>
+							<div class="wBall" id="wBall_5">
+							<div class="wInnerBall">
+							</div>
+							</div>
+						</div>
+
+						<div class="shade"></div>
+
+					</div>
+
+					<div class="span-33 box invisible">
+							
+					</div>
+
+				</div>
+				
+				<div class="rowSpacer"></div>
 
 				
 				<?php
