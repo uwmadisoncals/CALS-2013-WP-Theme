@@ -7141,6 +7141,17 @@ footer .socialRef .facebook {
 	margin-left: 7px;
 }
 
+footer .socialRef .instagram {
+	display: block;
+	float: right;
+	width: 30px;
+	height: 30px;
+	text-indent: -10000px;
+	background: url("dist/instagram_icon.png") no-repeat;
+	border: none;
+	margin-left: 7px;
+}
+
 footer .socialRef .flickr {
 	display: block;
 	float: right;
@@ -9713,5 +9724,130 @@ a.mobileNavTrigger {
 				background: rgba(0,0,0,0.7);
 			}
 		}
+	}
+}
+
+div.box.socialWithImage {
+	z-index:50;
+	position:relative;
+	
+	h2 {
+		
+		
+		svg {
+			position: relative;
+			top: 4px;
+			left: 0px;
+			
+			width: 20px;
+			height: 20px;
+			
+			path {
+				fill: rgba(255,255,255,0.7);
+			}
+		}
+	}
+	
+	.spotlight_title {
+		p {
+			font-size: 16px;
+		}
+	}
+}
+
+
+
+div.box.noImageSocial {
+	background: #fff;
+	z-index:50;
+	position:relative;
+	
+	h2, p {
+		color: rgba(0,0,0,0.7);
+		
+	}
+	
+	p {
+		font-size: 20px;
+	}
+	
+	a {
+		color: #03a9f4;
+		font-size: 20px;
+	}
+	
+	.boxContent {
+		bottom: auto;
+		right: auto;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		font-size: 20px;
+		text-align: center;
+	}
+}
+
+div.box.givingPromo {
+	h2 {
+		opacity: 0;
+	}
+}
+
+div.box.twitter {
+	h2, a {
+		color: #03a9f4;
+	}
+}
+
+div.box.socialWithImage.twitter {
+	h2, a {
+		color: rgba(255,255,255,0.8);
+	}
+}
+
+div.box.noImageSocial.twitter {
+	h2 {
+		svg {
+			path {
+				fill: #03a9f4;
+			}
+		}
+	}
+}
+
+
+div.box.noImageSocial.facebook {
+	h2 {
+		svg {
+			path {
+				fill: #395994;
+			}
+		}
+	}
+}
+
+
+div.box.facebook {
+	h2, a {
+		color: #395994;
+	}
+	
+	
+}
+
+
+div.box.noImageSocial.instagram {
+	h2 {
+		svg {
+			path {
+				fill: #125688;
+			}
+		}
+	}
+}
+
+div.box.instagram {
+	h2, a {
+		color: #125688;
 	}
 }
