@@ -15,7 +15,7 @@
 	}
 }
 
-@media only screen and (min-width : 640px) and (max-width : 960px) {
+@media only screen and (min-width : 700px) and (max-width : 960px) {
 	.page #primary, .single #primary, .page #content.fullWidth, #primary {
 		width: 98%;
 		margin-right: 1%;
@@ -141,7 +141,7 @@
 	}
 	
 	body.home.page .row .box.span-33, body.home.page .row .box.span-50 {
-		height: 180px;
+		height: 200px;
 	}
 	
 	footer .inner {
@@ -174,11 +174,36 @@
 }
 
 /*  */
-@media only screen and (min-width : 420px) and (max-width : 640px) {
+@media only screen and (min-width : 420px) and (max-width : 700px) {
 	.page #primary, .single #primary, .page #content.fullWidth, #primary {
 		width: 98%;
 		margin-right: 1%;
 		margin-left: 1%;
+	}
+	
+	
+	.box.span-33, .box.span-50, .box.span-66 {
+		width: 98%;
+		display: block;
+		position: relative;
+		margin-left: 1%;
+		margin-bottom: 1%;
+	}
+	
+	div.box.span-50:first-child {
+		width: 98%;
+		display: block;
+		position: relative;
+	}
+	
+	div.row div.box.invisible, div.rowSpacer {
+		display: none !important;
+	}
+	
+	.home.page .fullWidth .row.thirdRow, .home.page .fullWidth .row.fourthRow {
+		position: relative;
+		top: auto;
+		left: auto;
 	}
 	
 	#mobile-menu {
@@ -321,8 +346,8 @@
 	}
 	
 	body.home.page .row .box.span-33, body.home.page .row .box.span-50 {
-		height: 180px;
-	}
+		height: 200px;
+	} 
 	
 	footer .inner {
 		width: 100%;
@@ -541,7 +566,7 @@
 	}
 	
 	body.home.page .row .box.span-33, body.home.page .row .box.span-50 {
-		height: 180px;
+		height:200px;
 	}
 	
 	.collegeFeature li .featureCaption h2 {
