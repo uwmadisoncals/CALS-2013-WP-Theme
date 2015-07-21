@@ -9743,7 +9743,7 @@ div.box.socialWithImage {
 			height: 20px;
 			
 			path {
-				fill: rgba(255,255,255,0.7);
+				fill: rgba(255,255,255,0.7) !important;
 			}
 		}
 	}
@@ -9799,11 +9799,11 @@ div.box.twitter {
 	}
 }
 
-div.box.socialWithImage.twitter {
+div.box.socialWithImage.twitter, div.box.socialWithImage.instagram, div.box.socialWithImage.facebook {
 	h2, a {
 		color: rgba(255,255,255,0.8);
 	}
-}
+} 
 
 div.box.noImageSocial.twitter {
 	h2 {
