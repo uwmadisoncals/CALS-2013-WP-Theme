@@ -55,6 +55,10 @@ if ( ! function_exists( 'theme_special_nav' ) ) {
 
 
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
+
+add_post_type_support( 'page', 'excerpt' );
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
