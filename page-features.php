@@ -28,6 +28,10 @@ get_header(); ?>
 						<?php get_template_part( 'content', 'page-features-workplace' ); ?>
 					<?php } else if(is_page('careers')) { ?>
 						<?php get_template_part( 'content', 'page-features-careers' ); ?>
+					
+					<?php } else if(is_page('careerservices')) { ?>
+						<?php get_template_part( 'content', 'page-features-careers' ); ?>
+
 					<?php } else { ?>
 						<?php get_template_part( 'content', 'page-features' ); ?>
 					<?php } ?>
