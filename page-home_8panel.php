@@ -514,9 +514,9 @@ get_header(); ?>
 
 					<div class="span-66 box dropin4 givingPromo">
 							<h2>Giving</h2>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/giving_banner.jpg" alt=" ">
+							<img src="<?php echo get_template_directory_uri(); ?>/images/campaign-ad.jpg" alt=" ">
 							
-							<a href="https://www.myuwconnect.org/give?id=08D14821-5649-4686-A96C-92DFF6B6245C" rel="bookmark" class="hideTextFullSize" title="Permanent Link to Title">CALS Annual Fund</a>
+							<a href="http://www.allwaysforward.org/schools-colleges/cals/" rel="bookmark" class="hideTextFullSize" title="Permanent Link to Title">All Ways Forward CALS Fund</a>
 							<div class="boxContent">
 	
 
