@@ -168,7 +168,7 @@ get_header(); ?>
 							<div class="boxContent">
 	
 
-  <?php uwmadison_events('http://www.today.wisc.edu/events/feed/30', array('limit' => 5)) ?>
+  <?php uwmadison_events('http://www.today.wisc.edu/events/feed/30', array('limit' => 4)) ?>
 
 
 
