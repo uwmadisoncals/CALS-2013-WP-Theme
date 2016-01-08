@@ -514,7 +514,7 @@ get_header(); ?>
 
 					<div class="span-66 box dropin4 givingPromo">
 							<h2>Giving</h2>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/campaign-ad.jpg" alt=" ">
+							<img src="<?php echo get_template_directory_uri(); ?>/images/campaign-ad-winter.jpg" alt=" ">
 							
 							<a href="http://www.allwaysforward.org/schools-colleges/cals/" rel="bookmark" class="hideTextFullSize" title="Permanent Link to Title">All Ways Forward CALS Fund</a>
 							<div class="boxContent">
