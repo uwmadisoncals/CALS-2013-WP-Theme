@@ -76,16 +76,17 @@ University of Wisconsin Foundation.</p>
 
  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/master.min.js"></script>
  
- <script>
-    (function(f,b){
-        var c;
-        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
-        f._hjSettings={hjid:13024, hjsv:3};
-        c=b.createElement("script");c.async=1;
-        c.src="//static.hotjar.com/c/hotjar-13024.js?sv=3";
-        b.getElementsByTagName("head")[0].appendChild(c); 
-    })(window,document);
-</script> 
+<!-- Hotjar Tracking Code for www.cals.wisc.edu -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:13024,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
 
 <!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/snowfeature.js"></script>-->
 
