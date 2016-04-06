@@ -33,9 +33,9 @@ get_header(); ?>
 					<div class="span-50 box dropin">
 
 							<h2>News</h2>
-
+							<!--testing query change -->
 							<?php switch_to_blog(20); ?>
-<?php query_posts("posts_per_page=1&category_name=featured-articles"); ?>
+<?php query_posts("posts_per_page=1&cat7"); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
