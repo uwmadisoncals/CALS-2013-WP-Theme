@@ -35,7 +35,7 @@ get_header(); ?>
 							<h2>News</h2>
 							<!--testing query change -->
 							<?php switch_to_blog(20); ?>
-<?php query_posts("posts_per_page=1&cat7"); ?>
+<?php query_posts("posts_per_page=1&cat=7"); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
