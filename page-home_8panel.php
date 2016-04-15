@@ -276,7 +276,7 @@ get_header(); ?>
 							<h2>CALS in the News</h2>
 
 							<?php switch_to_blog(20); ?>
-<?php query_posts("posts_per_page=1&category_name=cals-in-the-media"); ?>
+<?php query_posts("posts_per_page=1&cat=18"); ?>
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post();  ?>
 
