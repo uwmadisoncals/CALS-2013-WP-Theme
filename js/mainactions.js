@@ -2844,7 +2844,7 @@ var countFeatures = 0;
 	    		
 	    		return false;
 	    });
-		
+	    
 		//Easter Egg - Type "boredom" into search to activate
 		var eeggused = "no";
 		function eegg() {
@@ -2854,7 +2854,7 @@ var countFeatures = 0;
 			var s = document.createElement('script'); 
 			s.type='text/javascript'; 
 			document.body.appendChild(s); 
-			s.src='//hi.kickassapp.com/kickass.js';
+			s.src='//www.websiteasteroids.com/asteroids.min.js';
 			void(0);
 			}
 		}
