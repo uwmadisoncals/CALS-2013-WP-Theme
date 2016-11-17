@@ -31,9 +31,8 @@
 
 			<div class="linksContainer right">
 				<h3>Support</h3>
-				<p>You can help support the College of Agricultural &amp; Life Sciences by making a gift to the
-University of Wisconsin Foundation.</p>
-				<a href="http://supportuw.org/giveto/cals" class="button">Make a Gift</a>
+				<p>You can help support the College of Agricultural and Life Sciences by making a gift via the University of Wisconsin Foundation.</p>
+				<a href="http://www.cals.wisc.edu/alumni-friends/make-a-gift/" class="button">Make a Gift</a>
 				<p class="address">College of Agricultural and Life Sciences | 1450 Linden Drive | Madison, WI 53706 | 608.262.1251 | <a href="mailto:info@cals.wisc.edu">info@cals.wisc.edu</a></p>
 			</div>
 			<div class="clearfix"></div>
