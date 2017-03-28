@@ -75,6 +75,153 @@
 
  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/master.min.js"></script>
  
+ <script>
+	 
+	 $(window).load(function() {
+	//var remotecount = 0;
+
+															
+																//remotecount = remotecount + 1;
+																
+																//var spinner = $(this).find(".loadingWrapper");
+																var remoteelem = $(".calsinthenews").find(".remoteContent");
+																//$(this).addClass(remoteelem);
+																var remoteurl = $(".calsinthenews").find(".remoteContent").attr("data-remoteurl");
+																
+																
+																var newsremoteurl = $(".calsnews").attr("data-remoteurl");
+																var ecalsremoteurl = $(".ecalsnews").attr("data-remoteurl");
+
+																var calsfacesurl = $(".calsfaces").attr("data-remoteurl");
+																
+																
+																
+																//Cals NEWS call
+																
+																
+																$.ajax( {
+																url: newsremoteurl,
+																success: function ( data ) {
+
+																	
+																	var post = data.shift(); // The data is an array of posts. Grab the first one.
+																	//console.log(post);
+																	
+																	$(".calsnews .spotlight_title a").text(post.title.rendered);
+																	
+																		var postdate = new Date(post.date);
+																		var strdate = (postdate.getMonth() + 1) + '/' + postdate.getDate() + '/' +  postdate.getFullYear();
+																		$(".calsnews .date").text(strdate);
+																		$(".calsnews .spotlight_title a").attr("href",post.link);
+																		
+																		var mediaID = post._links['wp:attachment'][0].href;
+																		
+																		
+																		
+																		$.ajax( {
+																		url: mediaID,
+																		success: function ( mediadata ) {
+		
+																			//$(spinner).hide();
+																			var media = mediadata.shift(); // The data is an array of posts. Grab the first one.
+																			
+																			$(".calsnews .mediaImg").attr("src",media.guid.rendered);
+																			
+																			},
+																		cache: true
+																		} );
+																
+																},
+																cache: true
+																} );
+																
+																
+																//Announcements eCALS call
+																
+																
+																$.ajax( {
+																url: ecalsremoteurl,
+																success: function ( data ) {
+
+																	
+																	var post = data.shift(); // The data is an array of posts. Grab the first one.
+																	//console.log(post);
+																	
+																	$(".ecalsnews .spotlight_title a").text(post.title.rendered);
+																	
+																		var postdate = new Date(post.date);
+																		var strdate = (postdate.getMonth() + 1) + '/' + postdate.getDate() + '/' +  postdate.getFullYear();
+																		$(".ecalsnews .date").text(strdate);
+																		$(".ecalsnews .spotlight_title a").attr("href",post.link);
+																		
+																		var mediaID = post._links['wp:attachment'][0].href;
+																		
+																		
+																		
+																		$.ajax( {
+																		url: mediaID,
+																		success: function ( mediadata ) {
+		
+																			//$(spinner).hide();
+																			var media = mediadata.shift(); // The data is an array of posts. Grab the first one.
+																			
+																			$(".ecalsnews .mediaImg").attr("src",media.guid.rendered);
+																			
+																			},
+																		cache: true
+																		} );
+																
+																},
+																cache: true
+																} );
+																
+																
+																//CALS Faces Call
+																
+																
+																$.ajax( {
+																url: calsfacesurl,
+																success: function ( data ) {
+
+																	
+																	var post = data.shift(); // The data is an array of posts. Grab the first one.
+																	//console.log(post);
+																	
+																	$(".calsfaces .spotlight_title a").text(post.title.rendered);
+																	
+																		var postdate = new Date(post.date);
+																		var strdate = (postdate.getMonth() + 1) + '/' + postdate.getDate() + '/' +  postdate.getFullYear();
+																		$(".calsfaces .date").text(strdate);
+																		$(".calsfaces .spotlight_title a").attr("href",post.link);
+																		
+																		var mediaID = post._links['wp:attachment'][0].href;
+																		
+																		
+																		
+																		$.ajax( {
+																		url: mediaID,
+																		success: function ( mediadata ) {
+		
+																			//$(spinner).hide();
+																			var media = mediadata.shift(); // The data is an array of posts. Grab the first one.
+																			
+																			$(".calsfaces .mediaImg").attr("src",media.guid.rendered);
+																			
+																			},
+																		cache: true
+																		} );
+																
+																},
+																cache: true
+																} );
+
+
+															
+	 });
+	 
+ </script>
+
+ 
 <!-- Hotjar Tracking Code for www.cals.wisc.edu -->
 <script>
     (function(h,o,t,j,a,r){

@@ -30,30 +30,15 @@ get_header(); ?>
 				<!-- CALS News Content Box -->
 				<div class="row clearfix">
 
-					<div class="span-50 box dropin">
+					<div class="span-50 box dropin calsnews" data-remoteurl="https://news.cals.wisc.edu/wp-json/wp/v2/posts?categories=7&per_page=1">
 
 							<h2>News</h2>
 							<!--testing query change -->
-							<?php switch_to_blog(20); ?>
-<?php query_posts("posts_per_page=1&cat=7"); ?>
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post();  ?>
-
-  <?php	if ( has_post_thumbnail() ) {
-
-		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'large');
-
-		    				} else {
-							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
-							 //echo '<img src="';
-							 echo catch_that_news_image();
-							// echo '" alt="" />';
-
-						} ?>
+							
+						<img src="" alt=" " class="mediaImg">
 			<div class="boxContent">
-											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_time('l, F jS, Y') ?></p>
+											<h3 class="spotlight_title"><a href="#" rel="bookmark"></a> </h3>
+											<p class="date"></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -63,9 +48,7 @@ get_header(); ?>
 
 
 
-  <?php endwhile; ?>
-<?php endif; ?>
-<?php restore_current_blog(); ?>
+
 							<a href="http://news.cals.wisc.edu" class="moreButton">More News</a>
 
 
@@ -96,29 +79,14 @@ get_header(); ?>
 
 					</div>
 
-					<div class="span-50 box dropin2">
+					<div class="span-50 box dropin2 ecalsnews" data-remoteurl="https://ecals.cals.wisc.edu/wp-json/wp/v2/posts?categories=17&per_page=1">
 							<h2>Announcements</h2>
 
-							<?php switch_to_blog(19); ?>
-<?php query_posts("cat=17&posts_per_page=1"); ?>
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post();  ?>
-
-  <?php	if ( has_post_thumbnail() ) {
-
-		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'large');
-
-		    				} else {
-
-							 //echo '<img src="';
-							 echo catch_that_announcements_image();
-							// echo '" alt="" />';
-
-						} ?>
+							
+						<img src="" alt=" " class="mediaImg">
 			<div class="boxContent">
-											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
-											<p><?php the_time('l, F jS, Y') ?></p>
+											<h3 class="spotlight_title"><a href="#" rel="bookmark"></a> </h3>
+											<p class="date"></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -128,9 +96,7 @@ get_header(); ?>
 
 
 
-  <?php endwhile; ?>
-<?php endif; ?>
-<?php restore_current_blog(); ?>
+
 							<a href="http://ecals.cals.wisc.edu" class="moreButton">More Announcements</a>
 						<div class="windows8">
 							<div class="wBall" id="wBall_1">
@@ -205,32 +171,19 @@ get_header(); ?>
 						<div class="shade"></div>
 					</div>
 
-					<div class="span-33 box dropin4">
+					<div class="span-33 box dropin4 calsfaces" data-remoteurl="https://news.cals.wisc.edu/wp-json/wp/v2/posts?categories=17&per_page=1">
 							<h2>CALS Faces</h2>
 
-							<?php switch_to_blog(20); ?>
-<?php query_posts("posts_per_page=1&cat=17"); ?>
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post();  ?>
 
-  <?php	if ( has_post_thumbnail() ) {
-
-		    				//the_post_thumbnail();
-		    				echo get_the_post_thumbnail($page->ID, 'large');
-
-		    				} else {
-							//echo "<img src='".get_template_directory_uri()."/images/newsplaceholder1.jpeg' alt=' '>";
-							 //echo '<img src="';
-							 echo catch_that_news_image();
-							// echo '" alt="" />';
-
-						} ?>
+						<img src="" alt=" " class="mediaImg">
 			<div class="boxContent">
-											<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
+											<!--<h3 class="spotlight_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h3>
 											<p><?php $academic_info = get_post_meta($post->ID, 'academic_info', true);
 				if($academic_info!=""){
 					echo $academic_info;
-				} ?></p>
+				} ?></p>-->
+				<h3 class="spotlight_title"><a href="#" rel="bookmark"></a> </h3>
+											<p class="date"></p>
                                              </div>
                             <div class="topShade"></div>
 							<div class="bottomShade"></div>
@@ -240,9 +193,7 @@ get_header(); ?>
 
 
 
-  <?php endwhile; ?>
-<?php endif; ?>
-<?php restore_current_blog(); ?>
+
 <a href="http://news.cals.wisc.edu/category/departments/cals-faces/" class="moreButton">More CALS Faces</a>
 <div class="windows8">
 							<div class="wBall" id="wBall_1">
